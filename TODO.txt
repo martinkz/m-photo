@@ -1,0 +1,24 @@
+add history
+add video to front page
+redo M logo?
+add Facebook Open Graph Options
+
+
+
+make thumbs much bigger on retina screens? (ipad, etc?)
+create list view? (large images only)
+optimize for IE 9-?
+
+
+
+Web Inspector’s “Show paint rectangles” and “Show composited layer borders” to track rendering performance.
+We also measured and tested the response time in animation with “Animation Inspection”; obviously it’s critical for a smooth experience. We had many problems in older, but still heavily used browsers.
+
+
+
+
+finalize location icon
+add responsive large images (small resolution phones, detect ppi)
+change gallery BG color
+add loading animation for large photo + set large photo to become visible onLoad / 
+remove fadeIn/Out and replace with CCS animations

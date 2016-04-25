@@ -1,0 +1,357 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"key",
+				"keyup"
+			],
+			[
+				"tabl",
+				"table-row"
+			],
+			[
+				"paddi",
+				"padding"
+			],
+			[
+				"tab",
+				"table-cell"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"menu",
+				"menu_is_open"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"wid",
+				"width"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main.css",
+			"settings":
+			{
+				"buffer_size": 13152,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 19375,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Projects/The-photo-site/html"
+	],
+	"file_history":
+	[
+		"/C/Users/M/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/Projects/The-photo-site/html/photo-site.sublime-project",
+		"/D/Projects/Pilates/html/bigtext.js",
+		"/D/Projects/Pilates/html/test.html",
+		"/D/Projects/Pilates/html/responsive-nav.js",
+		"/C/Users/M/Desktop/Github/mytest/gulpfile.js",
+		"/C/Users/M/Desktop/Github/mytest/package.json",
+		"/C/Users/M/Desktop/Github/mytest/html/index.html",
+		"/C/Users/M/Desktop/Github/mytest/html/images.svg",
+		"/C/Users/M/AppData/Roaming/Sublime Text 3/Packages/User/HTML.sublime-settings",
+		"/C/Users/M/Desktop/Github/mytest/node_modules/gulpicon/example/output/preview.html",
+		"/C/Users/M/Desktop/Github/mytest/node_modules/gulpicon/example/preview.hbs",
+		"/C/Users/M/Desktop/Github/mytest/grunticon/preview.html",
+		"/C/Users/M/Desktop/Github/mytest/grunticon/icons.data.svg.css",
+		"/C/Users/M/Desktop/Github/mytest/grunticon/icons.data.png.css",
+		"/C/Users/M/Desktop/Github/mytest/html/svgxuse.js",
+		"/C/Users/M/Desktop/Github/mytest/images/facebook.svg",
+		"/C/Users/M/Desktop/Github/mytest/images/link-external.svg",
+		"/C/Users/M/Desktop/Github/mytest/images/search.svg",
+		"/C/Users/M/Desktop/newproj/node_modules/milligram/dist/milligram.css",
+		"/C/Users/M/Desktop/script.js",
+		"/C/Users/M/Desktop/dohi_backup/2016.02.23/dohi/header.php",
+		"/C/Users/M/Desktop/newproj/primer-2.7.0/scss/_variables.scss",
+		"/C/Users/M/Desktop/Peregrina/index.html",
+		"/C/Users/M/Desktop/newproj/sass/style.scss",
+		"/C/Users/M/Desktop/newproj/package.json",
+		"/C/Users/M/Desktop/newproj/new.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"f5e4e5",
+			"hidden",
+			"photo-box hidden",
+			"hidden",
+			"photo-box hidden",
+			"class",
+			"box",
+			"photo",
+			"cursor",
+			"js-photo-link",
+			"photo-box",
+			"');\n",
+			"main-menu",
+			"js-close-large-photo",
+			"bg-main",
+			"class=\"map-location\"",
+			"alert",
+			"js-menu",
+			"h1",
+			"li",
+			">\n",
+			"",
+			"<div class=\"item_box\">\n							<h3>Injury Prevention</h3>\n							<p>Injuries often occur where the body compensates for developmental imbalances or trauma. Classical Pilates teaches body awareness: with a better understanding of the injury or misalignment, the client can heal faster and is less prone to re-injury.</p>\n						</div>",
+			"gif",
+			"600",
+			"logo_set_size",
+			"<hr",
+			"responsive"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"photo-link js-photo-link",
+			"js-photo-large-box",
+			"bg-main-vid",
+			"class=\"map-location js-map-location\"",
+			"js-menu-item",
+			"",
+			"logo_set_auto_size"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13152,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12952,
+								12952
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10260.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19375,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11115,
+								11115
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3204.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.35701774815,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "photo-site.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 181.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

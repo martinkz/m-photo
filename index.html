@@ -1,0 +1,413 @@
+<!doctype html>
+<html prefix="og: http://ogp.me/ns#" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>M</title>
+        <meta name="description" content="Martin's photo website - photography of nature, architecture, people.">
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="M Photo" />
+        <meta property="og:description" content="Photography of nature, architecture, people." />
+        <meta property="og:url" content="http://martinkz.eu/photo4/" />
+        <meta property="og:image" content="http://martinkz.eu/photo4/m-logo_fb.png" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        
+        <link href='http://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="main.css">
+        
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="html5shiv.js"><\/script>')</script> 
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <header>
+            <a id="m-logo" href="index.html" class="m-logo" title="Home"><img class="" src="logo-m.png" alt="M Photography Logo"></a>
+            
+            <button id="js-hamburger" class="hamburger" aria-label="Open Menu" aria-controls="main-nav" aria-expanded="false">
+                <div class="hamburger__inner"></div>
+            </button>
+            
+            <nav id="main-nav" class="modal" role="dialog" aria-label="Main Menu">
+                <div class="modal__inner">
+                    <a data-menu-cat="street" class="menu_item js-menu-item" href="#">Street</a>
+                    <a data-menu-cat="arch" class="menu_item js-menu-item" href="#">Architecture</a>
+                    <a data-menu-cat="nature" class="menu_item js-menu-item" href="#">Nature</a>
+                    <a data-menu-cat="people" class="menu_item js-menu-item" href="#">People</a>
+                </div>
+            </nav>
+        </header>
+        
+<!--        <div class="bg-main-vid">-->
+        <video class="bg-main-vid" autoplay poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop aria-hidden="true">
+            <source src="//demosthenes.info/assets/videos/polina2.webm" type="video/webm">
+            <source src="//demosthenes.info/assets/videos/polina2.mp4" type="video/mp4">
+        </video>
+<!--        </div>-->
+        
+        <div class="js-photo-large-box photo-large-box" href="#" tabindex="0" aria-label="photograph">
+            <img id="js-photo-large" src="" alt="">
+        </div>
+        
+        <section class="photo-section hidden">
+            
+            <h2 id="js-cat-title" class="cat-title"></h2>
+            
+            <div class="photo-box tsarevets_night hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC00343-2.jpg">
+                        <img data-cat="arch" src="" alt="Tsarevets Castle Photo">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title">Tsarevets Castle at Night</h2>
+            </div>  
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC01816_2.jpg">
+                        <img data-cat="arch" src="" alt="Tsarevets Castle Photo">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title">Tsarevets Castle at Night</h2>
+            </div>
+            <div class="photo-box asen_fortress hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC03354.jpg">
+                        <img data-cat="arch" src="" alt="Tsarevets Castle Photo">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title">Asen's Fortress</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC08611.jpg">
+                        <img data-cat="arch" src="" alt="Canary Wharf">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title color--canary">Canary Wharf</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC08687-2.jpg">
+                        <img data-cat="arch" src="" alt="Leadenhall Market">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title color--leadenhall">Leadenhall Market</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC08701-2.jpg">
+                        <img data-cat="arch" src="" alt="20 Fenchurch Street building">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title color--20fenchurch">20 Fenchurch Street</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC08706-2.jpg">
+                        <img data-cat="arch" src="" alt="The Shard">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title color--shard">The Shard</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC08738.jpg">
+                        <img data-cat="arch" src="" alt="More London Riverside">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title color--morelondon">More London Riverside</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC00349.jpg">
+                        <img data-cat="street" src="" alt="Black Street Cat">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title">Black Street Cat</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC00763-2.jpg">
+                        <img data-cat="street" src="" alt="Tsarevets Castle Photo">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title">Tsarevets Castle at Night</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC04036.jpg">
+                        <img data-cat="street" src="" alt="The South Bank Carousel">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title color--carousel">The South Bank Carousel</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC04249.jpg">
+                        <img data-cat="street" src="" alt="Tsarevets Castle Photo">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title">Tsarevets Castle at Night</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC04647.jpg">
+                        <img data-cat="street" src="" alt="Tsarevets Castle Photo">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title">Tsarevets Castle at Night</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC04818.jpg">
+                        <img data-cat="street" src="" alt="Tsarevets Castle Photo">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title">Tsarevets Castle at Night</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC05268.jpg">
+                        <img data-cat="street" src="" alt="King Street at Christmas">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title color--kingstr">King Street at Christmas</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC05522.jpg">
+                        <img data-cat="street" src="" alt="Millennium Bridge">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title color--milbridge">Millennium Bridge</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC06523.jpg">
+                        <img data-cat="street" src="" alt="Green Park">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title color--greenpark">Green Park</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC07351.jpg">
+                        <img data-cat="street" src="" alt="New Year's Eve Fireworks">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title color--nye2">New Year's Eve Fireworks</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC08387.jpg">
+                        <img data-cat="street" src="" alt="Parade participants">
+                    </a>
+                </div>
+                <h2 class="photo-title color--parade">Parade participants</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC07374.jpg">
+                        <img data-cat="street" src="" alt="New Year's Eve Fireworks">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title color--nye1">New Year's Eve Fireworks</h2>
+            </div>
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="img-large/DSC08761-4.jpg">
+                        <img data-cat="street" src="" alt="Tower Bridge">
+                    </a>
+                    <a class="map-location js-map-location" href="#"></a>
+                </div>
+                <h2 class="photo-title color--towerbridge">Tower Bridge</h2>
+            </div>
+            
+        </section>
+		
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="jquery-2.2.3.min.js"><\/script>')</script>
+
+		
+        <script>
+        $(document).ready(function()
+        {
+
+            // INIT STUFF
+
+            $('#m-logo').attr('tabindex', '-1');
+
+            setTimeout(function(){ 
+                $('.bg-main-vid').addClass('bg-main-vid--visible'); 
+            }, 0);
+
+            $('.js-photo-large-box').hide();
+
+            // MAIN MENU ( MODAL / HAMBURGER FUNCTIONALITY )
+
+            var gallery_active = false;
+            var menu_active = false;
+            
+            var toggleMenuFunctionality = function()
+            {
+                $('#js-hamburger').toggleClass('hamburger--open');
+                $('.modal').toggleClass('modal--visible');
+                
+                menu_active = $("#js-hamburger").hasClass('hamburger--open');
+                
+                if(menu_active) // opening menu
+                { 
+                    $('#js-hamburger').attr('aria-label', 'Close Menu');
+                    $('#js-hamburger').attr('aria-expanded', 'true');
+                    $('#m-logo').addClass('m-logo--in_header');
+                    $('#m-logo').attr('tabindex', '0');
+                    $('.bg-main-vid').addClass('hidden');
+                    $('.photo-section').addClass('hidden');
+                } 
+                else // closing menu
+                {
+                    $('#js-hamburger').attr('aria-label', 'Open Menu');
+                    $('#js-hamburger').attr('aria-expanded', 'false');
+                    if(gallery_active){
+                        $('.photo-section').removeClass('hidden'); 
+                    }
+                    else 
+                    {
+                        $('.photo-section').addClass('hidden');
+                        $('#m-logo').removeClass('m-logo--in_header');
+                        $('#m-logo').attr('tabindex', '-1');
+                        $('.bg-main-vid').removeClass('hidden');
+                    }
+                }
+            }
+            
+            $('#js-hamburger').click(function(e) {
+                toggleMenuFunctionality();
+                // fadeOut first checks whether the element is hidden to avoid unnecessary DOM manipulation, which is why I'm not checking for this explicitly
+                $('.js-photo-large-box').fadeOut(200); 
+            });
+            
+            $('.js-menu-item').click(function(e) 
+            {
+                e.preventDefault();
+                var s_cat = $(this).attr('data-menu-cat');
+                var $images = $('img[data-cat="' + s_cat + '"]');
+                gallery_active = true;
+                toggleMenuFunctionality();
+                $('.photo-box').addClass('hidden');
+                $images.attr('src', function() { 
+                    return $(this).parent('.js-photo-link').attr('href').replace('img-large', 'img-small');
+                });
+                $images.parents('.photo-box').removeClass('hidden');
+                $('.photo-box:not(.hidden):first .js-photo-link').focus();
+                $('.bg-main-vid').addClass('hidden');
+                $('#js-cat-title').text( $(this).text() );   
+            });
+
+            // HOME LINK
+            
+            $('#m-logo').click(function(e) 
+            {
+                e.preventDefault();
+                gallery_active = false;
+                $('#m-logo').removeClass('m-logo--in_header');
+                $('#m-logo').attr('tabindex', '-1');
+                if(menu_active) toggleMenuFunctionality();
+                $('.bg-main-vid').removeClass('hidden');
+                $('.photo-box').addClass('hidden');
+                $('.photo-section').addClass('hidden');
+                $('.js-photo-large-box').fadeOut(200);
+            });
+
+            // TAB KEY FUNCTIONALITY
+
+            var tab_items = '#js-hamburger, #m-logo, .js-menu-item, .js-photo-link, .js-map-location, .js-photo-large-box';
+
+            $(tab_items).keyup(function (e) {
+                if ((e.keyCode || e.which) == 9) $(this).addClass('has-tab-focus');
+            });
+
+            $(tab_items).blur(function() {
+                $(this).removeClass('has-tab-focus');
+            });
+            
+            // GALLERY FUNCTIONALITY
+
+            var cur_scroll;
+            
+            var generate_resp_link = function($obj) {
+                if(window.innerHeight <= 660 && window.innerWidth <= 660) {
+                    return $obj.attr('href').replace('img-large', 'img-small');
+                }
+                else return $obj.attr('href');
+            }
+
+            $('.js-photo-link').click(function(e) 
+            {
+                e.preventDefault();
+                cur_scroll = $(document).scrollTop();
+
+                $('#js-photo-large').attr('src', generate_resp_link($(this)) );
+                $('.js-photo-large-box').fadeIn(200);
+                $('.js-photo-large-box').focus();
+                $('.photo-section').addClass('hidden');
+                              
+                if(history.state===null || history.state.cur_page!="photo") { 
+                    history.pushState({cur_page: "photo"}, null, null);
+                }
+            });
+            
+            $('.js-photo-large-box').click(function(e) 
+            {
+                $('.js-photo-large-box').fadeOut(200, function(){
+                    $('#js-photo-large').attr('src', '');
+                });
+//              $('.photo-large-box').addClass('hidden');
+                $('.photo-section').removeClass('hidden');
+                
+                $(document).scrollTop(cur_scroll);
+            });
+
+            $('.js-photo-large-box').keyup(function(e) {
+                if (e.keyCode == 27) {
+                    $('.js-photo-large-box').click();
+                }
+            });
+            
+            window.addEventListener("popstate", function(event) {
+                $('.js-photo-large-box').click();
+            });
+            
+//            alert(window.devicePixelRatio + ' / ' + window.innerWidth + ' x ' + window.innerHeight);
+        });
+        </script>
+        
+    </body>
+</html>
