@@ -520,11 +520,6 @@ html,body {
     color: #d7e9f6;
 }
 
-.photo-title.color--carousel {
-    background-color: #9a4b85;
-    color: #ecd4e5;
-}
-
 .photo-title.color--leadenhall {
     background-color: #2f2a26;
     color: #e2ddd8;
@@ -535,48 +530,142 @@ html,body {
     color: #302c27;
 }
 
+.photo-title.color--carousel {
+    background-color: #7c7769;
+    color: #ecd4e5;
+}
+
 .photo-title.color--parade {
-    background-color: #b12a36;
+    background-color: #676254;
     color: #f5e4e5;
 }
 
 .photo-title.color--nye1 {
-    background-color: #7e2879;
+    background-color: #5e594b;
     color: #ebcce9;
 }
 
 .photo-title.color--nye2 {
-    background-color: #e8c3a6;
-    color: #88654a;
+    background-color: #5a5547;
+    color: white;
 }
 
 .photo-title.color--greenpark {
-    background-color: #6f852a;
+    background-color: #5c5749;
     color: #dce7bb;
 }
 
 .photo-title.color--milbridge {
-    background-color: #294474;
+    background-color: #847f71;
     color: #c1d4ee;
 }
 
 .photo-title.color--kingstr {
-    background-color: #b02d1b;
+    background-color: #6c6759;
     color: #e3ccc9;
 }
 
-.photo-title.color-- {
-    background-color: #;
-    color: #;
+.photo-title.color--cat {
+    background-color: #3b3632;
+    color: #e7e3e1;
+}
+
+.photo-title.color--parkhill {
+    background-color: #8c8779;
+    color: #e7e3e1;
+}
+
+.photo-box__inner:hover + .photo-title.color--parkhill {
+    background-color: #FF5252 !important;
+    color: white !important;
+}
+
+.photo-title.color--bigbensunset {
+    background-color: #635e50;
+    color: white;
+}
+
+.photo-title.color--kensingtontube {
+    background-color: #7b7668;
+    color: white;
+}
+
+.photo-title {
+    background-color: #393633 !important;
+    color: #e7e3e1 !important;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .photo-title.color-- {
-    background-color: #;
-    color: #;
+    background-color: ;
+    color: white;
 }
-
 .photo-title.color-- {
-    background-color: #;
-    color: #;
+    background-color: ;
+    color: white;
 }
-
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}
+.photo-title.color-- {
+    background-color: ;
+    color: white;
+}

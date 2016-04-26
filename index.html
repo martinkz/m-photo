@@ -29,22 +29,23 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <header>
-            <a id="m-logo" href="index.html" class="m-logo" title="Home"><img class="" src="logo-m.png" alt="M Photography Logo"></a>
+        <nav role="navigation">
+            <a id="m-logo" href="index.html" class="m-logo" title="Home">
+                <img class="" src="logo-m.png" alt="M Photography Logo"></a>
             
             <button id="js-hamburger" class="hamburger" aria-label="Open Menu" aria-controls="main-nav" aria-expanded="false">
                 <div class="hamburger__inner"></div>
             </button>
             
-            <nav id="main-nav" class="modal" role="dialog" aria-label="Main Menu">
+            <div id="main-nav" class="modal" role="dialog" aria-label="Main Menu">
                 <div class="modal__inner">
                     <a data-menu-cat="street" class="menu_item js-menu-item" href="#">Street</a>
                     <a data-menu-cat="arch" class="menu_item js-menu-item" href="#">Architecture</a>
                     <a data-menu-cat="nature" class="menu_item js-menu-item" href="#">Nature</a>
                     <a data-menu-cat="people" class="menu_item js-menu-item" href="#">People</a>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
         
 <!--        <div class="bg-main-vid">-->
         <video class="bg-main-vid" autoplay poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop aria-hidden="true">
@@ -53,204 +54,208 @@
         </video>
 <!--        </div>-->
         
-        <div class="js-photo-large-box photo-large-box" href="#" tabindex="0" aria-label="photograph">
-            <img id="js-photo-large" src="" alt="">
-        </div>
-        
-        <section class="photo-section hidden">
-            
-            <h2 id="js-cat-title" class="cat-title"></h2>
-            
-            <div class="photo-box tsarevets_night hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC00343-2.jpg">
-                        <img data-cat="arch" src="" alt="Tsarevets Castle Photo">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title">Tsarevets Castle at Night</h2>
-            </div>  
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC01816_2.jpg">
-                        <img data-cat="arch" src="" alt="Tsarevets Castle Photo">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title">Tsarevets Castle at Night</h2>
-            </div>
-            <div class="photo-box asen_fortress hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC03354.jpg">
-                        <img data-cat="arch" src="" alt="Tsarevets Castle Photo">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title">Asen's Fortress</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC08611.jpg">
-                        <img data-cat="arch" src="" alt="Canary Wharf">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title color--canary">Canary Wharf</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC08687-2.jpg">
-                        <img data-cat="arch" src="" alt="Leadenhall Market">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title color--leadenhall">Leadenhall Market</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC08701-2.jpg">
-                        <img data-cat="arch" src="" alt="20 Fenchurch Street building">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title color--20fenchurch">20 Fenchurch Street</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC08706-2.jpg">
-                        <img data-cat="arch" src="" alt="The Shard">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title color--shard">The Shard</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC08738.jpg">
-                        <img data-cat="arch" src="" alt="More London Riverside">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title color--morelondon">More London Riverside</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC00349.jpg">
-                        <img data-cat="street" src="" alt="Black Street Cat">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title">Black Street Cat</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC00763-2.jpg">
-                        <img data-cat="street" src="" alt="Tsarevets Castle Photo">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title">Tsarevets Castle at Night</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC04036.jpg">
-                        <img data-cat="street" src="" alt="The South Bank Carousel">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title color--carousel">The South Bank Carousel</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC04249.jpg">
-                        <img data-cat="street" src="" alt="Tsarevets Castle Photo">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title">Tsarevets Castle at Night</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC04647.jpg">
-                        <img data-cat="street" src="" alt="Tsarevets Castle Photo">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title">Tsarevets Castle at Night</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC04818.jpg">
-                        <img data-cat="street" src="" alt="Tsarevets Castle Photo">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title">Tsarevets Castle at Night</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC05268.jpg">
-                        <img data-cat="street" src="" alt="King Street at Christmas">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title color--kingstr">King Street at Christmas</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC05522.jpg">
-                        <img data-cat="street" src="" alt="Millennium Bridge">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title color--milbridge">Millennium Bridge</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC06523.jpg">
-                        <img data-cat="street" src="" alt="Green Park">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title color--greenpark">Green Park</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC07351.jpg">
-                        <img data-cat="street" src="" alt="New Year's Eve Fireworks">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title color--nye2">New Year's Eve Fireworks</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC08387.jpg">
-                        <img data-cat="street" src="" alt="Parade participants">
-                    </a>
-                </div>
-                <h2 class="photo-title color--parade">Parade participants</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC07374.jpg">
-                        <img data-cat="street" src="" alt="New Year's Eve Fireworks">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title color--nye1">New Year's Eve Fireworks</h2>
-            </div>
-            <div class="photo-box hidden">
-                <div class="photo-box__inner">
-                    <a class="photo-link js-photo-link" href="img-large/DSC08761-4.jpg">
-                        <img data-cat="street" src="" alt="Tower Bridge">
-                    </a>
-                    <a class="map-location js-map-location" href="#"></a>
-                </div>
-                <h2 class="photo-title color--towerbridge">Tower Bridge</h2>
+        <main role="main">
+
+            <div class="js-photo-large-box photo-large-box" href="#" tabindex="0" aria-label="photograph">
+                <img id="js-photo-large" src="" alt="">
             </div>
             
-        </section>
+            <section class="photo-section hidden">
+                
+                <h2 id="js-cat-title" class="cat-title"></h2>
+                
+                <div class="photo-box tsarevets_night hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC00343-2.jpg">
+                            <img data-cat="arch" src="" alt="Tsarevets Castle Photo">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title">Tsarevets Castle at Night</h2>
+                </div>  
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC01816_2.jpg">
+                            <img data-cat="arch" src="" alt="Tsarevets Castle Photo">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title">Tsarevets Castle at Night</h2>
+                </div>
+                <div class="photo-box asen_fortress hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC03354.jpg">
+                            <img data-cat="arch" src="" alt="Tsarevets Castle Photo">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title">Asen's Fortress</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC08611.jpg">
+                            <img data-cat="arch" src="" alt="Canary Wharf">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--canary">Canary Wharf</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC08687-2.jpg">
+                            <img data-cat="arch" src="" alt="Leadenhall Market">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--leadenhall">Leadenhall Market</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC08701-2.jpg">
+                            <img data-cat="arch" src="" alt="20 Fenchurch Street building">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--20fenchurch">20 Fenchurch Street</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC08706-2.jpg">
+                            <img data-cat="arch" src="" alt="The Shard">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--shard">The Shard</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC08738.jpg">
+                            <img data-cat="arch" src="" alt="More London Riverside">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--morelondon">More London Riverside</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC00349.jpg">
+                            <img data-cat="street" src="" alt="Black Street Cat">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--cat">Black Street Cat</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC00763-2.jpg">
+                            <img data-cat="street" src="" alt="Park Hill">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--parkhill">Park Hill in the spring</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC04036.jpg">
+                            <img data-cat="street" src="" alt="The South Bank Carousel">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--carousel">The South Bank Carousel</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC04249.jpg">
+                            <img data-cat="street" src="" alt="Tsarevets Castle Photo">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title">Tsarevets Castle at Night</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC04647.jpg">
+                            <img data-cat="street" src="" alt="Big Ben at sunset">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--bigbensunset">Big Ben at sunset</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC04818.jpg">
+                            <img data-cat="street" src="" alt="High Street Kensington">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--kensingtontube">High Street Kensington</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC05268.jpg">
+                            <img data-cat="street" src="" alt="King Street at Christmas">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--kingstr">King Street at Christmas</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC05522.jpg">
+                            <img data-cat="street" src="" alt="Millennium Bridge">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--milbridge">Millennium Bridge</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC06523.jpg">
+                            <img data-cat="street" src="" alt="Green Park">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--greenpark">Green Park</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC07351.jpg">
+                            <img data-cat="street" src="" alt="New Year's Eve Fireworks">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--nye2">New Year's Eve Fireworks</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC08387.jpg">
+                            <img data-cat="street" src="" alt="Parade participants">
+                        </a>
+                    </div>
+                    <h2 class="photo-title color--parade">Parade participants</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC07374.jpg">
+                            <img data-cat="street" src="" alt="New Year's Eve Fireworks">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--nye1">New Year's Eve Fireworks</h2>
+                </div>
+                <div class="photo-box hidden">
+                    <div class="photo-box__inner">
+                        <a class="photo-link js-photo-link" href="img-large/DSC08761-4.jpg">
+                            <img data-cat="street" src="" alt="Tower Bridge">
+                        </a>
+                        <a class="map-location js-map-location" href="#"></a>
+                    </div>
+                    <h2 class="photo-title color--towerbridge">Tower Bridge</h2>
+                </div>
+                
+            </section>
+
+        </main>
 		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="jquery-2.2.3.min.js"><\/script>')</script>
