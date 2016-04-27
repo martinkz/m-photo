@@ -47,7 +47,7 @@
 			"file": "main.css",
 			"settings":
 			{
-				"buffer_size": 13152,
+				"buffer_size": 14843,
 				"line_ending": "Unix"
 			}
 		},
@@ -55,7 +55,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 19375,
+				"buffer_size": 20246,
 				"line_ending": "Unix"
 			}
 		}
@@ -96,6 +96,11 @@
 	],
 	"file_history":
 	[
+		"/C/Users/M/Desktop/icon-location.svg",
+		"/C/Users/M/Desktop/location.svg",
+		"/C/Users/M/Desktop/demo-external-svg.html",
+		"/C/Users/M/Desktop/demo.css",
+		"/D/Projects/The-photo-site/html/html5shiv.js",
 		"/C/Users/M/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/D/Projects/The-photo-site/html/photo-site.sublime-project",
 		"/D/Projects/Pilates/html/bigtext.js",
@@ -140,6 +145,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".photo-title.color--",
+			"photo-title",
+			":hover",
+			"transition",
 			"f5e4e5",
 			"hidden",
 			"photo-box hidden",
@@ -175,6 +184,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			".photo-box:hover > .photo-title.color--",
 			"photo-link js-photo-link",
 			"js-photo-large-box",
 			"bg-main-vid",
@@ -201,15 +211,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13152,
+						"buffer_size": 14843,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12952,
-								12952
+								12426,
+								12426
 							]
 						],
 						"settings":
@@ -220,7 +230,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 10278.0,
+						"translation.y": 9515.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -238,15 +248,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19375,
+						"buffer_size": 20246,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								416,
-								416
+								7699,
+								7699
 							]
 						],
 						"settings":
@@ -256,7 +266,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2232.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -293,7 +303,7 @@
 		"cols":
 		[
 			0.0,
-			0.35701774815,
+			0.380019473279,
 			1.0
 		],
 		"rows":

@@ -30,7 +30,7 @@ audio,canvas,iframe,img,svg,video {
 
 html,body { 
     box-sizing: border-box;
-    background: #e5e0d2;
+    background: #E0DACC;
 }
 
 *, *:before, *:after {
@@ -249,10 +249,12 @@ html,body {
     /* Fixes Chrome 1 pix gap bug */
     font: 100 1.8em/1.2 'Roboto', sans-serif;
     margin: 0;
-    background: #3f386e;
-    color: #8c7fc3;
     text-transform: uppercase;
     padding: 0.5em 0.8em;
+    background-color: #31302E;
+    color: #e7e3e1;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .photo-box__inner {
@@ -266,10 +268,11 @@ html,body {
     bottom: 0;
     width: 65px;
     height: 65px;
-    background: beige url('icon_location.png') no-repeat center center;
+    background: #EFE9E0 url('data:image/svg+xml;utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256%22%20height%3D%22256%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%20%20%3Cpath%20fill%3D%22%232A2A2A%22%20d%3D%22M57.8%2075C58.8%2037.8%2088%206%20124%204c40-2%2073%2025.6%2076.5%2064%202%2020-5%2037.5-14.8%2054.4-10.4%2018.2-21.6%2036-31%2054.7-11%2022-16.7%2045.7-19%2070-.2%203.7-1%207.2-5.6%207.5-4.2.3-6-2.3-6.4-6-3.3-43-20.8-80.5-43.8-116-6.7-10.5-12.3-22-17-33.4-2.8-7.3-3.4-16-5-24zm72%2030.3c17.2%200%2030.6-13%2030.5-29.6%200-16.5-13-30.8-28-31-19.6%200-32.6%2012-32.7%2030%200%2018%2012.4%2030.5%2030.2%2030.6z%22%2F%3E%0A%3C%2Fsvg%3E') no-repeat center center;
     background-size: 65% auto;
 }
-/*.map-location:hover { background-color: #222; }*/
+
+.map-location:hover { background-color: white; }
 
 .photo-large-box {
     display: block;
@@ -430,15 +433,6 @@ html,body {
     .cat-title { font-size: 2.1em; width: 96%; }
 }
 
-/* Photo title & location icon colors */
-
-.tsarevets_night .photo-title { background-color: #7c5e3d; color: #16130b; }
-/*.tsarevets_night .map-location { background-color: #3d331a; }*/
-
-.asen_fortress .photo-title { background-color: #cdb59d; color: #9d8063; }
-/*.asen_fortress .map-location { background-color: #a59485; }*/
-
-.map-location:hover { background-color: white; }
 
 
 .has-tab-focus:focus,
@@ -500,172 +494,123 @@ html,body {
    Colours
    =============================================== */
 
-.photo-title.color--shard {
-    background-color: #324e76;
-    color: #a0c5f8;
+.photo-box:hover > .photo-title {
+    color: white;
 }
 
-.photo-title.color--20fenchurch {
-    background-color: #3b3632;
-    color: #e7e3e1;
+.photo-box:hover > .photo-title.color--shard {
+    background-color: #1976D2;
 }
 
-.photo-title.color--morelondon {
-    background-color: #4f443e;
-    color: #ede5e0;
+.photo-box:hover > .photo-title.color--20fenchurch {
+    background-color: #FBC02D;
 }
 
-.photo-title.color--towerbridge {
+.photo-box:hover > .photo-title.color--morelondon {
+    background-color: #5D4037;
+}
+
+.photo-box:hover > .photo-title.color--towerbridge {
     background-color: #004b83;
-    color: #d7e9f6;
 }
 
-.photo-title.color--leadenhall {
-    background-color: #2f2a26;
-    color: #e2ddd8;
+.photo-box:hover > .photo-title.color--leadenhall {
+    background-color: #D32F2F;
 }
 
-.photo-title.color--canary {
-    background-color: #c8bfb3;
-    color: #302c27;
+.photo-box:hover > .photo-title.color--canary {
+    background-color: #C5BAAB;
 }
 
-.photo-title.color--carousel {
-    background-color: #7c7769;
-    color: #ecd4e5;
+.photo-box:hover > .photo-title.color--carousel {
+    background-color: #E91E63;
 }
 
-.photo-title.color--parade {
-    background-color: #676254;
-    color: #f5e4e5;
+.photo-box:hover > .photo-title.color--parade {
+    background-color: #F44336;
 }
 
-.photo-title.color--nye1 {
-    background-color: #5e594b;
-    color: #ebcce9;
+.photo-box:hover > .photo-title.color--nye1 {
+    background-color: #673AB7;
 }
 
-.photo-title.color--nye2 {
-    background-color: #5a5547;
-    color: white;
+.photo-box:hover > .photo-title.color--nye2 {
+    background-color: #FF5722;
 }
 
-.photo-title.color--greenpark {
-    background-color: #5c5749;
-    color: #dce7bb;
+.photo-box:hover > .photo-title.color--greenpark {
+    background-color: #8BC34A;
 }
 
-.photo-title.color--milbridge {
-    background-color: #847f71;
-    color: #c1d4ee;
+.photo-box:hover > .photo-title.color--milbridge {
+    background-color: #3F51B5;
 }
 
-.photo-title.color--kingstr {
-    background-color: #6c6759;
-    color: #e3ccc9;
+.photo-box:hover > .photo-title.color--kingstr {
+    background-color: #1976D2;
 }
 
-.photo-title.color--cat {
-    background-color: #3b3632;
-    color: #e7e3e1;
+.photo-box:hover > .photo-title.color--cat {
+    background-color: #E8C090;
 }
 
-.photo-title.color--parkhill {
-    background-color: #8c8779;
-    color: #e7e3e1;
+.photo-box:hover > .photo-title.color--parkhill {
+    background-color: #FF5252;
 }
 
-.photo-box__inner:hover + .photo-title.color--parkhill {
-    background-color: #FF5252 !important;
-    color: white !important;
+.photo-box:hover > .photo-title.color--bigbensunset {
+    background-color: #FFC107;
 }
 
-.photo-title.color--bigbensunset {
-    background-color: #635e50;
-    color: white;
+.photo-box:hover > .photo-title.color--kensingtontube {
+    background-color: #7B584E;
 }
 
-.photo-title.color--kensingtontube {
-    background-color: #7b7668;
-    color: white;
+.photo-box:hover > .photo-title.color--eyeskate {
+    background-color: #3A96B7;
 }
-
-.photo-title {
-    background-color: #393633 !important;
-    color: #e7e3e1 !important;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+.photo-box:hover > .photo-title.color--tsarevets {
+    background-color: #4CAF50;
 }
-
-.photo-title.color-- {
+.photo-box:hover > .photo-title.color--tsarevetsnight {
+    background-color: #C2185B;
+}
+.photo-box:hover > .photo-title.color--asen {
+    background-color: #FF5722;
+}
+.photo-box:hover > .photo-title.color-- {
     background-color: ;
-    color: white;
 }
-.photo-title.color-- {
+.photo-box:hover > .photo-title.color-- {
     background-color: ;
-    color: white;
 }
-.photo-title.color-- {
+.photo-box:hover > .photo-title.color-- {
     background-color: ;
-    color: white;
 }
-.photo-title.color-- {
+.photo-box:hover > .photo-title.color-- {
     background-color: ;
-    color: white;
 }
-.photo-title.color-- {
+.photo-box:hover > .photo-title.color-- {
     background-color: ;
-    color: white;
 }
-.photo-title.color-- {
+.photo-box:hover > .photo-title.color-- {
     background-color: ;
-    color: white;
 }
-.photo-title.color-- {
+.photo-box:hover > .photo-title.color-- {
     background-color: ;
-    color: white;
 }
-.photo-title.color-- {
+.photo-box:hover > .photo-title.color-- {
     background-color: ;
-    color: white;
 }
-.photo-title.color-- {
+.photo-box:hover > .photo-title.color-- {
     background-color: ;
-    color: white;
 }
-.photo-title.color-- {
+.photo-box:hover > .photo-title.color-- {
     background-color: ;
-    color: white;
 }
-.photo-title.color-- {
+.photo-box:hover > .photo-title.color-- {
     background-color: ;
-    color: white;
 }
-.photo-title.color-- {
+.photo-box:hover > .photo-title.color-- {
     background-color: ;
-    color: white;
-}
-.photo-title.color-- {
-    background-color: ;
-    color: white;
-}
-.photo-title.color-- {
-    background-color: ;
-    color: white;
-}
-.photo-title.color-- {
-    background-color: ;
-    color: white;
-}
-.photo-title.color-- {
-    background-color: ;
-    color: white;
-}
-.photo-title.color-- {
-    background-color: ;
-    color: white;
-}
-.photo-title.color-- {
-    background-color: ;
-    color: white;
 }
