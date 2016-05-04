@@ -51,9 +51,15 @@ html,body {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    background: #333 
-        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg') no-repeat left top;
-    background-size: cover;
+}
+
+.bg-main-vid video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+/*    background: #333 
+    url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg') no-repeat left top;
+    background-size: cover;*/
 }
 
 .bg-main-vid--visible { 
@@ -578,11 +584,47 @@ html,body {
 .photo-box:hover > .photo-title.color--asen {
     background-color: #FF5722;
 }
-.photo-box:hover > .photo-title.color-- {
-    background-color: ;
+.photo-box:hover > .photo-title.color--jpmorgan {
+    background-color: #00BCD4;
 }
-.photo-box:hover > .photo-title.color-- {
-    background-color: ;
+.photo-box:hover > .photo-title.color--oldandnew {
+    background-color: #ffa000;
+}
+.photo-box:hover > .photo-title.color--bankside {
+    background-color: #512da8;
+}
+.photo-box:hover > .photo-title.color--admiralty {
+    background-color: #f4511e;
+}
+.photo-box:hover > .photo-title.color--vt1 {
+    background-color: #00897b;
+}
+.photo-box:hover > .photo-title.color--firedancing {
+    background-color: #fdd835;
+}
+.photo-box:hover > .photo-title.color--firedancing2 {
+    background-color: #fbc02d;
+}
+.photo-box:hover > .photo-title.color--thamessunset {
+    background-color: #e65100;
+}
+.photo-box:hover > .photo-title.color--bowl {
+    background-color: #555555;
+}
+.photo-box:hover > .photo-title.color--lumiereart {
+    background-color: #ff1744;
+}
+.photo-box:hover > .photo-title.color--asenevtsi {
+    background-color: #9c27b0;
+}
+.photo-box:hover > .photo-title.color--londoneye {
+    background-color: #5e35b1;
+}
+.photo-box:hover > .photo-title.color--bern {
+    background-color: #e53935;
+}
+.photo-box:hover > .photo-title.color--vt2 {
+    background-color: #7cb342;
 }
 .photo-box:hover > .photo-title.color-- {
     background-color: ;
