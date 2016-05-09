@@ -503,75 +503,57 @@ html,body {
 .photo-box:hover > .photo-title {
     color: white;
 }
-
 .photo-box:hover > .photo-title.color--shard {
     background-color: #1976D2;
 }
-
 .photo-box:hover > .photo-title.color--20fenchurch {
     background-color: #FBC02D;
 }
-
 .photo-box:hover > .photo-title.color--morelondon {
     background-color: #5D4037;
 }
-
 .photo-box:hover > .photo-title.color--towerbridge {
     background-color: #004b83;
 }
-
 .photo-box:hover > .photo-title.color--leadenhall {
     background-color: #D32F2F;
 }
-
 .photo-box:hover > .photo-title.color--canary {
     background-color: #C5BAAB;
 }
-
 .photo-box:hover > .photo-title.color--carousel {
     background-color: #E91E63;
 }
-
 .photo-box:hover > .photo-title.color--parade {
     background-color: #F44336;
 }
-
 .photo-box:hover > .photo-title.color--nye1 {
     background-color: #673AB7;
 }
-
 .photo-box:hover > .photo-title.color--nye2 {
     background-color: #FF5722;
 }
-
 .photo-box:hover > .photo-title.color--greenpark {
     background-color: #8BC34A;
 }
-
 .photo-box:hover > .photo-title.color--milbridge {
     background-color: #3F51B5;
 }
-
 .photo-box:hover > .photo-title.color--kingstr {
     background-color: #1976D2;
 }
-
 .photo-box:hover > .photo-title.color--cat {
     background-color: #E8C090;
 }
-
 .photo-box:hover > .photo-title.color--parkhill {
     background-color: #FF5252;
 }
-
 .photo-box:hover > .photo-title.color--bigbensunset {
     background-color: #FFC107;
 }
-
 .photo-box:hover > .photo-title.color--kensingtontube {
     background-color: #7B584E;
 }
-
 .photo-box:hover > .photo-title.color--eyeskate {
     background-color: #3A96B7;
 }

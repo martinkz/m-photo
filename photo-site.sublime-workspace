@@ -51,7 +51,7 @@
 			"file": "main.css",
 			"settings":
 			{
-				"buffer_size": 15950,
+				"buffer_size": 15932,
 				"line_ending": "Unix"
 			}
 		},
@@ -59,7 +59,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 28385,
+				"buffer_size": 40462,
 				"line_ending": "Unix"
 			}
 		}
@@ -149,6 +149,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Black",
+			"                    <h2 class=\"photo-title color--cat\">Black Street Cat</h2>\n",
+			"Black",
+			"photo-box hidden",
+			"<div class=\"photo-box hidden\">",
+			"photo-box__inner",
+			"hidden",
+			"map-location",
+			"box__inner",
+			"photo-box__inner",
+			"box__inner",
+			"photo",
+			"photo-box__inner",
+			"photo-link",
 			"Bowl",
 			"bg-main-vid",
 			"bgvid",
@@ -219,15 +233,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15950,
+						"buffer_size": 15932,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15447,
-								15447
+								15293,
+								15293
 							]
 						],
 						"settings":
@@ -238,10 +252,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 11703.0,
+						"translation.y": 11307.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -256,15 +270,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 28385,
+						"buffer_size": 40462,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								20985,
-								20985
+								25044,
+								25044
 							]
 						],
 						"settings":
@@ -274,10 +288,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6246.0,
+						"translation.y": 7615.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -359,7 +373,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
