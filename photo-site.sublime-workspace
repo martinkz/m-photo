@@ -51,7 +51,7 @@
 			"file": "main.css",
 			"settings":
 			{
-				"buffer_size": 15932,
+				"buffer_size": 17629,
 				"line_ending": "Unix"
 			}
 		},
@@ -59,7 +59,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 40462,
+				"buffer_size": 40598,
 				"line_ending": "Unix"
 			}
 		}
@@ -233,15 +233,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15932,
+						"buffer_size": 17629,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15293,
-								15293
+								17149,
+								17149
 							]
 						],
 						"settings":
@@ -252,7 +252,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 11307.0,
+						"translation.y": 12369.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -270,15 +270,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 40462,
+						"buffer_size": 40598,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								25044,
-								25044
+								27129,
+								27129
 							]
 						],
 						"settings":
@@ -288,7 +288,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7615.0,
+						"translation.y": 8748.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

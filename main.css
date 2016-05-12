@@ -608,14 +608,74 @@ html,body {
 .photo-box:hover > .photo-title.color--vt2 {
     background-color: #7cb342;
 }
-.photo-box:hover > .photo-title.color-- {
-    background-color: ;
+.photo-box:hover > .photo-title.color--parakeet1 {
+    background-color: #43a047;
 }
-.photo-box:hover > .photo-title.color-- {
-    background-color: ;
+.photo-box:hover > .photo-title.color--parakeet2 {
+    background-color: #7cb342;
 }
-.photo-box:hover > .photo-title.color-- {
-    background-color: ;
+.photo-box:hover > .photo-title.color--parakeet3 {
+    background-color: #c0ca33;
+}
+.photo-box:hover > .photo-title.color--owl1 {
+    background-color: #e53935;
+}
+.photo-box:hover > .photo-title.color--ilikegreen {
+    background-color: #4db6ac;
+}
+.photo-box:hover > .photo-title.color--stars {
+    background-color: #1a237e;
+}
+.photo-box:hover > .photo-title.color--interlaken {
+    background-color: #ff7043;
+}
+.photo-box:hover > .photo-title.color--splugen1 {
+    background-color: #039be5;
+}
+.photo-box:hover > .photo-title.color--splugen2 {
+    background-color: #26a69a;
+}
+.photo-box:hover > .photo-title.color--roadsplugen {
+    background-color: #9ccc65;
+}
+.photo-box:hover > .photo-title.color--ballenberg {
+    background-color: #fdd835;
+}
+.photo-box:hover > .photo-title.color--lugano {
+    background-color: #ec407a;
+}
+.photo-box:hover > .photo-title.color--jurassic {
+    background-color: #e53935;
+}
+.photo-box:hover > .photo-title.color--houndtor {
+    background-color: #6d4c41;
+}
+.photo-box:hover > .photo-title.color--owl2 {
+    background-color: #ab47bc;
+}
+.photo-box:hover > .photo-title.color--goldfinch {
+    background-color: #ec407a;
+}
+.photo-box:hover > .photo-title.color--owl3 {
+    background-color: #8d6e63;
+}
+.photo-box:hover > .photo-title.color--flower {
+    background-color: #ff5252;
+}
+.photo-box:hover > .photo-title.color--richmond {
+    background-color: #fbc02d;
+}
+.photo-box:hover > .photo-title.color--bateleur {
+    background-color: #ffa726;
+}
+.photo-box:hover > .photo-title.color--squirrel1 {
+    background-color: #ff7043;
+}
+.photo-box:hover > .photo-title.color--owl4 {
+    background-color: #78909c;
+}
+.photo-box:hover > .photo-title.color--squirrel2 {
+    background-color: #9e9d24;
 }
 .photo-box:hover > .photo-title.color-- {
     background-color: ;
