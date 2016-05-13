@@ -236,6 +236,7 @@ html,body {
 .photo-box {
     width: 100%;
     display: block;
+    position: relative;
     margin-bottom: 3em;
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
@@ -291,6 +292,7 @@ html,body {
     overflow: auto;
     cursor: pointer;
     z-index: 4000;
+    outline: none;
 }
 .photo-large-box img { 
     display: block;
@@ -677,24 +679,77 @@ html,body {
 .photo-box:hover > .photo-title.color--squirrel2 {
     background-color: #9e9d24;
 }
-.photo-box:hover > .photo-title.color-- {
-    background-color: ;
+
+.photo-box[class*="color--"] .photo-box__inner:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 10px;
 }
-.photo-box:hover > .photo-title.color-- {
-    background-color: ;
+
+.photo-box:hover.color--people1 .photo-box__inner:before {
+    background-color: #ffa726;
 }
-.photo-box:hover > .photo-title.color-- {
-    background-color: ;
+.photo-box:hover.color--people2 .photo-box__inner:before {
+    background-color: #7cb342;
 }
-.photo-box:hover > .photo-title.color-- {
-    background-color: ;
+.photo-box:hover.color--people3 .photo-box__inner:before {
+    background-color: #ec407a;
 }
-.photo-box:hover > .photo-title.color-- {
-    background-color: ;
+.photo-box:hover.color--people4 .photo-box__inner:before {
+    background-color: #ef5350;
 }
-.photo-box:hover > .photo-title.color-- {
-    background-color: ;
+.photo-box:hover.color--people5 .photo-box__inner:before {
+    background-color: #ff1744;
 }
-.photo-box:hover > .photo-title.color-- {
-    background-color: ;
+.photo-box:hover.color--people6 .photo-box__inner:before {
+    background-color: #9ccc65;
+}
+.photo-box:hover.color--people7 .photo-box__inner:before {
+    background-color: #e53935;
+}
+.photo-box:hover.color--people8 .photo-box__inner:before {
+    background-color: #29b6f6;
+}
+.photo-box:hover.color--people9 .photo-box__inner:before {
+    background-color: #fdd835;
+}
+.photo-box:hover.color--people10 .photo-box__inner:before {
+    background-color: #ffca28;
+}
+.photo-box:hover.color--people11 .photo-box__inner:before {
+    background-color: #ec407a;
+}
+.photo-box:hover.color--people12 .photo-box__inner:before {
+    background-color: #ff7043;
+}
+.photo-box:hover.color--people13 .photo-box__inner:before {
+    background-color: #6d4c41;
+}
+.photo-box:hover.color--people14 .photo-box__inner:before {
+    background-color: #fdd835;
+}
+.photo-box:hover.color--people15 .photo-box__inner:before {
+    background-color: #ab47bc;
+}
+.photo-box:hover.color--people16 .photo-box__inner:before {
+    background-color: #ef5350;
+}
+.photo-box:hover.color--people17 .photo-box__inner:before {
+    background-color: #29b6f6;
+}
+.photo-box:hover.color--people18 .photo-box__inner:before {
+    background-color: #e53935;
+}
+.photo-box:hover.color--people19 .photo-box__inner:before {
+    background-color: #ab47bc;
+}
+.photo-box:hover.color--people20 .photo-box__inner:before {
+    background-color: #3f51b5;
+}
+.photo-box:hover.color--people21 .photo-box__inner:before {
+    background-color: #ff7043;
 }

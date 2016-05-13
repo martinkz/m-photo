@@ -51,7 +51,7 @@
 			"file": "main.css",
 			"settings":
 			{
-				"buffer_size": 17629,
+				"buffer_size": 19318,
 				"line_ending": "Unix"
 			}
 		},
@@ -59,7 +59,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 40598,
+				"buffer_size": 47105,
 				"line_ending": "Unix"
 			}
 		}
@@ -149,6 +149,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"data-cat=\"\"",
 			"Black",
 			"                    <h2 class=\"photo-title color--cat\">Black Street Cat</h2>\n",
 			"Black",
@@ -206,6 +207,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"data-cat=\"people\"",
 			".photo-box:hover > .photo-title.color--",
 			"photo-link js-photo-link",
 			"js-photo-large-box",
@@ -233,15 +235,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17629,
+						"buffer_size": 19318,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17149,
-								17149
+								17352,
+								17352
 							]
 						],
 						"settings":
@@ -252,10 +254,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 12369.0,
+						"translation.y": 12621.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -270,15 +272,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 40598,
+						"buffer_size": 47105,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								27129,
-								27129
+								39965,
+								39965
 							]
 						],
 						"settings":
@@ -288,10 +290,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 8748.0,
+						"translation.y": 12441.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
