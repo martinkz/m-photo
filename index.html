@@ -787,22 +787,27 @@
                 // fadeOut first checks whether the element is hidden to avoid unnecessary DOM manipulation
                 $('.js-photo-large-box').fadeOut(200); 
             });
+
+            var img_loaded = {};
             
             $('.js-menu-item').click(function(e) 
             {
                 e.preventDefault();
                 var s_cat = $(this).attr('data-menu-cat');
-                var $images = $('img[data-cat="' + s_cat + '"]');
                 gallery_active = true;
                 toggleMenuFunctionality();
                 $('.photo-box').addClass('hidden');
-                $images.attr('src', function() { 
-                    return $(this).parent('.js-photo-link').attr('href').replace('img-large', 'img-small');
-                });
+                var $images = $('img[data-cat="' + s_cat + '"]');
+                if( !img_loaded[s_cat] ) {
+                    $images.attr('src', function() { 
+                        return $(this).parent('.js-photo-link').attr('href').replace('img-large', 'img-small');
+                    });
+                    img_loaded[s_cat] = true;
+                }
                 $images.parents('.photo-box').removeClass('hidden');
                 $('.photo-box:not(.hidden):first .js-photo-link').focus();
                 $('.bg-main-vid').addClass('hidden');
-                $('#js-cat-title').text( $(this).text() );   
+                $('#js-cat-title').text( $(this).text() );
             });
 
             // HOME LINK
