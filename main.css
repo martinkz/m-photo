@@ -57,9 +57,6 @@ html,body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-/*    background: #333 
-    url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg') no-repeat left top;
-    background-size: cover;*/
 }
 
 .bg-main-vid--visible { 
