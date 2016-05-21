@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"backg",
+				"background-color"
+			],
+			[
 				"marg",
 				"margin-bottom"
 			],
@@ -51,7 +55,7 @@
 			"file": "main.css",
 			"settings":
 			{
-				"buffer_size": 19172,
+				"buffer_size": 18301,
 				"line_ending": "Unix"
 			}
 		},
@@ -59,7 +63,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 52034,
+				"buffer_size": 52538,
 				"line_ending": "Unix"
 			}
 		}
@@ -100,6 +104,8 @@
 	],
 	"file_history":
 	[
+		"/D/Projects/Chuchuliga/web/sass/style.scss",
+		"/D/Projects/The-photo-site/html/new.html",
 		"/C/Users/M/Desktop/icon-location.svg",
 		"/C/Users/M/Desktop/location.svg",
 		"/C/Users/M/Desktop/demo-external-svg.html",
@@ -238,15 +244,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19172,
+						"buffer_size": 18301,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3005,
-								3005
+								7187,
+								7187
 							]
 						],
 						"settings":
@@ -257,7 +263,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1188.0,
+						"translation.y": 4140.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -275,15 +281,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 52034,
+						"buffer_size": 52538,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								48300,
-								48300
+								50179,
+								50179
 							]
 						],
 						"settings":
@@ -293,7 +299,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1944.0,
+						"translation.y": 16434.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -330,7 +336,7 @@
 		"cols":
 		[
 			0.0,
-			0.37311895574,
+			0.38289468892,
 			1.0
 		],
 		"rows":

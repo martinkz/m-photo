@@ -114,7 +114,6 @@ html,body {
 
 
 .modal {
-/*    background: #dfd5ae;*/
     visibility: hidden;
     background: #d7cfb4;
     position: absolute;
@@ -250,7 +249,7 @@ html,body {
 .photo-title {
     position: relative;
     top: -1px; 
-    /* Fixes Chrome 1 pix gap bug */
+    /* Fixes Chrome 1-pix gap bug */
     font: 100 1.8em/1.2 'Roboto', sans-serif;
     margin: 0;
     text-transform: uppercase;
@@ -272,7 +271,7 @@ html,body {
     bottom: 0;
     width: 65px;
     height: 65px;
-    background: #EFE9E0 url('data:image/svg+xml;utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256%22%20height%3D%22256%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%20%20%3Cpath%20fill%3D%22%232A2A2A%22%20d%3D%22M57.8%2075C58.8%2037.8%2088%206%20124%204c40-2%2073%2025.6%2076.5%2064%202%2020-5%2037.5-14.8%2054.4-10.4%2018.2-21.6%2036-31%2054.7-11%2022-16.7%2045.7-19%2070-.2%203.7-1%207.2-5.6%207.5-4.2.3-6-2.3-6.4-6-3.3-43-20.8-80.5-43.8-116-6.7-10.5-12.3-22-17-33.4-2.8-7.3-3.4-16-5-24zm72%2030.3c17.2%200%2030.6-13%2030.5-29.6%200-16.5-13-30.8-28-31-19.6%200-32.6%2012-32.7%2030%200%2018%2012.4%2030.5%2030.2%2030.6z%22%2F%3E%0A%3C%2Fsvg%3E') no-repeat center center;
+    background: #EFE9E0 url('icon-location.svg') no-repeat center center;
     background-size: 65% auto;
 }
 
@@ -481,19 +480,6 @@ html,body {
     visibility: hidden;
 }
 
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.photo-box:not(.hidden) { 
-    /*border: 5px solid red;*/
-}
 
 /* ==================================================
    Colours
