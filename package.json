@@ -1,0 +1,19 @@
+{
+  "name": "m-photo",
+  "version": "1.0.0",
+  "description": "My Photography Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinkz/m-photo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinkz/m-photo/issues"
+  },
+  "comment": "This project uses global node modules"
+}
