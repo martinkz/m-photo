@@ -142,17 +142,22 @@ textarea {
   -webkit-appearance: button;
   font: inherit; }
 
+/* RESET STYLES */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle; }
+
 /*
  *  GLOBAL SETTINGS / VARIABLES
  */
 /*
  *  ELEMENTS
  */
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4; }
-
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none; }
@@ -161,22 +166,15 @@ html {
   background: #b3d4fc;
   text-shadow: none; }
 
-audio, canvas, iframe, img, svg, video {
-  vertical-align: middle; }
+body {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+  background: #e0dacc; }
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0; }
-
-html, body {
-  box-sizing: border-box;
-  background: #E0DACC; }
-
-*, *:before, *:after {
-  box-sizing: inherit; }
-
+/*
+ *  OBJECTS / LAYOUT
+ */
 .bg-main-vid {
   position: fixed;
   bottom: 0;
@@ -526,9 +524,7 @@ html, body {
 .has-tab-focus:focus img {
   outline: 4px solid #f51b72 !important; }
 
-/* ==================================================
-   Helper classes
-   =============================================== */
+/* Helper classes */
 .hidden {
   display: none !important; }
 
@@ -554,9 +550,7 @@ html, body {
 .invisible {
   visibility: hidden; }
 
-/* ==================================================
-   Colours
-   =============================================== */
+/* Colours */
 .photo-box:hover > .photo-title {
   color: white; }
 
