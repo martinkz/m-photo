@@ -45,7 +45,8 @@
         </nav>
         
         <div class="bg-main-vid">
-            <video id="bgvid" autoplay loop poster="assets/poster.jpg" aria-hidden="true">
+        <!-- autoplay -->
+            <video id="bgvid"  loop poster="assets/poster.jpg" aria-hidden="true">
                 <source src="assets/bgvid.webm" type="video/webm">
                 <source src="assets/bgvid.mp4" type="video/mp4">
             </video>
@@ -57,7 +58,7 @@
                 <img id="js-photo-large" src="" alt="">
             </div>
             
-            <section class="photo-section hidden">
+            <section class="photo-section js-photo-section hidden">
                 
                 <h2 id="js-cat-title" class="cat-title"></h2>
                 
@@ -718,6 +719,18 @@
             </section>
 
         </main>
+
+        <script id="js-cardTemplate" type="text/template">
+            <div class="photo-box hidden">
+                <div class="photo-box__inner">
+                    <a class="photo-link js-photo-link" href="{link}">
+                        <img data-cat="{cat}" src="" alt="{altText}">
+                    </a>
+                    <a class="map-location js-map-location" target="_blank" href="{location}"></a>
+                </div>
+                <h2 class="photo-title {cssClass}">{title}</h2>
+            </div>
+        </script>
 		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="assets/jquery-2.2.3.min.js"><\/script>')</script>
@@ -738,7 +751,7 @@
             $('.js-photo-large-box').hide();
 
             var bgvid = document.getElementsByTagName("video")[0];
-            bgvid.play();
+            // bgvid.play();
 
             // MAIN MENU ( MODAL / HAMBURGER FUNCTIONALITY )
 
@@ -837,6 +850,67 @@
             });
             
             // GALLERY FUNCTIONALITY
+
+            var imageCollection = {
+
+                cur_scroll: null,
+                path_large: 'photos/img-large/',
+                path_small: 'photos/img-small/',
+                photos : [
+                    {
+                        filename: "DSC00343-2.jpg",
+                        cat: "arch",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC07374.jpg",
+                        cat: "street",
+                        location: "https://www.google.com/maps/place/Westminster+Pier/@51.5022585,-0.1249692,17z/data=!3m1!4b1!4m5!3m4!1s0x487604b5e5fa5013:0xd126c7fee870cd40!8m2!3d51.5022558!4d-0.1231811",
+                        title: "New Year's Eve Fireworks",
+                        altText: "",
+                        cssClass: "color--nye1"
+                    }
+                    // ,
+                    // {
+                    //     filename: "",
+                    //     cat: "",
+                    //     location: "",
+                    //     title: "",
+                    //     altText: "",
+                    //     cssClass: ""
+                    // }
+                ]
+            };
+
+
+            var photoCardView = {
+
+                templateText: $('#js-cardTemplate').html(),
+
+                render: function(card) {
+                    Object.keys(card).forEach( function(prop) {
+                        console.log(prop + ' ' + card[prop]);
+                    });
+                    // console.log(this.templateText);
+                }
+            };
+
+            var photoGalleryView = {
+
+                init: function() {
+                    imageCollection.photos.forEach( function(card) {
+                    	photoCardView.render(card);
+                    });
+                }(),
+
+                render: function(cat) {
+                    $('js-photo-section');
+                }
+            };
+
 
             var cur_scroll;
             
