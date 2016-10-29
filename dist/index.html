@@ -58,7 +58,7 @@
                 <img id="js-photo-large" src="" alt="">
             </div>
             
-            <section class="photo-section js-photo-section hidden">
+            <section id="js-photo-section" class="photo-section hidden">
                 
                 <h2 id="js-cat-title" class="cat-title"></h2>
                 
@@ -71,7 +71,7 @@
                     </div>
                     <h2 class="photo-title color--tsarevets">Tsarevets Castle</h2>
                 </div>  
-                <div class="photo-box hidden">
+<!--                 <div class="photo-box hidden">
                     <div class="photo-box__inner">
                         <a class="photo-link js-photo-link" href="img-large/DSC03354.jpg">
                             <img data-cat="arch" src="" alt="Asen's Fortress">
@@ -160,7 +160,7 @@
                         <a class="map-location js-map-location" target="_blank" href="https://www.google.com/maps/place/Southwark+Cathedral/@51.5061042,-0.0917845,17z/data=!3m1!4b1!4m5!3m4!1s0x487603571183a4d5:0x1e6e505ff27f7772!8m2!3d51.5061009!4d-0.0895958!6m1!1e1"></a>
                     </div>
                     <h2 class="photo-title color--oldandnew">Old &amp; New</h2>
-                </div>
+                </div> -->
 
                 <!-- Street -->
 
@@ -172,7 +172,7 @@
                     </div>
                     <h2 class="photo-title color--cat">Black Street Cat</h2>
                 </div>
-                <div class="photo-box hidden">
+ <!--                <div class="photo-box hidden">
                     <div class="photo-box__inner">
                         <a class="photo-link js-photo-link" href="img-large/DSC00763-2.jpg">
                             <img data-cat="street" src="" alt="Park Hill">
@@ -382,11 +382,11 @@
                         </a>
                     </div>
                     <h2 class="photo-title color--bowl">Wooden Bowl</h2>
-                </div>
+                </div> -->
 
                 <!-- Nature -->
 
-                <div class="photo-box hidden">
+<!--                 <div class="photo-box hidden">
                     <div class="photo-box__inner">
                         <a class="photo-link js-photo-link" href="img-large/DSC01091.jpg">
                             <img data-cat="nature" src="" alt="Ring-necked parakeet #1">
@@ -578,10 +578,10 @@
                     </div>
                     <h2 class="photo-title color--squirrel2">Mr. Squirrel</h2>
                 </div>
-
+ -->
                 <!-- People -->
 
-                <div class="photo-box color--people1 hidden">
+  <!--               <div class="photo-box color--people1 hidden">
                     <div class="photo-box__inner">
                         <a class="photo-link js-photo-link" href="img-large/DSC07127-3.jpg">
                             <img data-cat="people" src="" alt="">
@@ -713,14 +713,14 @@
                             <img data-cat="people" src="" alt="person">
                         </a>
                     </div>
-                </div>
+                </div> -->
                 
 
             </section>
 
         </main>
 
-        <script id="js-cardTemplate" type="text/template">
+<!--         <script id="js-cardTemplate" type="text/template">
             <div class="photo-box hidden">
                 <div class="photo-box__inner">
                     <a class="photo-link js-photo-link" href="{link}">
@@ -730,7 +730,7 @@
                 </div>
                 <h2 class="photo-title {cssClass}">{title}</h2>
             </div>
-        </script>
+        </script> -->
 		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="assets/jquery-2.2.3.min.js"><\/script>')</script>
@@ -808,13 +808,16 @@
                 gallery_active = true;
                 toggleMenuFunctionality();
                 $('.photo-box').addClass('hidden');
+
+                photoGallery.loadImages(s_cat);
+
                 var $images = $('img[data-cat="' + s_cat + '"]');
-                if( !img_loaded[s_cat] ) {
-                    $images.attr('src', function() { 
-                        return $(this).parent('.js-photo-link').attr('href').replace('img-large', 'img-small');
-                    });
-                    img_loaded[s_cat] = true;
-                }
+                // if( !img_loaded[s_cat] ) {
+                //     $images.attr('src', function() { 
+                //         return $(this).parent('.js-photo-link').attr('href').replace('img-large', 'img-small');
+                //     });
+                //     img_loaded[s_cat] = true;
+                // }
                 $images.parents('.photo-box').removeClass('hidden');
                 $('.photo-box:not(.hidden):first .js-photo-link').focus();
                 $('.bg-main-vid').addClass('hidden');
@@ -853,9 +856,8 @@
 
             var imageCollection = {
 
-                cur_scroll: null,
-                path_large: 'photos/img-large/',
-                path_small: 'photos/img-small/',
+                path_large: 'img-large/',
+                path_small: 'img-small/',
                 photos : [
                     {
                         filename: "DSC00343-2.jpg",
@@ -888,28 +890,51 @@
 
             var photoCardView = {
 
-                templateText: $('#js-cardTemplate').html(),
+                // templateText: $('#js-cardTemplate').html(),
 
-                render: function(card) {
-                    Object.keys(card).forEach( function(prop) {
-                        console.log(prop + ' ' + card[prop]);
-                    });
-                    // console.log(this.templateText);
+                buildHTML: function(card) {
+                    // Object.keys(card).forEach( function(prop) {
+                    // 		console.log(prop + ' ' + card[prop]);
+                    // });
+
+                    // Could be replaced with mustache template some day
+                    return '' +
+                    '<div class="photo-box ' + (!card.title ? card.cssClass : '') + ' hidden">' + 
+                    	'<div class="photo-box__inner">' + 
+                    		'<a class="photo-link js-photo-link" href="' + imageCollection.path_large + card.filename + '">' + 
+                    			'<img data-cat="' + card.cat + '" src="" alt="' + card.altText + '">' +
+                    		'</a>' + 
+                    		(card.location ? '<a class="map-location js-map-location" target="_blank" href="' + card.location + '"></a>' : '') +
+                    	'</div>' + 
+                    	(card.title ? '<h2 class="photo-title ' + card.cssClass + '">' + card.title + '</h2>' : '') +
+                    '</div>';
                 }
             };
 
-            var photoGalleryView = {
+            var photoGalleryView = function() {
 
-                init: function() {
+                var catLoaded = {};
+
+                imageCollection.photos.forEach( function(card) {
+                    if( !catLoaded.hasOwnProperty(card.cat) ) catLoaded[card.cat] = false;
+                	card.DOMref = $( photoCardView.buildHTML(card) ).appendTo( $('#js-photo-section') );
+                });
+
+                this.loadImages = function(cat) {
+                    //var that = this;
                     imageCollection.photos.forEach( function(card) {
-                    	photoCardView.render(card);
+                    	if( card.cat === cat && !catLoaded[card.cat] ) {
+                            console.log(cat);
+                    		$(card.DOMref).find('img[data-cat='+card.cat+']').attr('src', imageCollection.path_large + card.filename);
+                            catLoaded[card.cat] = true;
+                    	}
                     });
-                }(),
-
-                render: function(cat) {
-                    $('js-photo-section');
                 }
             };
+
+            var photoGallery = new photoGalleryView();
+
+            //photoGalleryView.init();
 
 
             var cur_scroll;
