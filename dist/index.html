@@ -54,7 +54,7 @@
         
         <main role="main">
 
-            <div class="js-photo-large-box photo-large-box" href="#" tabindex="0" aria-label="photograph">
+            <div id="js-photo-large-box" class="photo-large-box" href="#" tabindex="0" aria-label="photograph">
                 <img id="js-photo-large" src="" alt="">
             </div>
             
@@ -117,8 +117,6 @@
                 $('.bg-main-vid').addClass('bg-main-vid--visible'); 
             }, 0);
 
-            $('.js-photo-large-box').hide();
-
             var bgvid = document.getElementsByTagName("video")[0];
             // bgvid.play();
 
@@ -165,7 +163,7 @@
             $('#js-hamburger').click(function(e) {
                 toggleMenuFunctionality();
                 // fadeOut first checks whether the element is hidden to avoid unnecessary DOM manipulation
-                $('.js-photo-large-box').fadeOut(200); 
+                $('#js-photo-large-box').fadeOut(200); 
             });
 
             //var img_loaded = {};
@@ -176,18 +174,9 @@
                 var s_cat = $(this).attr('data-menu-cat');
                 gallery_active = true;
                 toggleMenuFunctionality();
-                $('.photo-box').addClass('hidden');
+                
+                photoGallery.render(s_cat); 
 
-                photoGallery.loadImages(s_cat);
-
-                var $images = $('img[data-cat="' + s_cat + '"]');
-                // if( !img_loaded[s_cat] ) {
-                //     $images.attr('src', function() { 
-                //         return $(this).parent('.js-photo-link').attr('href').replace('img-large', 'img-small');
-                //     });
-                //     img_loaded[s_cat] = true;
-                // }
-                $images.parents('.photo-box').removeClass('hidden');
                 $('.photo-box:not(.hidden):first .js-photo-link').focus();
                 $('.bg-main-vid').addClass('hidden');
                 $('#js-cat-title').text( $(this).text() );
@@ -205,13 +194,13 @@
                 $('.bg-main-vid').removeClass('hidden');
                 $('.photo-box').addClass('hidden');
                 $('.photo-section').addClass('hidden');
-                $('.js-photo-large-box').fadeOut(200);
+                $('#js-photo-large-box').fadeOut(200);
                 bgvid.play();
             });
 
             // TAB KEY FUNCTIONALITY
 
-            var tab_items = '#js-hamburger, #m-logo, .js-menu-item, .js-photo-link, .js-map-location, .js-photo-large-box';
+            var tab_items = '#js-hamburger, #m-logo, .js-menu-item, .js-photo-link, .js-map-location, #js-photo-large-box';
 
             $(tab_items).keyup(function (e) {
                 if ((e.keyCode || e.which) == 9) $(this).addClass('has-tab-focus');
@@ -223,40 +212,304 @@
             
             // GALLERY FUNCTIONALITY
 
-            var imageCollection = {
+            var photoData = {
+                'arch' : [
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    {
+                        filename: "DSC00343-2.jpg",
+                        location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
+                        title: "Tsarevets Castle",
+                        altText: "",
+                        cssClass: "color--tsarevets"
+                    },
+                    
+                    // ,
+                    // {
+                    //     filename: "",
+                    //     location: "",
+                    //     title: "",
+                    //     altText: "",
+                    //     cssClass: ""
+                    // }
+                ],
+                'street': [
+                    {
+                        filename: "DSC07374.jpg",
+                        location: "https://www.google.com/maps/place/Westminster+Pier/@51.5022585,-0.1249692,17z/data=!3m1!4b1!4m5!3m4!1s0x487604b5e5fa5013:0xd126c7fee870cd40!8m2!3d51.5022558!4d-0.1231811",
+                        title: "New Year's Eve Fireworks",
+                        altText: "",
+                        cssClass: "color--nye1"
+                    }
+                ]
+            };
 
-                path_lg: 'img-large/',
-                path_sm: 'img-small/',
-                width_sm: 800,
-                width_lg: 1920,
-                photos : {
-                    'arch' : [
-                        {
-                            filename: "DSC00343-2.jpg",
-                            location: "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
-                            title: "Tsarevets Castle",
-                            altText: "",
-                            cssClass: "color--tsarevets"
-                        }
-                        // ,
-                        // {
-                        //     filename: "",
-                        //     location: "",
-                        //     title: "",
-                        //     altText: "",
-                        //     cssClass: ""
-                        // }
-                    ],
-                    'street': [
-                        {
-                            filename: "DSC07374.jpg",
-                            location: "https://www.google.com/maps/place/Westminster+Pier/@51.5022585,-0.1249692,17z/data=!3m1!4b1!4m5!3m4!1s0x487604b5e5fa5013:0xd126c7fee870cd40!8m2!3d51.5022558!4d-0.1231811",
-                            title: "New Year's Eve Fireworks",
-                            altText: "",
-                            cssClass: "color--nye1"
-                        }
-                    ]
+            var galleryModel = {
 
+                paths : {
+                    'sm' : 'img-small/',
+                    'lg' : 'img-large/' 
+                },
+                widths : {
+                    'sm' : 800,
+                    'lg' : 1920
+                },
+                photos : photoData,
+
+                getCats : function() {
+                    return Object.keys(this.photos);
+                },
+                getPhotos : function(cat) {
+                    return this.photos[cat];
+                },
+                getPath : function(type) {
+                    return this.paths[type];
+                },
+                getWidth : function (type) {
+                    return this.widths[type];
                 }
             };
 
@@ -267,8 +520,9 @@
                     return '' +
                     '<div class="photo-box ' + (!card.title ? card.cssClass : '') + ' hidden">' + 
                     	'<div class="photo-box__inner">' + 
-                    		'<a class="photo-link js-photo-link" href="' + imageCollection.path_lg + card.filename + '">' + 
-                    			'<img data-cat="' + cat + '" src="' + imageCollection.path_sm + card.filename + '" alt="' + card.altText + '">' +
+                    		'<a class="photo-link js-photo-link" href="' + galleryModel.getPath('lg') + card.filename + '">' + 
+                                // to remove data-cat later if not needed
+                    			'<img data-cat="' + cat + '" src="' + galleryModel.getPath('sm') + card.filename + '" alt="' + card.altText + '">' +
                     		'</a>' + 
                     		(card.location ? '<a class="map-location js-map-location" target="_blank" href="' + card.location + '"></a>' : '') +
                     	'</div>' + 
@@ -277,69 +531,121 @@
                 }
             };
 
-            var photoGalleryView = function() {
+            var photoGalleryView = function(container) {
 
-                var catLoaded = {};
+                var _cardDOMrefs = {};
+                var _prevCat;
 
-                Object.keys(imageCollection.photos).forEach( function(cat) {
-                    catLoaded[cat] = false;
+                galleryModel.getCats().forEach( function(cat) {
+                    _cardDOMrefs[cat] = [];
                 });
 
-                this.loadImages = function(cat) {
-                    if( !catLoaded[cat] ) {
+                function catExists(cat) {
+                    return _cardDOMrefs.hasOwnProperty(cat);
+                }
 
-                        imageCollection.photos[cat].forEach( function(card) {
-                            var cardDOMref = $( photoCardView.buildHTML(card, cat) ).appendTo( $('#js-photo-section') );
-                            
-                            cardDOMref.click(function(e) {
-                                e.preventDefault();
-                                cur_scroll = $(document).scrollTop();
+                function catLoaded(cat) {
+                    return (catExists(cat) && _cardDOMrefs[cat].length > 0);
+                };
 
-                                var srcSet = imageCollection.path_lg + card.filename + ' ' + imageCollection.width_lg + 'w, ' +
-                                             imageCollection.path_sm + card.filename + ' ' + imageCollection.width_sm + 'w';
-                                $('#js-photo-large').attr('srcset', srcSet);
-                                $('#js-photo-large').attr('src', imageCollection.path_lg + card.filename);
-                                $('.js-photo-large-box').fadeIn(200);
-                                $('.js-photo-large-box').focus();
-                                $('.photo-section').addClass('hidden');
-                                              
-                                if(history.state===null || history.state.cur_page!="photo") { 
-                                    history.pushState({cur_page: "photo"}, null, null);
-                                }
-                            });
-                            console.log(cat);
+                function initCards(cat) {
+                    galleryModel.getPhotos(cat).forEach( function(card) {
+
+                        var cardDOMref = $( photoCardView.buildHTML(card, cat) );
+                        
+                        cardDOMref.on('click', function(e) {
+                            e.preventDefault();
+                            lightbox.show(card);
                         });
 
-                        catLoaded[cat] = true;
+                        cardDOMref.find('.js-map-location').on('click', function(e){
+                            e.stopPropagation();
+                        })
+
+                        _cardDOMrefs[cat].push(cardDOMref);
+                    });
+
+                     $(container).append(_cardDOMrefs[cat]);
+                     console.log(cat);
+                };
+
+                this.render = function(newCat) {
+
+                    if(_prevCat && _prevCat !== newCat) {
+                        _cardDOMrefs[_prevCat].forEach( function(card) {
+                            card.addClass('hidden');
+                        });
                     }
+
+                    if( !catExists(newCat) ) return;
+
+                    if( !catLoaded(newCat) ) initCards(newCat);
+
+                    _cardDOMrefs[newCat].forEach( function(card) {
+                        card.removeClass('hidden');
+                    })
+
+                    _prevCat = newCat;
                 }
             };
 
-            var photoGallery = new photoGalleryView();
+            var photoGallery = new photoGalleryView('#js-photo-section');
 
 
-            var cur_scroll;
-            
-            $('.js-photo-large-box').click(function(e) 
-            {
-                $('.js-photo-large-box').fadeOut(200, function(){
-                    $('#js-photo-large').attr('src', '');
-                    $('#js-photo-large').attr('srcset', '');
-                });
-                $('.photo-section').removeClass('hidden');
-                
-                $(document).scrollTop(cur_scroll);
-            });
+            var photoLightbox = function(el) {
 
-            $('.js-photo-large-box').keyup(function(e) {
-                if (e.keyCode == 27) {
-                    $('.js-photo-large-box').click();
+                var cur_scroll;
+                var container = $(el);
+                var image = $(el + ' img');
+
+                container.hide();
+
+                this.show = function(card) {
+                    var srcSet = galleryModel.getPath('lg') + card.filename + ' ' + galleryModel.getWidth('lg') + 'w, ' +
+                                 galleryModel.getPath('sm') + card.filename + ' ' + galleryModel.getWidth('sm') + 'w';
+
+                    image.attr('srcset', srcSet);
+                    image.attr('src', galleryModel.getPath('lg') + card.filename);
+                    container.fadeIn(200);
+                    container.focus();
+
+                    cur_scroll = $(document).scrollTop();
+
+                    // needs refactoring
+                    $('.photo-section').addClass('hidden');
+                                  
+                    if(history.state===null || history.state.cur_page!="photo") { 
+                        history.pushState({cur_page: "photo"}, null, null);
+                    }
                 }
-            });
-            
-            window.addEventListener("popstate", function(event) {
-                $('.js-photo-large-box').click();
-            });
+
+                this.hide = function() {
+                    container.fadeOut(200, function(){
+                        image.attr('src', '');
+                        image.attr('srcset', '');
+                    });
+                    
+                    $('.photo-section').removeClass('hidden');
+
+                    $(document).scrollTop(cur_scroll);
+                }
+
+                var that = this;
+
+                container.on('click', function(e) {
+                    that.hide();
+                });
+
+                container.on('keyup', function(e) {
+                    if (e.keyCode == 27) lightbox.hide();
+                });
+                
+                window.addEventListener("popstate", function(event) {
+                    lightbox.hide();
+                });
+            }
+
+            var lightbox = new photoLightbox('#js-photo-large-box');
             
         });
         </script>
