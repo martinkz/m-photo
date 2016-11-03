@@ -45,8 +45,7 @@
         </nav>
         
         <div class="bg-main-vid">
-        <!-- autoplay -->
-            <video id="bgvid"  loop poster="assets/poster.jpg" aria-hidden="true">
+            <video id="bgvid" autoplay loop poster="assets/poster.jpg" aria-hidden="true">
                 <source src="assets/bgvid.webm" type="video/webm">
                 <source src="assets/bgvid.mp4" type="video/mp4">
             </video>
@@ -546,12 +545,9 @@
             var galleryModel = {
 
                 paths : {
-                    'sm' : 'img-small/',
-                    'lg' : 'img-large/' 
-                },
-                widths : {
-                    'sm' : 660,
-                    'lg' : 1920
+                    'sm' : 'images/small/',
+                    'md' : 'images/medium/',
+                    'lg' : 'images/large/' 
                 },
                 photos : photoData,
 
@@ -656,18 +652,29 @@
 
                 container.hide();
 
-                this.show = function(card) {
-                    var srcSet = galleryModel.getPath('lg') + card.filename + ' ' + galleryModel.getWidth('lg') + 'w, ' +
-                                 galleryModel.getPath('sm') + card.filename + ' ' + galleryModel.getWidth('sm') + 'w';
+                var highDPR = window.devicePixelRatio ? window.devicePixelRatio >= 1.5 ? 1 : 0 : 0;
 
-                    image.attr('srcset', srcSet);
-                    image.attr('src', galleryModel.getPath('lg') + card.filename);
+                // To be replaced with srcset once object-fit works in Edge
+                function generate_resp_path() {
+                    var ww = window.innerWidth;
+                    var wh = window.innerHeight;
+
+                    if(ww <= 660 && wh <= 660) {
+                        return highDPR ? galleryModel.getPath('md') : galleryModel.getPath('sm');
+                    }
+                    else if (ww <= 1200 && wh <= 1200) {
+                        return highDPR ? galleryModel.getPath('lg') : galleryModel.getPath('md');
+                    }
+                    else return galleryModel.getPath('lg');
+                }
+
+                this.show = function(card) {
+                    image.attr('src', generate_resp_path() + card.filename);
                     container.fadeIn(200);
                     container.focus();
 
                     cur_scroll = $(document).scrollTop();
 
-                    // needs refactoring
                     $('.photo-section').addClass('hidden');
                                   
                     if(history.state===null || history.state.cur_page!="photo") { 
