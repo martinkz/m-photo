@@ -534,9 +534,6 @@
                 },
                 getPath : function(type) {
                     return this.paths[type];
-                },
-                getWidth : function (type) {
-                    return this.widths[type];
                 }
             };
 
@@ -660,7 +657,6 @@
                 this.hide = function() {
                     container.fadeOut(200, function(){
                         image.attr('src', '');
-                        image.attr('srcset', '');
                     });
                     
                     $('.photo-section').removeClass('hidden');
