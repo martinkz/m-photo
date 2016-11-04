@@ -53,9 +53,7 @@
         
         <main role="main">
 
-            <div id="js-photo-large-box" class="photo-large-box" href="#" tabindex="0" aria-label="photograph">
-                <img id="js-photo-large" src="" alt="">
-            </div>
+            <div id="js-photo-large-box" class="photo-large-box" href="#" tabindex="0" aria-label="photograph"></div>
             
             <section id="js-photo-section" class="photo-section hidden">
                 <h2 id="js-cat-title" class="cat-title"></h2>
@@ -620,7 +618,7 @@
 
                 var cur_scroll;
                 var container = $(el);
-                var image = $(el + ' img');
+                var image = $('<img src="">').appendTo(container);
 
                 container.hide();
 
@@ -642,6 +640,7 @@
 
                 this.show = function(card) {
                     image.attr('src', generate_resp_path() + card.filename);
+                    image.attr('alt', card.title ? card.title : 'photograph');
                     container.fadeIn(200);
                     container.focus();
 
@@ -657,6 +656,7 @@
                 this.hide = function() {
                     container.fadeOut(200, function(){
                         image.attr('src', '');
+                        image.attr('alt', '');
                     });
                     
                     $('.photo-section').removeClass('hidden');
