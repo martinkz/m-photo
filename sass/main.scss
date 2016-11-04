@@ -234,7 +234,7 @@ body {
 
 .map-location:hover { background-color: white; }
 
-.photo-large-box {
+.photo-lightbox {
     display: block;
     position: fixed;
     top: 0;
@@ -247,7 +247,7 @@ body {
     z-index: 4000;
     outline: none;
 }
-.photo-large-box img { 
+.photo-lightbox img { 
     display: block;
     position: absolute;
     width: auto;

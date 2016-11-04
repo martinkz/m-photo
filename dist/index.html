@@ -53,7 +53,7 @@
         
         <main role="main">
 
-            <div id="js-photo-large-box" class="photo-large-box" href="#" tabindex="0" aria-label="photograph"></div>
+            <div id="js-photo-lightbox" class="photo-lightbox" href="#" tabindex="0" aria-label="photograph"></div>
             
             <section id="js-photo-section" class="photo-section hidden">
                 <h2 id="js-cat-title" class="cat-title"></h2>
@@ -123,7 +123,7 @@
             $('#js-hamburger').click(function(e) {
                 toggleMenuFunctionality();
                 // fadeOut first checks whether the element is hidden to avoid unnecessary DOM manipulation
-                $('#js-photo-large-box').fadeOut(200); 
+                $('#js-photo-lightbox').fadeOut(200); 
             });
 
             //var img_loaded = {};
@@ -154,13 +154,13 @@
                 $('.bg-main-vid').removeClass('hidden');
                 $('.photo-box').addClass('hidden');
                 $('.photo-section').addClass('hidden');
-                $('#js-photo-large-box').fadeOut(200);
+                $('#js-photo-lightbox').fadeOut(200);
                 bgvid.play();
             });
 
             // TAB KEY FUNCTIONALITY
 
-            var tab_items = '#js-hamburger, #m-logo, .js-menu-item, .js-photo-link, .js-map-location, #js-photo-large-box';
+            var tab_items = '#js-hamburger, #m-logo, .js-menu-item, .js-photo-link, .js-map-location, #js-photo-lightbox';
 
             $(tab_items).keyup(function (e) {
                 if ((e.keyCode || e.which) == 9) $(this).addClass('has-tab-focus');
@@ -679,7 +679,7 @@
                 });
             }
 
-            var lightbox = new photoLightbox('#js-photo-large-box');
+            var lightbox = new photoLightbox('#js-photo-lightbox');
             
         });
         </script>
