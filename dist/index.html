@@ -27,7 +27,7 @@
     <body>
 
         <nav role="navigation">
-            <a id="m-logo" href="index.html" class="m-logo" title="Home">
+            <a id="js-home-btn" href="index.html" class="m-logo" title="Home">
                 <img class="" src="assets/logo-m.png" alt="M Photography Logo"></a>
             
             <button id="js-hamburger" class="hamburger" aria-label="Open Menu" aria-controls="main-nav" aria-expanded="false">
@@ -37,7 +37,7 @@
             <div id="main-nav" class="modal" role="dialog" aria-label="Main Menu">
                 <div class="modal__inner">
                     <a data-menu-cat="street" class="menu_item js-menu-item" href="#">Street</a>
-                    <a data-menu-cat="arch" class="menu_item js-menu-item" href="#">Architecture</a>
+                    <a data-menu-cat="arch"   class="menu_item js-menu-item" href="#">Architecture</a>
                     <a data-menu-cat="nature" class="menu_item js-menu-item" href="#">Nature</a>
                     <a data-menu-cat="people" class="menu_item js-menu-item" href="#">People</a>
                 </div>
@@ -71,7 +71,7 @@
 
             // INIT STUFF
 
-            $('#m-logo').attr('tabindex', '-1');
+            $('#js-home-btn').attr('tabindex', '-1');
 
             setTimeout(function(){ 
                 $('.bg-main-vid').addClass('bg-main-vid--visible'); 
@@ -82,58 +82,156 @@
 
             // MAIN MENU ( MODAL / HAMBURGER FUNCTIONALITY )
 
-            var gallery_active = false;
-            var menu_active = false;
+            // var gallery_active = false;
+            // var menu_active = false;
             
-            var toggleMenuFunctionality = function()
-            {
-                $('#js-hamburger').toggleClass('hamburger--open');
-                $('.modal').toggleClass('modal--visible');
+            // var toggleMenuFunctionality = function()
+            // {
+            //     $('#js-hamburger').toggleClass('hamburger--open');
+            //     $('.modal').toggleClass('modal--visible');
                 
-                menu_active = $("#js-hamburger").hasClass('hamburger--open');
+            //     menu_active = $("#js-hamburger").hasClass('hamburger--open');
                 
-                if(menu_active) // opening menu
-                { 
-                    $('#js-hamburger').attr('aria-label', 'Close Menu');
-                    $('#js-hamburger').attr('aria-expanded', 'true');
-                    $('#m-logo').addClass('m-logo--in_header');
-                    $('#m-logo').attr('tabindex', '0');
-                    $('.bg-main-vid').addClass('hidden');
-                    $('.photo-section').addClass('hidden');
-                    bgvid.pause();
-                } 
-                else // closing menu
-                {
-                    $('#js-hamburger').attr('aria-label', 'Open Menu');
-                    $('#js-hamburger').attr('aria-expanded', 'false');
-                    if(gallery_active){
-                        $('.photo-section').removeClass('hidden'); 
-                    }
-                    else 
-                    {
-                        $('.photo-section').addClass('hidden');
-                        $('#m-logo').removeClass('m-logo--in_header');
-                        $('#m-logo').attr('tabindex', '-1');
-                        $('.bg-main-vid').removeClass('hidden');
-                        bgvid.play();
-                    }
+            //     if(menu_active) // opening menu
+            //     { 
+            //         $('#js-hamburger').attr('aria-label', 'Close Menu');
+            //         $('#js-hamburger').attr('aria-expanded', 'true');
+            //         $('#js-home-btn').addClass('m-logo--in_header');
+            //         $('#js-home-btn').attr('tabindex', '0');
+            //         $('.bg-main-vid').addClass('hidden');
+            //         $('#js-photo-section').addClass('hidden');
+            //         bgvid.pause();
+            //     } 
+            //     else // closing menu
+            //     {
+            //         $('#js-hamburger').attr('aria-label', 'Open Menu');
+            //         $('#js-hamburger').attr('aria-expanded', 'false');
+            //         if(gallery_active){
+            //             $('#js-photo-section').removeClass('hidden'); 
+            //         }
+            //         else 
+            //         {
+            //             $('#js-photo-section').addClass('hidden');
+            //             $('#js-home-btn').removeClass('m-logo--in_header');
+            //             $('#js-home-btn').attr('tabindex', '-1');
+            //             $('.bg-main-vid').removeClass('hidden');
+            //             bgvid.play();
+            //         }
+            //     }
+            // };
+
+            // Component custom events
+
+            var menuBtn = function(elem) {
+                var $menu = $(elem);
+                var state = false;
+                
+                var renderOn = function() {
+                    $menu.addClass('hamburger--open');
+                    $menu.attr('aria-label', 'Close Menu');
+                    $menu.attr('aria-expanded', 'false');
+                    state = true;
                 }
+                var renderOff = function() {
+                    $menu.removeClass('hamburger--open');
+                    $menu.attr('aria-label', 'Open Menu');
+                    $menu.attr('aria-expanded', 'true');
+                    state = false;
+                }
+
+                this.isOn = function() { return state; };
+
+                this.on = function() {
+                    renderOn();
+                    $('.modal').addClass('modal--visible');
+                };
+
+                this.off = function() {
+                    renderOff();
+                    $('.modal').removeClass('modal--visible');
+                };
+
+                this.toggle = function() {
+                    if(this.isOn()) 
+                        this.off();
+                    else 
+                        this.on();
+                };
+                
+                //this.trigger = function(e) { $menu.trigger(e); }
+
             }
-            
-            $('#js-hamburger').click(function(e) {
-                toggleMenuFunctionality();
-                // fadeOut first checks whether the element is hidden to avoid unnecessary DOM manipulation
-                $('#js-photo-lightbox').fadeOut(200); 
+
+            var menu = new menuBtn('#js-hamburger');
+
+            // $(menu).on('menu:toggle', function() {
+            //     if(menu.isOn()) {
+            //         $(this).trigger('menu:off');
+            //     } else {
+            //         $(this).trigger('menu:on');
+            //     }
+            // }).on('menu:on', function() {
+            //     menu.toggleOn();
+            //     $('.modal').addClass('modal--visible');
+            //     bgvid.pause();
+            // }).on('menu:off', function() {
+            //     menu.toggleOff();
+            //     $('.modal').removeClass('modal--visible');
+            // });
+
+            // Replace with methods on photoGalleryView
+            $('#js-photo-section').on('gallery:on', function() {
+                 $(this).removeClass('hidden');
+            }).on('gallery:off', function(){
+                 $(this).addClass('hidden');
             });
 
-            //var img_loaded = {};
+            $('#js-home-btn').on('home:toggle', function() {
+                var homeBtn = $(this);
+                if( homeBtn.hasClass('m-logo--in_header') ) {
+                    homeBtn.trigger('home:off');
+                } else {
+                    homeBtn.trigger('home:on');
+                }
+            }).on('home:on', function() {
+                var homeBtn = $(this);
+                homeBtn.addClass('m-logo--in_header');
+                homeBtn.attr('tabindex', '0');
+            }).on('home:off', function() {
+                var homeBtn = $(this);
+                homeBtn.removeClass('m-logo--in_header');
+                homeBtn.attr('tabindex', '-1');
+            });
+
+
+            $('#js-hamburger').on('click', function(e) 
+            {
+                //toggleMenuFunctionality();
+                // fadeOut first checks whether the element is hidden to avoid unnecessary DOM manipulation
+                $('#js-photo-lightbox').fadeOut(200); 
+
+                menu.toggle();
+                
+                if( $('#js-photo-section').hasClass('hidden') ) {
+                    $('#js-home-btn').trigger('home:toggle');
+                    if( !menu.isOn() ) {
+                        bgvid.play();
+                    } else {
+                        bgvid.pause();
+                    }
+                };
+            });
             
-            $('.js-menu-item').click(function(e) 
+            $('.js-menu-item').on('click', function(e) 
             {
                 e.preventDefault();
                 var s_cat = $(this).attr('data-menu-cat');
-                gallery_active = true;
-                toggleMenuFunctionality();
+                // gallery_active = true;
+                //toggleMenuFunctionality();
+
+                menu.off();
+                $('#js-photo-section').trigger('gallery:on');
+                $('#js-home-btn').trigger('home:on');
                 
                 photoGallery.render(s_cat); 
 
@@ -144,23 +242,29 @@
 
             // HOME LINK
             
-            $('#m-logo').click(function(e) 
+            $('#js-home-btn').click(function(e) 
             {
                 e.preventDefault();
-                gallery_active = false;
-                $('#m-logo').removeClass('m-logo--in_header');
-                $('#m-logo').attr('tabindex', '-1');
-                if(menu_active) toggleMenuFunctionality();
+                // gallery_active = false;
+                // $('#js-home-btn').removeClass('m-logo--in_header');
+                // $('#js-home-btn').attr('tabindex', '-1');
+                //if(menu_active) toggleMenuFunctionality();
+
+                menu.off();
+                $('#js-home-btn').trigger('home:off');
+                $('#js-photo-section').trigger('gallery:off');
+
                 $('.bg-main-vid').removeClass('hidden');
                 $('.photo-box').addClass('hidden');
-                $('.photo-section').addClass('hidden');
+                // $('#js-photo-section').addClass('hidden');
+
                 $('#js-photo-lightbox').fadeOut(200);
                 bgvid.play();
             });
 
             // TAB KEY FUNCTIONALITY
 
-            var tab_items = '#js-hamburger, #m-logo, .js-menu-item, .js-photo-link, .js-map-location, #js-photo-lightbox';
+            var tab_items = '#js-hamburger, #js-home-btn, .js-menu-item, .js-photo-link, .js-map-location, #js-photo-lightbox';
 
             $(tab_items).keyup(function (e) {
                 if ((e.keyCode || e.which) == 9) $(this).addClass('has-tab-focus');
@@ -646,7 +750,7 @@
 
                     cur_scroll = $(document).scrollTop();
 
-                    $('.photo-section').addClass('hidden');
+                    $('#js-photo-section').addClass('hidden');
                                   
                     if(history.state===null || history.state.cur_page!="photo") { 
                         history.pushState({cur_page: "photo"}, null, null);
@@ -659,7 +763,7 @@
                         image.attr('alt', '');
                     });
                     
-                    $('.photo-section').removeClass('hidden');
+                    $('#js-photo-section').removeClass('hidden');
 
                     $(document).scrollTop(cur_scroll);
                 }
