@@ -82,73 +82,26 @@
 
             // MAIN MENU ( MODAL / HAMBURGER FUNCTIONALITY )
 
-            // var gallery_active = false;
-            // var menu_active = false;
-            
-            // var toggleMenuFunctionality = function()
-            // {
-            //     $('#js-hamburger').toggleClass('hamburger--open');
-            //     $('.modal').toggleClass('modal--visible');
-                
-            //     menu_active = $("#js-hamburger").hasClass('hamburger--open');
-                
-            //     if(menu_active) // opening menu
-            //     { 
-            //         $('#js-hamburger').attr('aria-label', 'Close Menu');
-            //         $('#js-hamburger').attr('aria-expanded', 'true');
-            //         $('#js-home-btn').addClass('m-logo--in_header');
-            //         $('#js-home-btn').attr('tabindex', '0');
-            //         $('.bg-main-vid').addClass('hidden');
-            //         $('#js-photo-section').addClass('hidden');
-            //         bgvid.pause();
-            //     } 
-            //     else // closing menu
-            //     {
-            //         $('#js-hamburger').attr('aria-label', 'Open Menu');
-            //         $('#js-hamburger').attr('aria-expanded', 'false');
-            //         if(gallery_active){
-            //             $('#js-photo-section').removeClass('hidden'); 
-            //         }
-            //         else 
-            //         {
-            //             $('#js-photo-section').addClass('hidden');
-            //             $('#js-home-btn').removeClass('m-logo--in_header');
-            //             $('#js-home-btn').attr('tabindex', '-1');
-            //             $('.bg-main-vid').removeClass('hidden');
-            //             bgvid.play();
-            //         }
-            //     }
-            // };
-
-            // Component custom events
-
             var menuBtn = function(elem) {
                 var $menu = $(elem);
-                var state = false;
-                
-                var renderOn = function() {
+                var _isOn = false;
+
+                this.isOn = function() { return _isOn; };
+
+                this.on = function() {
                     $menu.addClass('hamburger--open');
                     $menu.attr('aria-label', 'Close Menu');
                     $menu.attr('aria-expanded', 'false');
-                    state = true;
-                }
-                var renderOff = function() {
-                    $menu.removeClass('hamburger--open');
-                    $menu.attr('aria-label', 'Open Menu');
-                    $menu.attr('aria-expanded', 'true');
-                    state = false;
-                }
-
-                this.isOn = function() { return state; };
-
-                this.on = function() {
-                    renderOn();
                     $('.modal').addClass('modal--visible');
+                    _isOn = true;
                 };
 
                 this.off = function() {
-                    renderOff();
+                    $menu.removeClass('hamburger--open');
+                    $menu.attr('aria-label', 'Open Menu');
+                    $menu.attr('aria-expanded', 'true');
                     $('.modal').removeClass('modal--visible');
+                    _isOn = false;
                 };
 
                 this.toggle = function() {
@@ -157,83 +110,54 @@
                     else 
                         this.on();
                 };
-                
-                //this.trigger = function(e) { $menu.trigger(e); }
-
             }
 
             var menu = new menuBtn('#js-hamburger');
 
-            // $(menu).on('menu:toggle', function() {
-            //     if(menu.isOn()) {
-            //         $(this).trigger('menu:off');
-            //     } else {
-            //         $(this).trigger('menu:on');
-            //     }
-            // }).on('menu:on', function() {
-            //     menu.toggleOn();
-            //     $('.modal').addClass('modal--visible');
-            //     bgvid.pause();
-            // }).on('menu:off', function() {
-            //     menu.toggleOff();
-            //     $('.modal').removeClass('modal--visible');
-            // });
+            var homeBtn = function(elem) {
+                var $home = $(elem);
 
-            // Replace with methods on photoGalleryView
-            $('#js-photo-section').on('gallery:on', function() {
-                 $(this).removeClass('hidden');
-            }).on('gallery:off', function(){
-                 $(this).addClass('hidden');
-            });
-
-            $('#js-home-btn').on('home:toggle', function() {
-                var homeBtn = $(this);
-                if( homeBtn.hasClass('m-logo--in_header') ) {
-                    homeBtn.trigger('home:off');
-                } else {
-                    homeBtn.trigger('home:on');
+                this.on = function() {
+                    $home.addClass('m-logo--in_header');
+                    $home.attr('tabindex', '0');
                 }
-            }).on('home:on', function() {
-                var homeBtn = $(this);
-                homeBtn.addClass('m-logo--in_header');
-                homeBtn.attr('tabindex', '0');
-            }).on('home:off', function() {
-                var homeBtn = $(this);
-                homeBtn.removeClass('m-logo--in_header');
-                homeBtn.attr('tabindex', '-1');
-            });
 
+                this.off = function() {
+                    $home.removeClass('m-logo--in_header');
+                    $home.attr('tabindex', '-1');
+                }
+            }
 
-            $('#js-hamburger').on('click', function(e) 
-            {
+            var home = new homeBtn('#js-home-btn');
+
+            $('#js-hamburger').on('click', function(e) {
                 //toggleMenuFunctionality();
                 // fadeOut first checks whether the element is hidden to avoid unnecessary DOM manipulation
                 $('#js-photo-lightbox').fadeOut(200); 
 
                 menu.toggle();
                 
-                if( $('#js-photo-section').hasClass('hidden') ) {
-                    $('#js-home-btn').trigger('home:toggle');
-                    if( !menu.isOn() ) {
-                        bgvid.play();
-                    } else {
+                if( photoGallery.isActive() ) {
+                    photoGallery.toggleVisibility();
+                } else {
+                    if( menu.isOn() ) {
+                        home.on();
                         bgvid.pause();
                     }
-                };
+                    else {
+                        home.off();
+                        bgvid.play();
+                    }
+                }
             });
             
-            $('.js-menu-item').on('click', function(e) 
-            {
+            $('.js-menu-item').on('click', function(e) {
                 e.preventDefault();
-                var s_cat = $(this).attr('data-menu-cat');
-                // gallery_active = true;
-                //toggleMenuFunctionality();
 
                 menu.off();
-                $('#js-photo-section').trigger('gallery:on');
-                $('#js-home-btn').trigger('home:on');
-                
-                photoGallery.render(s_cat); 
+
+                var cat = $(this).attr('data-menu-cat');
+                photoGallery.render(cat);
 
                 $('.photo-box:not(.hidden):first .js-photo-link').focus();
                 $('.bg-main-vid').addClass('hidden');
@@ -242,21 +166,15 @@
 
             // HOME LINK
             
-            $('#js-home-btn').click(function(e) 
-            {
+            $('#js-home-btn').click(function(e)  {
                 e.preventDefault();
-                // gallery_active = false;
-                // $('#js-home-btn').removeClass('m-logo--in_header');
-                // $('#js-home-btn').attr('tabindex', '-1');
-                //if(menu_active) toggleMenuFunctionality();
 
                 menu.off();
-                $('#js-home-btn').trigger('home:off');
-                $('#js-photo-section').trigger('gallery:off');
+                home.off();
+                photoGallery.setInactive();
 
                 $('.bg-main-vid').removeClass('hidden');
-                $('.photo-box').addClass('hidden');
-                // $('#js-photo-section').addClass('hidden');
+                //$('.photo-box').addClass('hidden');
 
                 $('#js-photo-lightbox').fadeOut(200);
                 bgvid.play();
@@ -660,7 +578,7 @@
             var photoGalleryView = function(container) {
 
                 var _cardDOMrefs = {};
-                var _prevCat;
+                var $container = $(container);
 
                 galleryModel.getCats().forEach( function(cat) {
                     _cardDOMrefs[cat] = [];
@@ -691,9 +609,12 @@
                         _cardDOMrefs[cat].push(cardDOMref);
                     });
 
-                     $(container).append(_cardDOMrefs[cat]);
+                     $container.append(_cardDOMrefs[cat]);
                      console.log(cat);
                 };
+
+                var _gallery_active;
+                var _prevCat;
 
                 this.render = function(newCat) {
 
@@ -712,15 +633,49 @@
                     })
 
                     _prevCat = newCat;
+                    _gallery_active = true;
+
+                    this.show();
+                };
+
+                this.isActive = function() {
+                    return _gallery_active;
                 }
+
+                this.setInactive = function() {
+                    _gallery_active = false;
+                    this.hide();
+                }
+
+                var _cur_scroll;
+
+                this.isVisible = function() {
+                    return !$container.hasClass('hidden');
+                }
+
+                this.show = function() {
+                    $container.removeClass('hidden');
+                    $(document).scrollTop(_cur_scroll);
+                }
+
+                this.hide = function() {
+                    _cur_scroll = $(document).scrollTop();
+                    $container.addClass('hidden');
+                }
+
+                this.toggleVisibility = function() {
+                    if(this.isVisible())
+                        this.hide();
+                    else
+                        this.show();
+                }
+
             };
 
             var photoGallery = new photoGalleryView('#js-photo-section');
 
-
             var photoLightbox = function(el) {
 
-                var cur_scroll;
                 var container = $(el);
                 var image = $('<img src="">').appendTo(container);
 
@@ -748,9 +703,8 @@
                     container.fadeIn(200);
                     container.focus();
 
-                    cur_scroll = $(document).scrollTop();
-
-                    $('#js-photo-section').addClass('hidden');
+                    // needed for a11y?
+                    //photoGallery.hide();
                                   
                     if(history.state===null || history.state.cur_page!="photo") { 
                         history.pushState({cur_page: "photo"}, null, null);
@@ -762,10 +716,8 @@
                         image.attr('src', '');
                         image.attr('alt', '');
                     });
-                    
-                    $('#js-photo-section').removeClass('hidden');
 
-                    $(document).scrollTop(cur_scroll);
+                    //photoGallery.show();
                 }
 
                 var that = this;
