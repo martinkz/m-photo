@@ -44,8 +44,8 @@
             </div>
         </nav>
         
-        <div class="bg-main-vid">
-            <video id="bgvid" autoplay loop poster="assets/poster.jpg" aria-hidden="true">
+        <div id="js-bgvid-container" class="bg-main-vid">
+            <video id="js-bgvid" autoplay loop poster="assets/poster.jpg" aria-hidden="true">
                 <source src="assets/bgvid.webm" type="video/webm">
                 <source src="assets/bgvid.mp4" type="video/mp4">
             </video>
@@ -74,13 +74,13 @@
             $('#js-home-btn').attr('tabindex', '-1');
 
             setTimeout(function(){ 
-                $('.bg-main-vid').addClass('bg-main-vid--visible'); 
+                $('#js-bgvid-container').addClass('bg-main-vid--visible'); 
             }, 0);
 
-            var bgvid = document.getElementsByTagName("video")[0];
+            var bgvid = document.getElementById('js-bgvid');
             bgvid.play();
 
-            // MAIN MENU ( MODAL / HAMBURGER FUNCTIONALITY )
+            // NAVIGATION FUNCTIONALITY
 
             var menuBtn = function(elem) {
                 var $menu = $(elem);
@@ -131,7 +131,6 @@
             var home = new homeBtn('#js-home-btn');
 
             $('#js-hamburger').on('click', function(e) {
-                //toggleMenuFunctionality();
                 // fadeOut first checks whether the element is hidden to avoid unnecessary DOM manipulation
                 $('#js-photo-lightbox').fadeOut(200); 
 
@@ -159,12 +158,10 @@
                 var cat = $(this).attr('data-menu-cat');
                 photoGallery.render(cat);
 
-                $('.photo-box:not(.hidden):first .js-photo-link').focus();
-                $('.bg-main-vid').addClass('hidden');
+                
+                $('#js-bgvid-container').addClass('hidden');
                 $('#js-cat-title').text( $(this).text() );
             });
-
-            // HOME LINK
             
             $('#js-home-btn').click(function(e)  {
                 e.preventDefault();
@@ -173,7 +170,8 @@
                 home.off();
                 photoGallery.setInactive();
 
-                $('.bg-main-vid').removeClass('hidden');
+                $('#js-bgvid-container').removeClass('hidden');
+
                 //$('.photo-box').addClass('hidden');
 
                 $('#js-photo-lightbox').fadeOut(200);
@@ -182,17 +180,19 @@
 
             // TAB KEY FUNCTIONALITY
 
-            var tab_items = '#js-hamburger, #js-home-btn, .js-menu-item, .js-photo-link, .js-map-location, #js-photo-lightbox';
+            function setFocusOutline(list) {
+                $(list).keyup(function (e) {
+                    if ((e.keyCode || e.which) == 9) $(this).addClass('has-tab-focus');
+                });
 
-            $(tab_items).keyup(function (e) {
-                if ((e.keyCode || e.which) == 9) $(this).addClass('has-tab-focus');
-            });
+                $(list).blur(function() {
+                    $(this).removeClass('has-tab-focus');
+                });
+            }
 
-            $(tab_items).blur(function() {
-                $(this).removeClass('has-tab-focus');
-            });
-            
-            // GALLERY FUNCTIONALITY
+            setFocusOutline('#js-hamburger, #js-home-btn, .js-menu-item, #js-photo-lightbox');
+
+            // GALLERY COMPONENT
 
             var photoData = {
                 'arch' : [
@@ -565,7 +565,7 @@
                     '<div class="photo-box ' + (!card.title ? card.cssClass : '') + ' hidden">' + 
                     	'<div class="photo-box__inner">' + 
                     		'<a class="photo-link js-photo-link" href="' + galleryModel.getPath('lg') + card.filename + '">' + 
-                                // to remove data-cat later if not needed
+                                // remove data-cat later if not needed
                     			'<img data-cat="' + cat + '" src="' + galleryModel.getPath('sm') + card.filename + '" alt="' + card.title + '">' +
                     		'</a>' + 
                     		(card.location ? '<a class="map-location js-map-location" target="_blank" href="' + card.location + '"></a>' : '') +
@@ -604,13 +604,13 @@
 
                         cardDOMref.find('.js-map-location').on('click', function(e){
                             e.stopPropagation();
-                        })
+                        });
 
                         _cardDOMrefs[cat].push(cardDOMref);
                     });
 
                      $container.append(_cardDOMrefs[cat]);
-                     console.log(cat);
+                     setFocusOutline('.js-photo-link, .js-map-location');
                 };
 
                 var _gallery_active;
@@ -636,6 +636,8 @@
                     _gallery_active = true;
 
                     this.show();
+
+                    $('.photo-box:not(.hidden):first .js-photo-link').focus();
                 };
 
                 this.isActive = function() {
@@ -669,10 +671,11 @@
                     else
                         this.show();
                 }
-
             };
 
             var photoGallery = new photoGalleryView('#js-photo-section');
+
+            // LIGHTBOX COMPONENT
 
             var photoLightbox = function(el) {
 
@@ -703,8 +706,7 @@
                     container.fadeIn(200);
                     container.focus();
 
-                    // needed for a11y?
-                    //photoGallery.hide();
+                    photoGallery.hide();
                                   
                     if(history.state===null || history.state.cur_page!="photo") { 
                         history.pushState({cur_page: "photo"}, null, null);
@@ -717,7 +719,7 @@
                         image.attr('alt', '');
                     });
 
-                    //photoGallery.show();
+                    photoGallery.show();
                 }
 
                 var that = this;

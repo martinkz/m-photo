@@ -183,10 +183,10 @@ body {
 /* Image block */
 
 .photo-section {
+    position: relative; // Forces this to be on top of the video
     column-count: 3;
     column-gap: 3vw;
     padding: 128px 8% 30px 8%;
-    
 }
 
 .photo-box {
