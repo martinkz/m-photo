@@ -4,7 +4,7 @@ $(document).ready( function()
 	 *   INIT STUFF
 	 */
 
-	$('#js-home-btn').attr('tabindex', '-1');
+	//$('#js-home-btn').attr('tabindex', '-1');
 
 	setTimeout(function(){ 
 		$('#js-bgvid-container').addClass('bg-main-vid--visible'); 
@@ -27,7 +27,7 @@ $(document).ready( function()
 		this.on = function() {
 			$menu.addClass('hamburger--open');
 			$menu.attr('aria-label', 'Close Menu');
-			$menu.attr('aria-expanded', 'false');
+			$menu.attr('aria-expanded', 'true');
 			$('.modal').addClass('modal--visible');
 			_isOn = true;
 		};
@@ -35,7 +35,7 @@ $(document).ready( function()
 		this.off = function() {
 			$menu.removeClass('hamburger--open');
 			$menu.attr('aria-label', 'Open Menu');
-			$menu.attr('aria-expanded', 'true');
+			$menu.attr('aria-expanded', 'false');
 			$('.modal').removeClass('modal--visible');
 			_isOn = false;
 		};
@@ -168,7 +168,7 @@ $(document).ready( function()
 						// remove data-cat later if not needed
 						'<img data-cat="' + cat + '" src="' + galleryModel.getPath('sm') + card.filename + '" alt="' + card.title + '">' +
 					'</a>' + 
-					(card.location ? '<a class="map-location js-map-location" target="_blank" href="' + card.location + '"></a>' : '') +
+					(card.location ? '<a class="map-location js-map-location" target="_blank" title="location" href="' + card.location + '"></a>' : '') +
 				'</div>' + 
 				(card.title ? '<h2 class="photo-title ' + card.cssClass + '">' + card.title + '</h2>' : '') +
 			'</div>';
