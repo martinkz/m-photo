@@ -92,7 +92,6 @@ $(document).ready( function()
 
 		var cat = $(this).attr('data-menu-cat');
 		photoGallery.render(cat);
-
 		
 		$('#js-bgvid-container').addClass('hidden');
 		$('#js-cat-title').text( $(this).text() );
@@ -275,7 +274,7 @@ $(document).ready( function()
 
 	// LIGHTBOX COMPONENT
 
-	var photoLightbox = function(el) {
+	var photoLightbox = function(el, elHideA11y) {
 
 		var container = $(el);
 		var image = $('<img src="">').appendTo(container);
@@ -305,7 +304,8 @@ $(document).ready( function()
 			container.focus();
 
 			photoGallery.hide();
-						  
+			$(elHideA11y).attr('aria-hidden', true);
+			
 			if(history.state===null || history.state.cur_page!="photo") { 
 				history.pushState({cur_page: "photo"}, null, null);
 			}
@@ -318,6 +318,7 @@ $(document).ready( function()
 			});
 
 			photoGallery.show();
+			$(elHideA11y).removeAttr('aria-hidden');
 		}
 
 		var that = this;
@@ -326,8 +327,11 @@ $(document).ready( function()
 			that.hide();
 		});
 
-		container.on('keyup', function(e) {
-			if (e.keyCode == 27) that.hide();
+		container.on('keydown', function(e) {
+			if (e.keyCode == 27 || e.keyCode == 13) that.hide();
+
+			// Trap the tab key on the focused modal
+			if (e.keyCode == 9) e.preventDefault();
 		});
 		
 		window.addEventListener("popstate", function(event) {
@@ -335,13 +339,12 @@ $(document).ready( function()
 		});
 	}
 
+	var lightbox = new photoLightbox('#js-photo-lightbox', '#js-nav, #js-main');
 	var photoGallery;
-	var lightbox;
 
 	$.getJSON("js/photo-data.json", function(data) {
 		galleryModel.setPhotos(data);
 		photoGallery = new photoGalleryView('#js-photo-section');
-		lightbox = new photoLightbox('#js-photo-lightbox');
 	});
 	
 });
