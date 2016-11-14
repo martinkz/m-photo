@@ -3,339 +3,339 @@
 		{
 			"filename" : "DSC00343-2.jpg",
 			"location" : "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
-			"cssClass" : "color--tsarevets",
+			"color" : "#4CAF50",
 			"title" : "Tsarevets Castle"
 		},{
 			"filename" : "DSC03354.jpg",
 			"location" : "https://www.google.com/maps/place/Assen's+Fortress,+86,+4230,+Bulgaria/@41.9866573,24.8614335,15.54z/data=!4m5!3m4!1s0x14acdf314ac0cb81:0x7dcdeb016a88a92e!8m2!3d41.9862893!4d24.8742939",
-			"cssClass" : "color--asen",
+			"color" : "#FF5722",
 			"title" : "Asen's Fortress"
 		},{
 			"filename" : "DSC08611.jpg",
 			"location" : "https://www.google.com/maps/place/Canary+Wharf,+London,+UK/@51.5053536,-0.0254861,16z/data=!3m1!4b1!4m5!3m4!1s0x487602ba7a12992f:0x4d821857a5e4a41!8m2!3d51.5054306!4d-0.0235333",
-			"cssClass" : "color--canary",
+			"color" : "#C5BAAB",
 			"title" : "Canary Wharf"
 		},{
 			"filename" : "DSC08687-2.jpg",
 			"location" : "https://www.google.com/maps/place/Leadenhall+Market/@51.5127764,-0.0857301,17z/data=!3m1!4b1!4m5!3m4!1s0x487603528c761b51:0x2ab521a67e1111b3!8m2!3d51.5127731!4d-0.0835414",
-			"cssClass" : "color--leadenhall",
+			"color" : "#D32F2F",
 			"title" : "Leadenhall Market"
 		},{
 			"filename" : "DSC08706-2.jpg",
 			"location" : "https://www.google.com/maps/place/The+Shard/@51.5045033,-0.0886887,17z/data=!3m1!4b1!4m5!3m4!1s0x4876035a0a9271d3:0xbdf26ba73efb7b!8m2!3d51.5045!4d-0.0865",
-			"cssClass" : "color--shard",
+			"color" : "#1976D2",
 			"title" : "The Shard"
 		},{
 			"filename" : "DSC01816_2.jpg",
 			"location" : "https://www.google.com/maps/place/Tsarevets/@43.0837812,25.6520446,15z/data=!4m5!3m4!1s0x0:0x9a3dd95d468c59c4!8m2!3d43.0837812!4d25.6520446",
-			"cssClass" : "color--tsarevetsnight",
+			"color" : "#C2185B",
 			"title" : "Tsarevets Castle at Night"
 		},{
 			"filename" : "DSC08738.jpg",
 			"location" : "https://www.google.com/maps/place/More+London+Riverside,+London+SE1,+UK/@51.5049969,-0.0838736,17z/data=!3m1!4b1!4m5!3m4!1s0x487603500e445477:0x1c7ec4e9f2ff809b!8m2!3d51.5049936!4d-0.0816849",
-			"cssClass" : "color--morelondon",
+			"color" : "#5D4037",
 			"title" : "More London Riverside"
 		},{
 			"filename" : "DSC08701-2.jpg",
 			"location" : "https://www.google.com/maps/place/20+Fenchurch+Street/@51.5110245,-0.0856419,17z/data=!3m1!4b1!4m5!3m4!1s0x4876034da993f3fb:0xb252389db2d35c67!8m2!3d51.5110212!4d-0.0834532",
-			"cssClass" : "color--20fenchurch",
+			"color" : "#FBC02D",
 			"title" : "20 Fenchurch Street"
 		},{
 			"filename" : "DSC05511-2.jpg",
 			"location" : "https://www.google.com/maps/place/Bankside+Pier/@51.5087443,-0.0974469,18z/data=!3m1!4b1!4m5!3m4!1s0x487604a99c2696a1:0x28b86d6fa6fd8de0!8m2!3d51.508743!4d-0.096603",
-			"cssClass" : "color--bankside",
+			"color" : "#512da8",
 			"title" : "Bankside View"
 		},{
 			"filename" : "DSC08617.jpg",
 			"location" : "https://www.google.com/maps/place/J.P.+Morgan/@51.5038201,-0.0193993,17.17z/data=!4m5!3m4!1s0x0000000000000000:0x7901d4ddebf1e959!8m2!3d51.5030428!4d-0.0203526",
-			"cssClass" : "color--jpmorgan",
+			"color" : "#00BCD4",
 			"title" : "J. P. Morgan building"
 		},{
 			"filename" : "DSC09830_2.jpg",
 			"location" : "https://www.google.com/maps/place/Southwark+Cathedral/@51.5061042,-0.0917845,17z/data=!3m1!4b1!4m5!3m4!1s0x487603571183a4d5:0x1e6e505ff27f7772!8m2!3d51.5061009!4d-0.0895958!6m1!1e1",
-			"cssClass" : "color--oldandnew",
+			"color" : "#ffa000",
 			"title" : "Old &amp; New"
 		}
 	],"street" : [
 		{
 			"filename" : "DSC00349.jpg",
-			"cssClass" : "color--cat",
+			"color" : "#E8C090",
 			"title" : "Black Street Cat"
 		},{
 			"filename" : "DSC00763-2.jpg",
 			"location" : "https://www.google.com/maps/place/Park+Hill+Park/@51.3707857,-0.0940061,17z/data=!3m1!4b1!4m5!3m4!1s0x487600cb1f032ce5:0x3c6012c82d89b0f5!8m2!3d51.3707824!4d-0.0918174!6m1!1e1",
-			"cssClass" : "color--parkhill",
+			"color" : "#FF5252",
 			"title" : "Park Hill in the spring"
 		},{
 			"filename" : "DSC04036.jpg",
 			"location" : "https://www.google.com/maps/place/Southbank+Centre/@51.5057831,-0.1188808,17z/data=!3m1!4b1!4m5!3m4!1s0x487604b7e7c78711:0xa1ed79798fdff99!8m2!3d51.5057798!4d-0.1166921!6m1!1e1",
-			"cssClass" : "color--carousel",
+			"color" : "#E91E63",
 			"title" : "The South Bank Carousel"
 		},{
 			"filename" : "DSC04249.jpg",
 			"location" : "https://www.google.com/maps/place/Jubilee+Gardens/@51.5037757,-0.1205264,17z/data=!3m1!4b1!4m5!3m4!1s0x487604c7eeb058b3:0x2ed43bbc432e41d4!8m2!3d51.5037724!4d-0.1183377!6m1!1e1",
-			"cssClass" : "color--eyeskate",
+			"color" : "#3A96B7",
 			"title" : "Eyeskate at London Eye"
 		},{
 			"filename" : "DSC04647.jpg",
 			"location" : "https://www.google.com/maps/place/Big+Ben/@51.5007325,-0.1268141,17z/data=!3m1!4b1!4m5!3m4!1s0x487604c38c8cd1d9:0xb78f2474b9a45aa9!8m2!3d51.5007292!4d-0.1246254!6m1!1e1",
-			"cssClass" : "color--bigbensunset",
+			"color" : "#FFC107",
 			"title" : "Big Ben at sunset"
 		},{
 			"filename" : "DSC04818.jpg",
 			"location" : "https://www.google.com/maps/place/High+Street+Kensington+Station/@51.5010254,-0.1949251,17z/data=!3m1!4b1!4m5!3m4!1s0x48760ff6c4a82b49:0x585a2ea24735a80b!8m2!3d51.5010221!4d-0.1927364!6m1!1e1",
-			"cssClass" : "color--kensingtontube",
+			"color" : "#7B584E",
 			"title" : "High Street Kensington"
 		},{
 			"filename" : "DSC05268.jpg",
 			"location" : "https://www.google.com/maps/place/King+St,+London+WC2E+8HN,+UK/@51.5120407,-0.1262272,17.58z/data=!4m5!3m4!1s0x487604d18fe91ce3:0x49bd96b347de6d85!8m2!3d51.5116526!4d-0.1244363",
-			"cssClass" : "color--kingstr",
+			"color" : "#1976D2",
 			"title" : "King St at Christmas"
 		},{
 			"filename" : "DSC05522.jpg",
 			"location" : "https://www.google.com/maps/place/Millennium+Bridge/@51.5095324,-0.1007312,17z/data=!3m1!4b1!4m5!3m4!1s0x487604abcc128291:0xbd5ceafc2f514e1c!8m2!3d51.5095291!4d-0.0985425",
-			"cssClass" : "color--milbridge",
+			"color" : "#3F51B5",
 			"title" : "Millennium Bridge"
 		},{
 			"filename" : "DSC06523.jpg",
 			"location" : "https://www.google.com/maps/place/Green+Park/@51.503905,-0.1460481,17z/data=!3m1!4b1!4m5!3m4!1s0x4876052881ff2bd9:0xdb5ab148cad5f1a3!8m2!3d51.5039017!4d-0.1438594",
-			"cssClass" : "color--greenpark",
+			"color" : "#8BC34A",
 			"title" : "Green Park"
 		},{
 			"filename" : "DSC07351.jpg",
 			"location" : "https://www.google.com/maps/place/Westminster+Pier/@51.5022585,-0.1249692,17z/data=!3m1!4b1!4m5!3m4!1s0x487604b5e5fa5013:0xd126c7fee870cd40!8m2!3d51.5022558!4d-0.1231811",
-			"cssClass" : "color--nye2",
+			"color" : "#FF5722",
 			"title" : "New Year's Eve Fireworks"
 		},{
 			"filename" : "DSC01344.jpg",
 			"location" : "https://www.google.com/maps/place/Blackfriars+Millennium+Pier/@51.5107682,-0.1088308,17z/data=!3m1!4b1!4m5!3m4!1s0x487604b20a893427:0x4ea46251e06dcb4!8m2!3d51.5107649!4d-0.1066421",
-			"cssClass" : "color--thamessunset",
+			"color" : "#e65100",
 			"title" : "Ship on the Thames"
 		},{
 			"filename" : "DSC04239.jpg",
 			"location" : "https://www.google.com/maps/place/Monument+Asenevtsi/@43.0825698,25.6354304,17z/data=!3m1!4b1!4m5!3m4!1s0x40a92619660c62fb:0x28cf66ea959ff989!8m2!3d43.0825659!4d25.6376191",
-			"cssClass" : "color--asenevtsi",
+			"color" : "#9c27b0",
 			"title" : "Asenevtsi Monument"
 		},{
 			"filename" : "DSC00437.jpg",
 			"location" : "https://www.google.com/maps/place/Admiralty+Arch/@51.5067931,-0.1308471,17z/data=!3m1!4b1!4m5!3m4!1s0x48761be37a08548f:0x8c2c4c72fe80030d!8m2!3d51.5067898!4d-0.1286584",
-			"cssClass" : "color--admiralty",
+			"color" : "#f4511e",
 			"title" : "Admiralty Arch"
 		},{
 			"filename" : "DSC07374.jpg",
 			"location" : "https://www.google.com/maps/place/Westminster+Pier/@51.5022585,-0.1249692,17z/data=!3m1!4b1!4m5!3m4!1s0x487604b5e5fa5013:0xd126c7fee870cd40!8m2!3d51.5022558!4d-0.1231811",
-			"cssClass" : "color--nye1",
+			"color" : "#673AB7",
 			"title" : "New Year's Eve Fireworks"
 		},{
 			"filename" : "DSC00882.jpg",
-			"cssClass" : "color--firedancing",
+			"color" : "#fdd835",
 			"title" : "Fire dancing"
 		},{
 			"filename" : "DSC00553_3.jpg",
 			"location" : "https://www.google.com/maps/place/Veliko+Tarnovo,+Bulgaria/@43.0841301,25.5981031,13z/data=!3m1!4b1!4m5!3m4!1s0x40a9214b3d9491dd:0x400a01269bf5dc0!8m2!3d43.0756739!4d25.6171514",
-			"cssClass" : "color--vt1",
+			"color" : "#00897b",
 			"title" : "Veliko Tarnovo"
 		},{
 			"filename" : "DSC00960.jpg",
-			"cssClass" : "color--firedancing2",
+			"color" : "#fbc02d",
 			"title" : "Fire dancing"
 		},{
 			"filename" : "DSC01778.jpg",
-			"cssClass" : "color--lumiereart",
+			"color" : "#ff1744",
 			"title" : "Art installation"
 		},{
 			"filename" : "DSC01785.jpg",
 			"location" : "https://www.google.com/maps/place/Ganton+St,+Soho,+London,+UK/@51.5131292,-0.1409391,17z/data=!3m1!4b1!4m5!3m4!1s0x487604d51a725e2d:0x98cdd619015cf8e2!8m2!3d51.5131259!4d-0.1387504",
-			"cssClass" : "color--morelondon",
+			"color" : "#5D4037",
 			"title" : "Ganton Street"
 		},{
 			"filename" : "DSC02368_2.jpg",
-			"cssClass" : "color--towerbridge",
+			"color" : "#004b83",
 			"title" : "Martini"
 		},{
 			"filename" : "DSC08761-4.jpg",
 			"location" : "https://www.google.com/maps/place/The+Scoop/@51.5053567,-0.0813937,18z/data=!3m1!4b1!4m5!3m4!1s0x4876034f9245ce1f:0xc41ba1b462523a57!8m2!3d51.505355!4d-0.0802994",
-			"cssClass" : "color--towerbridge",
+			"color" : "#004b83",
 			"title" : "Tower Bridge"
 		},{
 			"filename" : "DSC04245.jpg",
 			"location" : "https://www.google.com/maps/place/London+Eye/@51.5033273,-0.1217317,17z/data=!3m1!4b1!4m5!3m4!1s0x487604b900d26973:0x4291f3172409ea92!8m2!3d51.503324!4d-0.119543",
-			"cssClass" : "color--londoneye",
+			"color" : "#5e35b1",
 			"title" : "The London Eye"
 		},{
 			"filename" : "DSC07260_2.jpg",
 			"location" : "https://www.google.com/maps/place/Bern,+Switzerland/@46.9547232,7.3598507,13z/data=!3m1!4b1!4m5!3m4!1s0x478e39c0d43a1b77:0xcb555ffe0457659a!8m2!3d46.9479739!4d7.4474468",
-			"cssClass" : "color--bern",
+			"color" : "#e53935",
 			"title" : "Bern"
 		},{
 			"filename" : "DSC03213_2.jpg",
 			"location" : "https://www.google.com/maps/place/%D0%A6%D1%8A%D1%80%D0%BA%D0%B2%D0%B0+%22%D0%A1%D0%B2.+%D0%94%D0%B8%D0%BC%D0%B8%D1%82%D1%8A%D1%80+%D0%A1%D0%BE%D0%BB%D1%83%D0%BD%D1%81%D0%BA%D0%B8%22/@43.0879324,25.6460754,17z/data=!4m5!3m4!1s0x40a928a03b00fe97:0x40898cdcf95e4322!8m2!3d43.0879207!4d25.6482963",
-			"cssClass" : "color--vt2",
+			"color" : "#7cb342",
 			"title" : "St Demetrius church, <br>Veliko Tarnovo"
 		},{
 			"filename" : "DSC01091_2.jpg",
-			"cssClass" : "color--bowl",
+			"color" : "#555555",
 			"title" : "Wooden Bowl"
 		}
 	], "nature" : [
 		{
 			"filename" : "DSC01091.jpg",
-			"cssClass" : "color--parakeet1",
+			"color" : "#43a047",
 			"title" : "Ring-necked parakeet #1"
 		},{
 			"filename" : "DSC01103.jpg",
-			"cssClass" : "color--parakeet2",
+			"color" : "#7cb342",
 			"title" : "Ring-necked parakeet #2"
 		},{
 			"filename" : "DSC01097.jpg",
-			"cssClass" : "color--parakeet3",
+			"color" : "#c0ca33",
 			"title" : "Ring-necked parakeet #3"
 		},{
 			"filename" : "DSC00059.jpg",
-			"cssClass" : "color--owl1",
+			"color" : "#e53935",
 			"title" : "Young Owl"
 		},{
 			"filename" : "DSC00027.jpg",
-			"cssClass" : "color--ilikegreen",
+			"color" : "#4db6ac",
 			"title" : "&quot;I like green&quot;"
 		},{
 			"filename" : "DSC07404.jpg",
-			"cssClass" : "color--stars",
+			"color" : "#1a237e",
 			"title" : "Stars"
 		},{
 			"filename" : "DSC03377.jpg",
 			"location" : "https://www.google.com/maps/place/Lake+Thun/@46.7004466,7.693371,13z/data=!3m1!4b1!4m5!3m4!1s0x478fae3554ddf6eb:0xc692ca79d2500aea!8m2!3d46.6958354!4d7.7212158",
-			"cssClass" : "color--interlaken",
+			"color" : "#ff7043",
 			"title" : "Interlaken, Switzerland"
 		},{
 			"filename" : "DSC03470.jpg",
 			"location" : "https://www.google.com/maps/place/Spl%C3%BCgen,+Switzerland/@46.5419936,9.2730908,13z/data=!3m1!4b1!4m5!3m4!1s0x4784f13d6aedbcfd:0xf1aadd833303743!8m2!3d46.5528268!4d9.3233581",
-			"cssClass" : "color--splugen1",
+			"color" : "#039be5",
 			"title" : "Splügen, Switzerland"
 		},{
 			"filename" : "DSC03477.jpg",
 			"location" : "https://www.google.com/maps/place/Spl%C3%BCgen,+Switzerland/@46.5419936,9.2730908,13z/data=!3m1!4b1!4m5!3m4!1s0x4784f13d6aedbcfd:0xf1aadd833303743!8m2!3d46.5528268!4d9.3233581",
-			"cssClass" : "color--splugen2",
+			"color" : "#26a69a",
 			"title" : "Splügen, Switzerland"
 		},{
 			"filename" : "DSC03534_1.jpg",
-			"cssClass" : "color--roadsplugen",
+			"color" : "#9ccc65",
 			"title" : "Road near Splügen"
 		},{
 			"filename" : "DSC04007.jpg",
 			"location" : "https://www.google.com/maps/place/Ballenberg,+Swiss+Open-Air+Museum/@46.6288304,8.053599,10.88z/data=!4m5!3m4!1s0x478f9134298b85dd:0x1b2939447bd25159!8m2!3d46.7496093!4d8.0857353",
-			"cssClass" : "color--ballenberg",
+			"color" : "#fdd835",
 			"title" : "Ballenberg"
 		},{
 			"filename" : "DSC04721_3-HDR.jpg",
 			"location" : "https://www.google.com/maps/place/Lugano,+Switzerland/@46.0295228,8.9247653,12z/data=!3m1!4b1!4m5!3m4!1s0x47842df76a4211f1:0xef8c04212ea1f8e0!8m2!3d46.0036778!4d8.951052",
-			"cssClass" : "color--lugano",
+			"color" : "#ec407a",
 			"title" : "Near Lugano"
 		},{
 			"filename" : "DSC07081_2.jpg",
 			"location" : "https://www.google.com/maps/place/Sandy+Bay,+Exmouth,+Devon,+UK/@50.6156499,-3.3862672,13.54z/data=!4m5!3m4!1s0x486d7549638311b5:0xbecac8a6021b1136!8m2!3d50.6172316!4d-3.3649063",
-			"cssClass" : "color--jurassic",
+			"color" : "#e53935",
 			"title" : "The Jurassic Coast"
 		},{
 			"filename" : "DSC07302_2.jpg",
 			"location" : "https://www.google.com/maps/place/Hound+Tor/@50.6000184,-3.8227894,12.54z/data=!4m5!3m4!1s0x486cffdfe5332c95:0x5a76d7f0711197ef!8m2!3d50.5969615!4d-3.7779772",
-			"cssClass" : "color--houndtor",
+			"color" : "#6d4c41",
 			"title" : "Hound Tor, Dartmoor"
 		},{
 			"filename" : "DSC07475.jpg",
-			"cssClass" : "color--owl2",
+			"color" : "#ab47bc",
 			"title" : "Owl"
 		},{
 			"filename" : "DSC01052.jpg",
-			"cssClass" : "color--goldfinch",
+			"color" : "#ec407a",
 			"title" : "European goldfinch"
 		},{
 			"filename" : "DSC07525.jpg",
-			"cssClass" : "color--owl3",
+			"color" : "#8d6e63",
 			"title" : "More owl"
 		},{
 			"filename" : "DSC09379.jpg",
-			"cssClass" : "color--flower",
+			"color" : "#ff5252",
 			"title" : "Flower"
 		},{
 			"filename" : "DSC09957.jpg",
 			"location" : "https://www.google.com/maps/place/Richmond+Park/@51.4426902,-0.2858957,17z/data=!3m1!4b1!4m5!3m4!1s0x48760ea56197d1fd:0x138cbe1a5a3a048d!8m2!3d51.4426869!4d-0.283707",
-			"cssClass" : "color--richmond",
+			"color" : "#fbc02d",
 			"title" : "Richmond Park"
 		},{
 			"filename" : "DSC09960.jpg",
-			"cssClass" : "color--bateleur",
+			"color" : "#ffa726",
 			"title" : "Bateleur Eagle"
 		},{
 			"filename" : "DSC09461.jpg",
-			"cssClass" : "color--squirrel1",
+			"color" : "#ff7043",
 			"title" : "Curious Squirrel"
 		},{
 			"filename" : "DSC09940.jpg",
-			"cssClass" : "color--owl4",
+			"color" : "#78909c",
 			"title" : "Yet another owl"
 		},{
 			"filename" : "DSC09420.jpg",
-			"cssClass" : "color--squirrel2",
+			"color" : "#9e9d24",
 			"title" : "Mr. Squirrel"
 		}
 	], "people" : [
 		{
-			"cssClass" : "color--people1",
+			"color" : "#ffa726",
 			"filename" : "DSC07127-3.jpg"
 		},{
-			"cssClass" : "color--people2",
+			"color" : "#7cb342",
 			"filename" : "DSC00284.jpg"
 		},{
-			"cssClass" : "color--people3",
+			"color" : "#ec407a",
 			"filename" : "DSC00370.jpg"
 		},{
-			"cssClass" : "color--people4",
+			"color" : "#ef5350",
 			"filename" : "DSC00446.jpg"
 		},{
-			"cssClass" : "color--people5",
+			"color" : "#ff1744",
 			"filename" : "DSC01252_2.jpg"
 		},{
-			"cssClass" : "color--people17",
+			"color" : "#29b6f6",
 			"filename" : "DSC08387.jpg"
 		},{
-			"cssClass" : "color--people7",
+			"color" : "#e53935",
 			"filename" : "DSC01343_2.jpg"
 		},{
-			"cssClass" : "color--people8",
+			"color" : "#29b6f6",
 			"filename" : "DSC02129.jpg"
 		},{
-			"cssClass" : "color--people16",
+			"color" : "#ef5350",
 			"filename" : "DSC04339.jpg"
 		},{
-			"cssClass" : "color--people13",
+			"color" : "#6d4c41",
 			"filename" : "DSC03322-2.jpg"
 		},{
-			"cssClass" : "color--people6",
+			"color" : "#9ccc65",
 			"filename" : "DSC01318.jpg"
 		},{
-			"cssClass" : "color--people11",
+			"color" : "#ec407a",
 			"filename" : "DSC03231.jpg"
 		},{
-			"cssClass" : "color--people12",
+			"color" : "#ff7043",
 			"filename" : "DSC03263.jpg"
 		},{
-			"cssClass" : "color--people19",
+			"color" : "#ab47bc",
 			"filename" : "DSC05200.jpg"
 		},{
-			"cssClass" : "color--people20",
+			"color" : "#3f51b5",
 			"filename" : "DSC05672.jpg"
 		},{
-			"cssClass" : "color--people9",
+			"color" : "#fdd835",
 			"filename" : "DSC02943.jpg"
 		},{
-			"cssClass" : "color--people18",
+			"color" : "#e53935",
 			"filename" : "DSC04397_2.jpg"
 		},{
-			"cssClass" : "color--people21",
+			"color" : "#ff7043",
 			"filename" : "DSC05983-2.jpg"
 		},{
-			"cssClass" : "color--people14",
+			"color" : "#fdd835",
 			"filename" : "DSC03372-2.jpg"
 		}
 	]

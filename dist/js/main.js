@@ -163,6 +163,7 @@ $(document).ready( function()
 			return '' +
 			'<div class="photo-box hidden">' + 
 				'<div class="photo-box__inner">' + 
+					(!card.title ? '<div class="photo-box-highlight"></div>' : '') +
 					'<a class="photo-link js-photo-link" href="' + galleryModel.getPath('lg') + card.filename + '">' + 
 						// remove data-cat later if not needed
 						'<img data-cat="' + cat + '" src="' + galleryModel.getPath('sm') + card.filename + '" alt="' + card.title + '">' +
@@ -193,7 +194,7 @@ $(document).ready( function()
 
 		var _cur_card;
 
-		function initCards(cat) {
+		function initCards(cat) {		
 			galleryModel.getPhotos(cat).forEach( function(card) {
 
 				var cardDOMref = $( photoCardView.buildHTML(card, cat) );
@@ -204,23 +205,23 @@ $(document).ready( function()
 					_cur_card = $(this).find('.js-photo-link');
 				});
 
-				var highlightEl = card.title ? cardDOMref.find('h2') : cardDOMref;
-				var cssClass = card.cssClass;
+				var highlightEl = card.title ? cardDOMref.find('h2') : cardDOMref.find('.photo-box-highlight');
+				var color = card.color;
 
 				cardDOMref.find('.js-photo-link').on('focus', function(e) {
-					highlightEl.addClass(cssClass);
+					highlightEl.css('background-color', color);
 				});
 
 				cardDOMref.find('.js-photo-link').on('blur', function(e) {
-					highlightEl.removeClass(cssClass);
+					highlightEl.css('background-color', '');
 				});
 
 				cardDOMref.on('mouseenter', function(e) {
-					highlightEl.addClass(cssClass);
+					highlightEl.css('background-color', color);
 				});
 
 				cardDOMref.on('mouseleave', function(e) {
-					highlightEl.removeClass(cssClass);
+					highlightEl.css('background-color', '');
 				});
 
 				cardDOMref.find('.js-map-location').on('click', function(e){
