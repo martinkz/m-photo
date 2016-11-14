@@ -118,11 +118,11 @@ $(document).ready( function()
 	 */
 
 	function setFocusOutline(list) {
-		$(list).keyup(function (e) {
+		$(list).on('keyup', function (e) {
 			if ((e.keyCode || e.which) == 9) $(this).addClass('has-tab-focus');
 		});
 
-		$(list).blur(function() {
+		$(list).on('blur', function() {
 			$(this).removeClass('has-tab-focus');
 		});
 	}
@@ -161,7 +161,7 @@ $(document).ready( function()
 		// Could be replaced with a mustache template some day
 		buildHTML: function(card, cat) {
 			return '' +
-			'<div class="photo-box ' + (!card.title ? card.cssClass : '') + ' hidden">' + 
+			'<div class="photo-box hidden">' + 
 				'<div class="photo-box__inner">' + 
 					'<a class="photo-link js-photo-link" href="' + galleryModel.getPath('lg') + card.filename + '">' + 
 						// remove data-cat later if not needed
@@ -169,7 +169,7 @@ $(document).ready( function()
 					'</a>' + 
 					(card.location ? '<a class="map-location js-map-location" target="_blank" title="location" href="' + card.location + '"></a>' : '') +
 				'</div>' + 
-				(card.title ? '<h2 class="photo-title ' + card.cssClass + '">' + card.title + '</h2>' : '') +
+				(card.title ? '<h2 class="photo-title">' + card.title + '</h2>' : '') +
 			'</div>';
 		}
 	};
@@ -201,6 +201,25 @@ $(document).ready( function()
 					lightbox.show(card);
 				});
 
+				var highlightEl = card.title ? cardDOMref.find('h2') : cardDOMref;
+				var cssClass = card.cssClass;
+
+				cardDOMref.find('.js-photo-link').on('keyup', function(e) {
+					if ((e.keyCode || e.which) == 9) highlightEl.addClass(cssClass);
+				});
+
+				cardDOMref.find('.js-photo-link').on('blur', function(e) {
+					highlightEl.removeClass(cssClass);
+				});
+
+				cardDOMref.on('mouseenter', function(e) {
+					highlightEl.addClass(cssClass);
+				});
+
+				cardDOMref.on('mouseleave', function(e) {
+					highlightEl.removeClass(cssClass);
+				});
+
 				cardDOMref.find('.js-map-location').on('click', function(e){
 					e.stopPropagation();
 				});
@@ -209,7 +228,7 @@ $(document).ready( function()
 			});
 
 			 $container.append(_cardDOMrefs[cat]);
-			 setFocusOutline('.js-photo-link, .js-map-location');
+			 setFocusOutline('.js-map-location');
 		};
 
 		var _gallery_active;

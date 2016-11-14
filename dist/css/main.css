@@ -351,6 +351,9 @@ body {
   width: 100%;
   height: auto; }
 
+.photo-link {
+  display: block; }
+
 .photo-link:focus {
   outline: none; }
 
@@ -365,7 +368,8 @@ body {
   background-color: #31302E;
   color: #e7e3e1;
   -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease; }
+  transition: all 0.2s ease;
+  cursor: pointer; }
 
 .photo-box__inner {
   position: relative; }
@@ -374,11 +378,14 @@ body {
   display: block;
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 1px;
+  /* Fixes Chrome 1-pix gap bug */
   width: 65px;
   height: 65px;
   background: #EFE9E0 url("../assets/icon-location.svg") no-repeat center center;
-  background-size: 65% auto; }
+  background-size: 65% auto;
+  z-index: 1;
+  outline: none; }
 
 .map-location:hover {
   background-color: white; }
@@ -525,6 +532,9 @@ body {
 .has-tab-focus:focus img {
   outline: 4px solid #f51b72 !important; }
 
+.photo-box:hover > .photo-title {
+  color: white; }
+
 /* Helper classes */
 .hidden {
   display: none !important; }
@@ -552,251 +562,249 @@ body {
   visibility: hidden; }
 
 /* Colours */
-.photo-box:hover > .photo-title {
-  color: white; }
-
-.photo-box:hover > .photo-title.color--shard {
+.color--shard {
   background-color: #1976D2; }
 
-.photo-box:hover > .photo-title.color--20fenchurch {
+.color--20fenchurch {
   background-color: #FBC02D; }
 
-.photo-box:hover > .photo-title.color--morelondon {
+.color--morelondon {
   background-color: #5D4037; }
 
-.photo-box:hover > .photo-title.color--towerbridge {
+.color--towerbridge {
   background-color: #004b83; }
 
-.photo-box:hover > .photo-title.color--leadenhall {
+.color--leadenhall {
   background-color: #D32F2F; }
 
-.photo-box:hover > .photo-title.color--canary {
+.color--canary {
   background-color: #C5BAAB; }
 
-.photo-box:hover > .photo-title.color--carousel {
+.color--carousel {
   background-color: #E91E63; }
 
-.photo-box:hover > .photo-title.color--parade {
+.color--parade {
   background-color: #F44336; }
 
-.photo-box:hover > .photo-title.color--nye1 {
+.color--nye1 {
   background-color: #673AB7; }
 
-.photo-box:hover > .photo-title.color--nye2 {
+.color--nye2 {
   background-color: #FF5722; }
 
-.photo-box:hover > .photo-title.color--greenpark {
+.color--greenpark {
   background-color: #8BC34A; }
 
-.photo-box:hover > .photo-title.color--milbridge {
+.color--milbridge {
   background-color: #3F51B5; }
 
-.photo-box:hover > .photo-title.color--kingstr {
+.color--kingstr {
   background-color: #1976D2; }
 
-.photo-box:hover > .photo-title.color--cat {
+.color--cat {
   background-color: #E8C090; }
 
-.photo-box:hover > .photo-title.color--parkhill {
+.color--parkhill {
   background-color: #FF5252; }
 
-.photo-box:hover > .photo-title.color--bigbensunset {
+.color--bigbensunset {
   background-color: #FFC107; }
 
-.photo-box:hover > .photo-title.color--kensingtontube {
+.color--kensingtontube {
   background-color: #7B584E; }
 
-.photo-box:hover > .photo-title.color--eyeskate {
+.color--eyeskate {
   background-color: #3A96B7; }
 
-.photo-box:hover > .photo-title.color--tsarevets {
+.color--tsarevets {
   background-color: #4CAF50; }
 
-.photo-box:hover > .photo-title.color--tsarevetsnight {
+.color--tsarevetsnight {
   background-color: #C2185B; }
 
-.photo-box:hover > .photo-title.color--asen {
+.color--asen {
   background-color: #FF5722; }
 
-.photo-box:hover > .photo-title.color--jpmorgan {
+.color--jpmorgan {
   background-color: #00BCD4; }
 
-.photo-box:hover > .photo-title.color--oldandnew {
+.color--oldandnew {
   background-color: #ffa000; }
 
-.photo-box:hover > .photo-title.color--bankside {
+.color--bankside {
   background-color: #512da8; }
 
-.photo-box:hover > .photo-title.color--admiralty {
+.color--admiralty {
   background-color: #f4511e; }
 
-.photo-box:hover > .photo-title.color--vt1 {
+.color--vt1 {
   background-color: #00897b; }
 
-.photo-box:hover > .photo-title.color--firedancing {
+.color--firedancing {
   background-color: #fdd835; }
 
-.photo-box:hover > .photo-title.color--firedancing2 {
+.color--firedancing2 {
   background-color: #fbc02d; }
 
-.photo-box:hover > .photo-title.color--thamessunset {
+.color--thamessunset {
   background-color: #e65100; }
 
-.photo-box:hover > .photo-title.color--bowl {
+.color--bowl {
   background-color: #555555; }
 
-.photo-box:hover > .photo-title.color--lumiereart {
+.color--lumiereart {
   background-color: #ff1744; }
 
-.photo-box:hover > .photo-title.color--asenevtsi {
+.color--asenevtsi {
   background-color: #9c27b0; }
 
-.photo-box:hover > .photo-title.color--londoneye {
+.color--londoneye {
   background-color: #5e35b1; }
 
-.photo-box:hover > .photo-title.color--bern {
+.color--bern {
   background-color: #e53935; }
 
-.photo-box:hover > .photo-title.color--vt2 {
+.color--vt2 {
   background-color: #7cb342; }
 
-.photo-box:hover > .photo-title.color--parakeet1 {
+.color--parakeet1 {
   background-color: #43a047; }
 
-.photo-box:hover > .photo-title.color--parakeet2 {
+.color--parakeet2 {
   background-color: #7cb342; }
 
-.photo-box:hover > .photo-title.color--parakeet3 {
+.color--parakeet3 {
   background-color: #c0ca33; }
 
-.photo-box:hover > .photo-title.color--owl1 {
+.color--owl1 {
   background-color: #e53935; }
 
-.photo-box:hover > .photo-title.color--ilikegreen {
+.color--ilikegreen {
   background-color: #4db6ac; }
 
-.photo-box:hover > .photo-title.color--stars {
+.color--stars {
   background-color: #1a237e; }
 
-.photo-box:hover > .photo-title.color--interlaken {
+.color--interlaken {
   background-color: #ff7043; }
 
-.photo-box:hover > .photo-title.color--splugen1 {
+.color--splugen1 {
   background-color: #039be5; }
 
-.photo-box:hover > .photo-title.color--splugen2 {
+.color--splugen2 {
   background-color: #26a69a; }
 
-.photo-box:hover > .photo-title.color--roadsplugen {
+.color--roadsplugen {
   background-color: #9ccc65; }
 
-.photo-box:hover > .photo-title.color--ballenberg {
+.color--ballenberg {
   background-color: #fdd835; }
 
-.photo-box:hover > .photo-title.color--lugano {
+.color--lugano {
   background-color: #ec407a; }
 
-.photo-box:hover > .photo-title.color--jurassic {
+.color--jurassic {
   background-color: #e53935; }
 
-.photo-box:hover > .photo-title.color--houndtor {
+.color--houndtor {
   background-color: #6d4c41; }
 
-.photo-box:hover > .photo-title.color--owl2 {
+.color--owl2 {
   background-color: #ab47bc; }
 
-.photo-box:hover > .photo-title.color--goldfinch {
+.color--goldfinch {
   background-color: #ec407a; }
 
-.photo-box:hover > .photo-title.color--owl3 {
+.color--owl3 {
   background-color: #8d6e63; }
 
-.photo-box:hover > .photo-title.color--flower {
+.color--flower {
   background-color: #ff5252; }
 
-.photo-box:hover > .photo-title.color--richmond {
+.color--richmond {
   background-color: #fbc02d; }
 
-.photo-box:hover > .photo-title.color--bateleur {
+.color--bateleur {
   background-color: #ffa726; }
 
-.photo-box:hover > .photo-title.color--squirrel1 {
+.color--squirrel1 {
   background-color: #ff7043; }
 
-.photo-box:hover > .photo-title.color--owl4 {
+.color--owl4 {
   background-color: #78909c; }
 
-.photo-box:hover > .photo-title.color--squirrel2 {
+.color--squirrel2 {
   background-color: #9e9d24; }
 
-.photo-box[class*="color--"] .photo-box__inner:before {
+.photo-box[class*="color--"]:before {
   content: "";
   display: block;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  height: 10px; }
+  height: 10px;
+  z-index: 1; }
 
-.photo-box:hover.color--people1 .photo-box__inner:before {
+.color--people1:before {
   background-color: #ffa726; }
 
-.photo-box:hover.color--people2 .photo-box__inner:before {
+.color--people2:before {
   background-color: #7cb342; }
 
-.photo-box:hover.color--people3 .photo-box__inner:before {
+.color--people3:before {
   background-color: #ec407a; }
 
-.photo-box:hover.color--people4 .photo-box__inner:before {
+.color--people4:before {
   background-color: #ef5350; }
 
-.photo-box:hover.color--people5 .photo-box__inner:before {
+.color--people5:before {
   background-color: #ff1744; }
 
-.photo-box:hover.color--people6 .photo-box__inner:before {
+.color--people6:before {
   background-color: #9ccc65; }
 
-.photo-box:hover.color--people7 .photo-box__inner:before {
+.color--people7:before {
   background-color: #e53935; }
 
-.photo-box:hover.color--people8 .photo-box__inner:before {
+.color--people8:before {
   background-color: #29b6f6; }
 
-.photo-box:hover.color--people9 .photo-box__inner:before {
+.color--people9:before {
   background-color: #fdd835; }
 
-.photo-box:hover.color--people10 .photo-box__inner:before {
+.color--people10:before {
   background-color: #ffca28; }
 
-.photo-box:hover.color--people11 .photo-box__inner:before {
+.color--people11:before {
   background-color: #ec407a; }
 
-.photo-box:hover.color--people12 .photo-box__inner:before {
+.color--people12:before {
   background-color: #ff7043; }
 
-.photo-box:hover.color--people13 .photo-box__inner:before {
+.color--people13:before {
   background-color: #6d4c41; }
 
-.photo-box:hover.color--people14 .photo-box__inner:before {
+.color--people14:before {
   background-color: #fdd835; }
 
-.photo-box:hover.color--people15 .photo-box__inner:before {
+.color--people15:before {
   background-color: #ab47bc; }
 
-.photo-box:hover.color--people16 .photo-box__inner:before {
+.color--people16:before {
   background-color: #ef5350; }
 
-.photo-box:hover.color--people17 .photo-box__inner:before {
+.color--people17:before {
   background-color: #29b6f6; }
 
-.photo-box:hover.color--people18 .photo-box__inner:before {
+.color--people18:before {
   background-color: #e53935; }
 
-.photo-box:hover.color--people19 .photo-box__inner:before {
+.color--people19:before {
   background-color: #ab47bc; }
 
-.photo-box:hover.color--people20 .photo-box__inner:before {
+.color--people20:before {
   background-color: #3f51b5; }
 
-.photo-box:hover.color--people21 .photo-box__inner:before {
+.color--people21:before {
   background-color: #ff7043; }
