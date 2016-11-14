@@ -191,6 +191,8 @@ $(document).ready( function()
 			return (catExists(cat) && _cardDOMrefs[cat].length > 0);
 		};
 
+		var _cur_card;
+
 		function initCards(cat) {
 			galleryModel.getPhotos(cat).forEach( function(card) {
 
@@ -199,13 +201,14 @@ $(document).ready( function()
 				cardDOMref.on('click', function(e) {
 					e.preventDefault();
 					lightbox.show(card);
+					_cur_card = $(this).find('.js-photo-link');
 				});
 
 				var highlightEl = card.title ? cardDOMref.find('h2') : cardDOMref;
 				var cssClass = card.cssClass;
 
-				cardDOMref.find('.js-photo-link').on('keyup', function(e) {
-					if ((e.keyCode || e.which) == 9) highlightEl.addClass(cssClass);
+				cardDOMref.find('.js-photo-link').on('focus', function(e) {
+					highlightEl.addClass(cssClass);
 				});
 
 				cardDOMref.find('.js-photo-link').on('blur', function(e) {
@@ -248,14 +251,14 @@ $(document).ready( function()
 
 			_cardDOMrefs[newCat].forEach( function(card) {
 				card.removeClass('hidden');
-			})
+			});
 
 			_prevCat = newCat;
 			_gallery_active = true;
 
-			this.show();
+			_cur_card = $('.photo-box:not(.hidden):first .js-photo-link');
 
-			$('.photo-box:not(.hidden):first .js-photo-link').focus();
+			this.show();
 		};
 
 		this.isActive = function() {
@@ -276,11 +279,13 @@ $(document).ready( function()
 		this.show = function() {
 			$container.removeClass('hidden');
 			$(document).scrollTop(_cur_scroll);
+			_cur_card.focus();
 		}
 
 		this.hide = function() {
 			_cur_scroll = $(document).scrollTop();
 			$container.addClass('hidden');
+			// console.log(_cur_card);
 		}
 
 		this.toggleVisibility = function() {

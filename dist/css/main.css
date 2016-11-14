@@ -371,6 +371,9 @@ body {
   transition: all 0.2s ease;
   cursor: pointer; }
 
+.photo-box:hover > .photo-title {
+  color: white; }
+
 .photo-box__inner {
   position: relative; }
 
@@ -531,9 +534,6 @@ body {
 .has-tab-focus:focus,
 .has-tab-focus:focus img {
   outline: 4px solid #f51b72 !important; }
-
-.photo-box:hover > .photo-title {
-  color: white; }
 
 /* Helper classes */
 .hidden {
