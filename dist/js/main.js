@@ -159,14 +159,13 @@ $(document).ready( function()
 
 	var photoCardView = {
 		// Could be replaced with a mustache template some day
-		buildHTML: function(card, cat) {
+		buildHTML: function(card) {
 			return '' +
 			'<div class="photo-box hidden">' + 
 				'<div class="photo-box__inner">' + 
 					(!card.title ? '<div class="photo-box-highlight"></div>' : '') +
 					'<a class="photo-link js-photo-link" href="' + galleryModel.getPath('lg') + card.filename + '">' + 
-						// remove data-cat later if not needed
-						'<img data-cat="' + cat + '" src="' + galleryModel.getPath('sm') + card.filename + '" alt="' + card.title + '">' +
+						'<img src="' + galleryModel.getPath('sm') + card.filename + '" alt="' + card.title + '">' +
 					'</a>' + 
 					(card.location ? '<a class="map-location js-map-location" target="_blank" title="location" href="' + card.location + '"></a>' : '') +
 				'</div>' + 
@@ -197,7 +196,7 @@ $(document).ready( function()
 		function initCards(cat) {		
 			galleryModel.getPhotos(cat).forEach( function(card) {
 
-				var cardDOMref = $( photoCardView.buildHTML(card, cat) );
+				var cardDOMref = $( photoCardView.buildHTML(card) );
 				
 				cardDOMref.on('click', function(e) {
 					e.preventDefault();
