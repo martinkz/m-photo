@@ -96,7 +96,7 @@ $(document).ready( function()
 
 
 	/*
-	 *   TAB KEY FUNCTIONALITY
+	 *   FOCUSED ELEMENT HIGHLIGH FUNCTIONALITY
 	 */
 
 	function setFocusOutline(list) {
@@ -116,26 +116,26 @@ $(document).ready( function()
 	 *   GALLERY
 	 */
 
-	var galleryModel = {
+	var galleryDataModel = function() {
 
-		paths : {
+		var paths = {
 			'sm' : 'images/small/',
 			'md' : 'images/medium/',
 			'lg' : 'images/large/' 
-		},
-		photos : {},
+		};
+		var photos = {};
 
-		getPath : function(type) {
-			return this.paths[type];
+		this.getPath = function(type) {
+			return paths[type];
 		},
-		getCats : function() {
-			return Object.keys(this.photos);
+		this.getCats = function() {
+			return Object.keys(photos);
 		},
-		getPhotos : function(cat) {
-			return this.photos[cat];
+		this.getPhotos = function(cat) {
+			return photos[cat];
 		},
-		setPhotos : function(data) {
-			this.photos = data;
+		this.setPhotos = function(data) {
+			photos = data;
 		}
 	};
 
@@ -356,8 +356,8 @@ $(document).ready( function()
 	var bgvid = document.getElementById('js-bgvid');
 	bgvid.play();
 
+	var galleryModel = new galleryDataModel();
 	var lightbox = new photoLightbox('#js-photo-lightbox', '#js-nav, #js-main');
-
 	var photoGallery;
 
 	$.getJSON("js/photo-data.json", function(data) {
