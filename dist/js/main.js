@@ -1,18 +1,5 @@
 $(document).ready( function()
 {
-	/*
-	 *   INIT STUFF
-	 */
-
-	//$('#js-home-btn').attr('tabindex', '-1');
-
-	setTimeout(function(){ 
-		$('#js-bgvid-container').addClass('bg-main-vid--visible'); 
-	}, 0);
-
-	var bgvid = document.getElementById('js-bgvid');
-	bgvid.play();
-
 
 	/*
 	 *   NAVIGATION FUNCTIONALITY
@@ -297,8 +284,6 @@ $(document).ready( function()
 		var $container = $(el);
 		var $image = $('<img src="">').appendTo($container);
 
-		$container.hide();
-
 		var highDPR = window.devicePixelRatio ? window.devicePixelRatio >= 1.5 ? 1 : 0 : 0;
 
 		// To be replaced with srcset once object-fit works in Edge
@@ -357,7 +342,22 @@ $(document).ready( function()
 		});
 	}
 
+
+	/*
+	 *   INIT STUFF
+	 */
+
+	$('#js-bgvid').hide();
+
+	setTimeout( function() { 
+		$('#js-bgvid').fadeIn(300);
+	}, 0);
+
+	var bgvid = document.getElementById('js-bgvid');
+	bgvid.play();
+
 	var lightbox = new photoLightbox('#js-photo-lightbox', '#js-nav, #js-main');
+
 	var photoGallery;
 
 	$.getJSON("js/photo-data.json", function(data) {
