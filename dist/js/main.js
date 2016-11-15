@@ -191,43 +191,43 @@ $(document).ready( function()
 			return (catExists(cat) && _cardDOMrefs[cat].length > 0);
 		};
 
-		var _cur_card;
+		var $_cur_card;
 
 		function initCards(cat) {		
 			galleryModel.getPhotos(cat).forEach( function(card) {
 
-				var cardDOMref = $( photoCardView.buildHTML(card) );
+				var $cardDOMref = $( photoCardView.buildHTML(card) );
 				
-				cardDOMref.on('click', function(e) {
+				$cardDOMref.on('click', function(e) {
 					e.preventDefault();
 					lightbox.show(card);
-					_cur_card = $(this).find('.js-photo-link');
+					$_cur_card = $(this).find('.js-photo-link');
 				});
 
-				var highlightEl = card.title ? cardDOMref.find('h2') : cardDOMref.find('.photo-box-highlight');
+				var highlightEl = card.title ? $cardDOMref.find('h2') : $cardDOMref.find('.photo-box-highlight');
 				var color = card.color;
 
-				cardDOMref.find('.js-photo-link').on('focus', function(e) {
+				$cardDOMref.find('.js-photo-link').on('focus', function(e) {
 					highlightEl.css('background-color', color);
 				});
 
-				cardDOMref.find('.js-photo-link').on('blur', function(e) {
+				$cardDOMref.find('.js-photo-link').on('blur', function(e) {
 					highlightEl.css('background-color', '');
 				});
 
-				cardDOMref.on('mouseenter', function(e) {
+				$cardDOMref.on('mouseenter', function(e) {
 					highlightEl.css('background-color', color);
 				});
 
-				cardDOMref.on('mouseleave', function(e) {
+				$cardDOMref.on('mouseleave', function(e) {
 					highlightEl.css('background-color', '');
 				});
 
-				cardDOMref.find('.js-map-location').on('click', function(e){
+				$cardDOMref.find('.js-map-location').on('click', function(e){
 					e.stopPropagation();
 				});
 
-				_cardDOMrefs[cat].push(cardDOMref);
+				_cardDOMrefs[cat].push($cardDOMref);
 			});
 
 			 $container.append(_cardDOMrefs[cat]);
@@ -256,7 +256,7 @@ $(document).ready( function()
 			_prevCat = newCat;
 			_gallery_active = true;
 
-			_cur_card = $('.photo-box:not(.hidden):first .js-photo-link');
+			$_cur_card = $('.photo-box:not(.hidden):first .js-photo-link');
 
 			this.show();
 		};
@@ -279,13 +279,13 @@ $(document).ready( function()
 		this.show = function() {
 			$container.removeClass('hidden');
 			$(document).scrollTop(_cur_scroll);
-			_cur_card.focus();
+			$_cur_card.focus();
 		}
 
 		this.hide = function() {
 			_cur_scroll = $(document).scrollTop();
 			$container.addClass('hidden');
-			// console.log(_cur_card);
+			// console.log($_cur_card);
 		}
 
 		this.toggleVisibility = function() {
@@ -300,10 +300,10 @@ $(document).ready( function()
 
 	var photoLightbox = function(el, elHideA11y) {
 
-		var container = $(el);
-		var image = $('<img src="">').appendTo(container);
+		var $container = $(el);
+		var $image = $('<img src="">').appendTo($container);
 
-		container.hide();
+		$container.hide();
 
 		var highDPR = window.devicePixelRatio ? window.devicePixelRatio >= 1.5 ? 1 : 0 : 0;
 
@@ -322,10 +322,10 @@ $(document).ready( function()
 		}
 
 		this.show = function(card) {
-			image.attr('src', generate_resp_path() + card.filename);
-			image.attr('alt', card.title ? card.title : 'photograph');
-			container.fadeIn(200);
-			container.focus();
+			$image.attr('src', generate_resp_path() + card.filename);
+			$image.attr('alt', card.title ? card.title : 'photograph');
+			$container.fadeIn(200);
+			$container.focus();
 
 			photoGallery.hide();
 			$(elHideA11y).attr('aria-hidden', true);
@@ -336,9 +336,9 @@ $(document).ready( function()
 		}
 
 		this.hide = function() {
-			container.fadeOut(200, function(){
-				image.attr('src', '');
-				image.attr('alt', '');
+			$container.fadeOut(200, function(){
+				$image.attr('src', '');
+				$image.attr('alt', '');
 			});
 
 			photoGallery.show();
@@ -347,11 +347,11 @@ $(document).ready( function()
 
 		var that = this;
 
-		container.on('click', function(e) {
+		$container.on('click', function(e) {
 			that.hide();
 		});
 
-		container.on('keydown', function(e) {
+		$container.on('keydown', function(e) {
 			if (e.keyCode == 27 || e.keyCode == 13) that.hide();
 
 			// Trap the tab key on the focused modal
