@@ -66,9 +66,6 @@ $(document).ready( function()
 	var home = new homeBtn('#js-home-btn');
 
 	$('#js-hamburger').on('click', function(e) {
-		// fadeOut first checks whether the element is hidden to avoid unnecessary DOM manipulation
-		$('#js-photo-lightbox').fadeOut(200); 
-
 		menu.toggle();
 		
 		if( photoGallery.isActive() ) {
@@ -105,8 +102,6 @@ $(document).ready( function()
 		photoGallery.setInactive();
 
 		$('#js-bgvid-container').removeClass('hidden');
-
-		//$('.photo-box').addClass('hidden');
 
 		$('#js-photo-lightbox').fadeOut(200);
 		bgvid.play();
@@ -285,7 +280,6 @@ $(document).ready( function()
 		this.hide = function() {
 			_cur_scroll = $(document).scrollTop();
 			$container.addClass('hidden');
-			// console.log($_cur_card);
 		}
 
 		this.toggleVisibility = function() {
