@@ -38,7 +38,7 @@
 		},{
 			"filename" : "DSC08701-2.jpg",
 			"location" : "https://www.google.com/maps/place/20+Fenchurch+Street/@51.5110245,-0.0856419,17z/data=!3m1!4b1!4m5!3m4!1s0x4876034da993f3fb:0xb252389db2d35c67!8m2!3d51.5110212!4d-0.0834532",
-			"color" : "#FBC02D",
+			"color" : "#e6a80e",
 			"title" : "20 Fenchurch Street"
 		},{
 			"filename" : "DSC05511-2.jpg",
@@ -59,7 +59,7 @@
 	],"street" : [
 		{
 			"filename" : "DSC00349.jpg",
-			"color" : "#E8C090",
+			"color" : "#509dad",
 			"title" : "Black Street Cat"
 		},{
 			"filename" : "DSC00763-2.jpg",
@@ -128,7 +128,7 @@
 			"title" : "New Year's Eve Fireworks"
 		},{
 			"filename" : "DSC00882.jpg",
-			"color" : "#fdd835",
+			"color" : "#000000",
 			"title" : "Fire dancing"
 		},{
 			"filename" : "DSC00553_3.jpg",
@@ -224,7 +224,7 @@
 		},{
 			"filename" : "DSC04007.jpg",
 			"location" : "https://www.google.com/maps/place/Ballenberg,+Swiss+Open-Air+Museum/@46.6288304,8.053599,10.88z/data=!4m5!3m4!1s0x478f9134298b85dd:0x1b2939447bd25159!8m2!3d46.7496093!4d8.0857353",
-			"color" : "#fdd835",
+			"color" : "#e6a80e",
 			"title" : "Ballenberg"
 		},{
 			"filename" : "DSC04721_3-HDR.jpg",
