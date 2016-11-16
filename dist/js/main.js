@@ -1,7 +1,7 @@
 $(document).ready( function()
 {
 	'use strict';
-	
+
 	/*
 	 *   NAVIGATION
 	 */
@@ -101,11 +101,13 @@ $(document).ready( function()
 	 */
 
 	function setFocusOutline(list) {
-		$(list).on('keyup', function (e) {
+		var items = list instanceof jQuery ? list : $(list);
+
+		items.on('keyup', function (e) {
 			if ((e.keyCode || e.which) == 9) $(this).addClass('has-tab-focus');
 		});
 
-		$(list).on('blur', function() {
+		items.on('blur', function() {
 			$(this).removeClass('has-tab-focus');
 		});
 	}
@@ -189,41 +191,42 @@ $(document).ready( function()
 				gallery.getPhotos(cat).forEach( function(card) {
 
 					var $cardDOMref = $( photoCardView.buildHTML(card) );
+
+					var $highlightEl = card.title ? $cardDOMref.find('h2') : $cardDOMref.find('.photo-box-highlight');
+					var $photo_link = $cardDOMref.find('.js-photo-link')
+					var $location_icon = $cardDOMref.find('.js-map-location');
 					
 					$cardDOMref.on('click', function(e) {
 						e.preventDefault();
 						lightbox.show(card);
-						$_cur_card = $(this).find('.js-photo-link');
+						$_cur_card = $photo_link;
 					});
 
-					var highlightEl = card.title ? $cardDOMref.find('h2') : $cardDOMref.find('.photo-box-highlight');
-					var color = card.color;
-
-					$cardDOMref.find('.js-photo-link').on('focus', function(e) {
-						highlightEl.css('background-color', color);
+					$photo_link.on('focus', function(e) {
+						$highlightEl.css('background-color', card.color);
 					});
 
-					$cardDOMref.find('.js-photo-link').on('blur', function(e) {
-						highlightEl.css('background-color', '');
+					$photo_link.on('blur', function(e) {
+						$highlightEl.css('background-color', '');
 					});
 
 					$cardDOMref.on('mouseenter', function(e) {
-						highlightEl.css('background-color', color);
+						$highlightEl.css('background-color', card.color);
 					});
 
 					$cardDOMref.on('mouseleave', function(e) {
-						highlightEl.css('background-color', '');
+						$highlightEl.css('background-color', '');
 					});
 
-					$cardDOMref.find('.js-map-location').on('click', function(e){
+					$location_icon.on('click', function(e){
 						e.stopPropagation();
 					});
-
+					
 					_cardDOMrefs[cat].push($cardDOMref);
+					setFocusOutline($location_icon);
 				});
 
 				$container.append(_cardDOMrefs[cat]);
-				setFocusOutline('.js-map-location');
 			}
 
 			var _gallery_active;
