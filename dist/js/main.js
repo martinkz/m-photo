@@ -2,7 +2,7 @@ $(document).ready( function()
 {
 
 	/*
-	 *   NAVIGATION FUNCTIONALITY
+	 *   NAVIGATION
 	 */
 
 	var menuBtn = function(elem) {
@@ -96,7 +96,7 @@ $(document).ready( function()
 
 
 	/*
-	 *   FOCUSED ELEMENT HIGHLIGH FUNCTIONALITY
+	 *   FOCUSED ELEMENT HIGHLIGH
 	 */
 
 	function setFocusOutline(list) {
@@ -279,7 +279,7 @@ $(document).ready( function()
 
 	// LIGHTBOX COMPONENT
 
-	var photoLightbox = function(el, elHideA11y) {
+	var photoLightbox = function(el, elA11yHide) {
 
 		var $container = $(el);
 		var $image = $('<img src="">').appendTo($container);
@@ -307,7 +307,7 @@ $(document).ready( function()
 			$container.focus();
 
 			photoGallery.hide();
-			$(elHideA11y).attr('aria-hidden', true);
+			$(elA11yHide).attr('aria-hidden', true);
 			
 			if(history.state===null || history.state.cur_page!="photo") { 
 				history.pushState({cur_page: "photo"}, null, null);
@@ -321,7 +321,7 @@ $(document).ready( function()
 			});
 
 			photoGallery.show();
-			$(elHideA11y).removeAttr('aria-hidden');
+			$(elA11yHide).removeAttr('aria-hidden');
 		}
 
 		var that = this;
@@ -344,7 +344,7 @@ $(document).ready( function()
 
 
 	/*
-	 *   INIT STUFF
+	 *   INIT
 	 */
 
 	$('#js-bgvid').hide();
