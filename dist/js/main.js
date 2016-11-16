@@ -116,8 +116,7 @@ $(document).ready( function()
 	 *   GALLERY
 	 */
 
-	var galleryDataModel = function() {
-
+	var galleryModel = function() {
 		var paths = {
 			'sm' : 'images/small/',
 			'md' : 'images/medium/',
@@ -125,222 +124,236 @@ $(document).ready( function()
 		};
 		var photos = {};
 
-		this.getPath = function(type) {
-			return paths[type];
-		}
-		this.getCats = function() {
-			return Object.keys(photos);
-		}
-		this.getPhotos = function(cat) {
-			return photos[cat];
-		}
-		this.setPhotos = function(data) {
+		var _galleryDataAccessObj = {
+			getPath : function(type) {
+				return paths[type];
+			},
+			getCats : function() {
+				return Object.keys(photos);
+			},
+			getPhotos : function(cat) {
+				return photos[cat];
+			}
+		};
+
+		$.getJSON("js/photo-data.json", function(data) {
 			photos = data;
-		}
-	}
-
-	var photoCardView = {
-		// Could be replaced with a mustache template some day
-		buildHTML: function(card) {
-			return '' +
-			'<div class="photo-box hidden">' + 
-				'<div class="photo-box__inner">' + 
-					(!card.title ? '<div class="photo-box-highlight"></div>' : '') +
-					'<a class="photo-link js-photo-link" href="' + galleryModel.getPath('lg') + card.filename + '">' + 
-						'<img src="' + galleryModel.getPath('sm') + card.filename + '" alt="' + card.title + '">' +
-					'</a>' + 
-					(card.location ? '<a class="map-location js-map-location" target="_blank" title="location" href="' + card.location + '"></a>' : '') +
-				'</div>' + 
-				(card.title ? '<h2 class="photo-title">' + card.title + '</h2>' : '') +
-			'</div>';
-		}
-	}
-
-	var photoGalleryView = function(container) {
-
-		var _cardDOMrefs = {};
-		var $container = $(container);
-
-		galleryModel.getCats().forEach( function(cat) {
-			_cardDOMrefs[cat] = [];
+			$(_galleryDataAccessObj).trigger("data:ready");
 		});
 
-		function catExists(cat) {
-			return _cardDOMrefs.hasOwnProperty(cat);
+		return _galleryDataAccessObj;
+	}();
+
+	var photoCardView = function(gallery) {
+		return {
+			// Could be replaced with a mustache template some day
+			buildHTML : function(card) {
+				return '' +
+				'<div class="photo-box hidden">' + 
+					'<div class="photo-box__inner">' + 
+						(!card.title ? '<div class="photo-box-highlight"></div>' : '') +
+						'<a class="photo-link js-photo-link" href="' + gallery.getPath('lg') + card.filename + '">' + 
+							'<img src="' + gallery.getPath('sm') + card.filename + '" alt="' + card.title + '">' +
+						'</a>' + 
+						(card.location ? '<a class="map-location js-map-location" target="_blank" title="location" href="' + card.location + '"></a>' : '') +
+					'</div>' + 
+					(card.title ? '<h2 class="photo-title">' + card.title + '</h2>' : '') +
+				'</div>';
+			}
 		}
+	}(galleryModel);
 
-		function catLoaded(cat) {
-			return (catExists(cat) && _cardDOMrefs[cat].length > 0);
-		}
+	var photoGalleryView = function(gallery) {
 
-		var $_cur_card;
+		return function(container) {
 
-		function initCards(cat) {		
-			galleryModel.getPhotos(cat).forEach( function(card) {
+			var _cardDOMrefs = {};
+			var $container = $(container);
 
-				var $cardDOMref = $( photoCardView.buildHTML(card) );
-				
-				$cardDOMref.on('click', function(e) {
-					e.preventDefault();
-					lightbox.show(card);
-					$_cur_card = $(this).find('.js-photo-link');
-				});
-
-				var highlightEl = card.title ? $cardDOMref.find('h2') : $cardDOMref.find('.photo-box-highlight');
-				var color = card.color;
-
-				$cardDOMref.find('.js-photo-link').on('focus', function(e) {
-					highlightEl.css('background-color', color);
-				});
-
-				$cardDOMref.find('.js-photo-link').on('blur', function(e) {
-					highlightEl.css('background-color', '');
-				});
-
-				$cardDOMref.on('mouseenter', function(e) {
-					highlightEl.css('background-color', color);
-				});
-
-				$cardDOMref.on('mouseleave', function(e) {
-					highlightEl.css('background-color', '');
-				});
-
-				$cardDOMref.find('.js-map-location').on('click', function(e){
-					e.stopPropagation();
-				});
-
-				_cardDOMrefs[cat].push($cardDOMref);
+			gallery.getCats().forEach( function(cat) {
+				_cardDOMrefs[cat] = [];
 			});
 
-			 $container.append(_cardDOMrefs[cat]);
-			 setFocusOutline('.js-map-location');
-		}
-
-		var _gallery_active;
-		var _prevCat;
-
-		this.render = function(newCat) {
-
-			if(_prevCat && _prevCat !== newCat) {
-				_cardDOMrefs[_prevCat].forEach( function(card) {
-					card.addClass('hidden');
-				});
+			function catExists(cat) {
+				return _cardDOMrefs.hasOwnProperty(cat);
 			}
 
-			if( !catExists(newCat) ) return;
+			function catLoaded(cat) {
+				return (catExists(cat) && _cardDOMrefs[cat].length > 0);
+			}
 
-			if( !catLoaded(newCat) ) initCards(newCat);
+			var $_cur_card;
 
-			_cardDOMrefs[newCat].forEach( function(card) {
-				card.removeClass('hidden');
-			});
+			function initCards(cat) {		
+				gallery.getPhotos(cat).forEach( function(card) {
 
-			_prevCat = newCat;
-			_gallery_active = true;
+					var $cardDOMref = $( photoCardView.buildHTML(card) );
+					
+					$cardDOMref.on('click', function(e) {
+						e.preventDefault();
+						lightbox.show(card);
+						$_cur_card = $(this).find('.js-photo-link');
+					});
 
-			$_cur_card = $('.photo-box:not(.hidden):first .js-photo-link');
+					var highlightEl = card.title ? $cardDOMref.find('h2') : $cardDOMref.find('.photo-box-highlight');
+					var color = card.color;
 
-			this.show();
-		}
+					$cardDOMref.find('.js-photo-link').on('focus', function(e) {
+						highlightEl.css('background-color', color);
+					});
 
-		this.isActive = function() {
-			return _gallery_active;
-		}
+					$cardDOMref.find('.js-photo-link').on('blur', function(e) {
+						highlightEl.css('background-color', '');
+					});
 
-		this.setInactive = function() {
-			_gallery_active = false;
-			this.hide();
-		}
+					$cardDOMref.on('mouseenter', function(e) {
+						highlightEl.css('background-color', color);
+					});
 
-		var _cur_scroll;
+					$cardDOMref.on('mouseleave', function(e) {
+						highlightEl.css('background-color', '');
+					});
 
-		this.isVisible = function() {
-			return !$container.hasClass('hidden');
-		}
+					$cardDOMref.find('.js-map-location').on('click', function(e){
+						e.stopPropagation();
+					});
 
-		this.show = function() {
-			$container.removeClass('hidden');
-			$(document).scrollTop(_cur_scroll);
-			$_cur_card.focus();
-		}
+					_cardDOMrefs[cat].push($cardDOMref);
+				});
 
-		this.hide = function() {
-			_cur_scroll = $(document).scrollTop();
-			$container.addClass('hidden');
-		}
+				 $container.append(_cardDOMrefs[cat]);
+				 setFocusOutline('.js-map-location');
+			}
 
-		this.toggleVisibility = function() {
-			if(this.isVisible())
-				this.hide();
-			else
+			var _gallery_active;
+			var _prevCat;
+
+			this.render = function(newCat) {
+
+				if(_prevCat && _prevCat !== newCat) {
+					_cardDOMrefs[_prevCat].forEach( function(card) {
+						card.addClass('hidden');
+					});
+				}
+
+				if( !catExists(newCat) ) return;
+
+				if( !catLoaded(newCat) ) initCards(newCat);
+
+				_cardDOMrefs[newCat].forEach( function(card) {
+					card.removeClass('hidden');
+				});
+
+				_prevCat = newCat;
+				_gallery_active = true;
+
+				$_cur_card = $('.photo-box:not(.hidden):first .js-photo-link');
+
 				this.show();
+			}
+
+			this.isActive = function() {
+				return _gallery_active;
+			}
+
+			this.setInactive = function() {
+				_gallery_active = false;
+				this.hide();
+			}
+
+			var _cur_scroll;
+
+			this.isVisible = function() {
+				return !$container.hasClass('hidden');
+			}
+
+			this.show = function() {
+				$container.removeClass('hidden');
+				$(document).scrollTop(_cur_scroll);
+				$_cur_card.focus();
+			}
+
+			this.hide = function() {
+				_cur_scroll = $(document).scrollTop();
+				$container.addClass('hidden');
+			}
+
+			this.toggleVisibility = function() {
+				if(this.isVisible())
+					this.hide();
+				else
+					this.show();
+			}
 		}
-	}
+	}(galleryModel);
 
 	// LIGHTBOX COMPONENT
 
-	var photoLightbox = function(el, elA11yHide) {
+	var photoLightbox = function(gallery) {
 
-		var $container = $(el);
-		var $image = $('<img src="">').appendTo($container);
+		return function(el, elA11yHide) {
 
-		var highDPR = window.devicePixelRatio ? window.devicePixelRatio >= 1.5 ? 1 : 0 : 0;
+			var $container = $(el);
+			var $image = $('<img src="">').appendTo($container);
 
-		// To be replaced with srcset once object-fit works in Edge
-		function generate_resp_path() {
-			var ww = window.innerWidth;
-			var wh = window.innerHeight;
+			var highDPR = window.devicePixelRatio ? window.devicePixelRatio >= 1.5 ? 1 : 0 : 0;
 
-			if(ww <= 660 && wh <= 660) {
-				return highDPR ? galleryModel.getPath('md') : galleryModel.getPath('sm');
+			// To be replaced with srcset once object-fit works in Edge
+			function generate_resp_path() {
+				var ww = window.innerWidth;
+				var wh = window.innerHeight;
+
+				if(ww <= 660 && wh <= 660) {
+					return highDPR ? gallery.getPath('md') : gallery.getPath('sm');
+				}
+				else if (ww <= 1200 && wh <= 1200) {
+					return highDPR ? gallery.getPath('lg') : gallery.getPath('md');
+				}
+				else return gallery.getPath('lg');
 			}
-			else if (ww <= 1200 && wh <= 1200) {
-				return highDPR ? galleryModel.getPath('lg') : galleryModel.getPath('md');
+
+			this.show = function(card) {
+				$image.attr('src', generate_resp_path() + card.filename);
+				$image.attr('alt', card.title ? card.title : 'photograph');
+				$container.fadeIn(200);
+				$container.focus();
+
+				photoGallery.hide();
+				$(elA11yHide).attr('aria-hidden', true);
+				
+				if(history.state===null || history.state.cur_page!="photo") { 
+					history.pushState({cur_page: "photo"}, null, null);
+				}
 			}
-			else return galleryModel.getPath('lg');
-		}
 
-		this.show = function(card) {
-			$image.attr('src', generate_resp_path() + card.filename);
-			$image.attr('alt', card.title ? card.title : 'photograph');
-			$container.fadeIn(200);
-			$container.focus();
+			this.hide = function() {
+				$container.fadeOut(200, function(){
+					$image.attr('src', '');
+					$image.attr('alt', '');
+				});
 
-			photoGallery.hide();
-			$(elA11yHide).attr('aria-hidden', true);
-			
-			if(history.state===null || history.state.cur_page!="photo") { 
-				history.pushState({cur_page: "photo"}, null, null);
+				photoGallery.show();
+				$(elA11yHide).removeAttr('aria-hidden');
 			}
-		}
 
-		this.hide = function() {
-			$container.fadeOut(200, function(){
-				$image.attr('src', '');
-				$image.attr('alt', '');
+			var that = this;
+
+			$container.on('click', function(e) {
+				that.hide();
 			});
 
-			photoGallery.show();
-			$(elA11yHide).removeAttr('aria-hidden');
+			$container.on('keydown', function(e) {
+				if (e.keyCode == 27 || e.keyCode == 13) that.hide();
+
+				// Trap the tab key on the focused modal
+				if (e.keyCode == 9) e.preventDefault();
+			});
+			
+			window.addEventListener("popstate", function(event) {
+				that.hide();
+			});
 		}
-
-		var that = this;
-
-		$container.on('click', function(e) {
-			that.hide();
-		});
-
-		$container.on('keydown', function(e) {
-			if (e.keyCode == 27 || e.keyCode == 13) that.hide();
-
-			// Trap the tab key on the focused modal
-			if (e.keyCode == 9) e.preventDefault();
-		});
-		
-		window.addEventListener("popstate", function(event) {
-			that.hide();
-		});
-	}
+	}(galleryModel);
 
 
 	/*
@@ -356,12 +369,10 @@ $(document).ready( function()
 	var bgvid = document.getElementById('js-bgvid');
 	bgvid.play();
 
-	var galleryModel = new galleryDataModel();
 	var lightbox = new photoLightbox('#js-photo-lightbox', '#js-nav, #js-main');
 	var photoGallery;
 
-	$.getJSON("js/photo-data.json", function(data) {
-		galleryModel.setPhotos(data);
+	$(galleryModel).on("data:ready", function() {
 		photoGallery = new photoGalleryView('#js-photo-section');
 	});
 	
