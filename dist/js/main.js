@@ -9,7 +9,7 @@ $(document).ready( function()
 		var $menu = $(elem);
 		var _isOn = false;
 
-		this.isOn = function() { return _isOn; };
+		this.isOn = function() { return _isOn; }
 
 		this.on = function() {
 			$menu.addClass('hamburger--open');
@@ -17,7 +17,7 @@ $(document).ready( function()
 			$menu.attr('aria-expanded', 'true');
 			$('.modal').addClass('modal--visible');
 			_isOn = true;
-		};
+		}
 
 		this.off = function() {
 			$menu.removeClass('hamburger--open');
@@ -25,14 +25,14 @@ $(document).ready( function()
 			$menu.attr('aria-expanded', 'false');
 			$('.modal').removeClass('modal--visible');
 			_isOn = false;
-		};
+		}
 
 		this.toggle = function() {
 			if(this.isOn()) 
 				this.off();
 			else 
 				this.on();
-		};
+		}
 	}
 
 	var homeBtn = function(elem) {
@@ -127,17 +127,17 @@ $(document).ready( function()
 
 		this.getPath = function(type) {
 			return paths[type];
-		},
+		}
 		this.getCats = function() {
 			return Object.keys(photos);
-		},
+		}
 		this.getPhotos = function(cat) {
 			return photos[cat];
-		},
+		}
 		this.setPhotos = function(data) {
 			photos = data;
 		}
-	};
+	}
 
 	var photoCardView = {
 		// Could be replaced with a mustache template some day
@@ -154,7 +154,7 @@ $(document).ready( function()
 				(card.title ? '<h2 class="photo-title">' + card.title + '</h2>' : '') +
 			'</div>';
 		}
-	};
+	}
 
 	var photoGalleryView = function(container) {
 
@@ -171,7 +171,7 @@ $(document).ready( function()
 
 		function catLoaded(cat) {
 			return (catExists(cat) && _cardDOMrefs[cat].length > 0);
-		};
+		}
 
 		var $_cur_card;
 
@@ -214,7 +214,7 @@ $(document).ready( function()
 
 			 $container.append(_cardDOMrefs[cat]);
 			 setFocusOutline('.js-map-location');
-		};
+		}
 
 		var _gallery_active;
 		var _prevCat;
@@ -241,7 +241,7 @@ $(document).ready( function()
 			$_cur_card = $('.photo-box:not(.hidden):first .js-photo-link');
 
 			this.show();
-		};
+		}
 
 		this.isActive = function() {
 			return _gallery_active;
@@ -275,7 +275,7 @@ $(document).ready( function()
 			else
 				this.show();
 		}
-	};
+	}
 
 	// LIGHTBOX COMPONENT
 
