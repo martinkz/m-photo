@@ -122,7 +122,7 @@ $(document).ready( function()
 			'md' : 'images/medium/',
 			'lg' : 'images/large/' 
 		};
-		var photos = {};
+		var photos;
 
 		var _galleryDataAccessObj = {
 			getPath : function(type) {
@@ -133,12 +133,14 @@ $(document).ready( function()
 			},
 			getPhotos : function(cat) {
 				return photos[cat];
+			},
+			ready : function() {
+				return (photos !== undefined);
 			}
 		};
 
 		$.getJSON("js/photo-data.json", function(data) {
 			photos = data;
-			$(_galleryDataAccessObj).trigger("data:ready");
 		});
 
 		return _galleryDataAccessObj;
@@ -170,10 +172,6 @@ $(document).ready( function()
 			var _cardDOMrefs = {};
 			var $container = $(container);
 
-			gallery.getCats().forEach( function(cat) {
-				_cardDOMrefs[cat] = [];
-			});
-
 			function catExists(cat) {
 				return _cardDOMrefs.hasOwnProperty(cat);
 			}
@@ -184,7 +182,9 @@ $(document).ready( function()
 
 			var $_cur_card;
 
-			function initCards(cat) {		
+			function initCards(cat) {
+				_cardDOMrefs[cat] = [];
+
 				gallery.getPhotos(cat).forEach( function(card) {
 
 					var $cardDOMref = $( photoCardView.buildHTML(card) );
@@ -221,22 +221,21 @@ $(document).ready( function()
 					_cardDOMrefs[cat].push($cardDOMref);
 				});
 
-				 $container.append(_cardDOMrefs[cat]);
-				 setFocusOutline('.js-map-location');
+				$container.append(_cardDOMrefs[cat]);
+				setFocusOutline('.js-map-location');
 			}
 
 			var _gallery_active;
 			var _prevCat;
 
 			this.render = function(newCat) {
+				if( !gallery.ready() ) return;
 
 				if(_prevCat && _prevCat !== newCat) {
 					_cardDOMrefs[_prevCat].forEach( function(card) {
 						card.addClass('hidden');
 					});
 				}
-
-				if( !catExists(newCat) ) return;
 
 				if( !catLoaded(newCat) ) initCards(newCat);
 
@@ -370,10 +369,6 @@ $(document).ready( function()
 	bgvid.play();
 
 	var lightbox = new photoLightbox('#js-photo-lightbox', '#js-nav, #js-main');
-	var photoGallery;
-
-	$(galleryModel).on("data:ready", function() {
-		photoGallery = new photoGalleryView('#js-photo-section');
-	});
+	var photoGallery = new photoGalleryView('#js-photo-section');
 	
 });
