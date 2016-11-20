@@ -10,7 +10,10 @@
  *  GLOBAL SETTINGS / VARIABLES
  */
 
-
+$max-screen-xl: "only screen and (max-width: 1400px)";
+$max-screen-l:  "only screen and (max-width: 780px)";
+$max-screen-m:  "only screen and (max-width: 680px)";
+$max-screen-s:  "only screen and (max-width: 520px)";
 
 /*
  *  ELEMENTS
@@ -87,7 +90,6 @@ body {
     }
 }
 
-
 .cat-title {
     font: 100 2.4em 'Roboto', sans-serif;
     color: white;
@@ -100,22 +102,31 @@ body {
     text-transform: uppercase;
 
     &:before { content: " / "; }
-}
 
+    @media #{$max-screen-s} {
+        left: 8%;
+        top: 95px;
+        transform: none;
+
+        &:before { content: ""; }
+    }
+}
 
 /* Modal */
 
 .modal {
     visibility: hidden;
-    background: #d7cfb4;
+    opacity: 0;
+
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     top: 0;
-    opacity: 0;
+
+    background: #d7cfb4;
+
     transition: all 0.2s ease;
-    // z-index: -100;
     will-change: transform, opacity;
 
     &--visible {
@@ -124,23 +135,19 @@ body {
         z-index: 100;
     }
 
-    // &--visible .menu_item {
-    //     pointer-events: all;
-    // }
-
     &--visible .modal__inner {
         transform: scale(1);
     }
 
     &__inner {
-        height: 100%;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
         align-content: center;
         align-items: flex-end;
-        
-        padding-top: 70px;
+
+        height: 100%;
+        padding-top: 85px;
         padding-bottom: 3%;
         
         transform: scale(0.9);
@@ -160,16 +167,33 @@ body {
     width: 40%;
     height: 40%;
     margin: 2%;
+
     text-align: center;
-    
     text-transform: uppercase;
     text-decoration: none;
     word-wrap: break-word;
-    
-    // pointer-events: none;
 
     &:hover {
         background: #cbc1aa;
+    }
+
+    @media #{$max-screen-xl} {
+        font-size: 2em;
+        border: 20px solid white;
+    }
+    @media #{$max-screen-l} and (orientation: landscape) {
+        border: 15px solid white;
+    }
+    @media #{$max-screen-m} {
+        font-size: 1.4em;
+    }
+    @media #{$max-screen-m} and (orientation: portrait) {
+        width: 84%; 
+        height: 18%;
+    }
+    @media #{$max-screen-s} {
+        font-size: 1.2em;
+        border: 12px solid white;
     }
 }
 /* vertical margins don't work as expected in Firefox */
@@ -182,7 +206,16 @@ body {
     position: relative; // Forces this to be on top of the video
     column-count: 3;
     column-gap: 3vw;
+    column-width: 350px;
     padding: 128px 8% 30px 8%;
+
+    @media #{$max-screen-m} {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @media #{$max-screen-s} {
+        padding-top: 160px;
+    }
 }
 
 .photo-box {
@@ -209,6 +242,10 @@ body {
         top: 0;
         height: 10px;
         z-index: 1;
+    }
+
+    @media #{$max-screen-m} {
+        margin-bottom: 1em;
     }
 }
 
@@ -323,73 +360,6 @@ body {
 }
 .hamburger--open .hamburger__inner:after {
     transform: rotate(45deg);
-}
-
-/* MEDIA QUERIES */
-
-@media only screen and (max-width: 1400px) {
-    .menu_item {
-        font-size: 2em;
-        border: 20px solid white;
-    }
-    
-    .photo-section {
-        column-count: 2;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-    .photo-section {
-        column-count: 1;
-    }
-}
-
-@media only screen and (max-width: 680px) {
-    .menu_item {
-        font-size: 1.4em;
-    }
-}
-@media only screen and (max-width: 680px) and (orientation: portrait) {
-    .menu_item { 
-        width: 80%; 
-        height: 18%;
-    }
-}
-
-@media only screen and (max-width: 599px) {
-    .photo-section {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .hamburger {
-        right: 4%;
-    }
-    .m-logo--in_header {
-        left: 4%;
-    }
-    .cat-title { left: 5%; }
-}
-
-@media only screen and (max-width: 500px) {
-    .cat-title {
-        left: 4%;
-        top: 95px;
-        transform: none;
-    }
-    .cat-title:before { content: ""; }
-    .photo-section {
-        padding-top: 160px;
-    }
-    .photo-box {
-        margin-bottom: 1em;
-    }
-    .menu_item {
-        font-size: 1.2em;
-        border: 15px solid white;
-    }
-}
-@media only screen and (max-width: 355px) {
-    .cat-title { font-size: 2.1em; width: 96%; }
 }
 
 
