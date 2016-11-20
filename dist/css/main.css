@@ -446,52 +446,40 @@ body {
   width: 50px;
   height: 41px;
   padding: 0;
-  z-index: 2000;
+  z-index: 1000;
   outline: none;
   background: none;
   border: none;
   cursor: pointer; }
-
-.hamburger__inner,
-.hamburger__inner:before,
-.hamburger__inner:after {
-  display: block;
-  width: 50px;
-  height: 9px;
-  background: #fff;
-  border-radius: 1px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
-
-.hamburger__inner {
-  margin-top: 0; }
-
-.hamburger__inner:before,
-.hamburger__inner:after {
-  position: absolute;
-  content: "";
-  z-index: -1; }
-
-.hamburger__inner:before {
-  top: 0; }
-
-.hamburger__inner:after {
-  top: 32px; }
-
-.hamburger--open .hamburger__inner {
-  background: none; }
-
-.hamburger--open .hamburger__inner:before,
-.hamburger--open .hamburger__inner:after {
-  top: 16px; }
-
-.hamburger--open .hamburger__inner:before {
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg); }
-
-.hamburger--open .hamburger__inner:after {
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg); }
+  .hamburger__inner, .hamburger__inner:before, .hamburger__inner:after {
+    display: block;
+    width: 50px;
+    height: 9px;
+    background: #fff;
+    border-radius: 1px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+  .hamburger__inner {
+    margin-top: 0; }
+  .hamburger__inner:before, .hamburger__inner:after {
+    position: absolute;
+    content: "";
+    z-index: -1; }
+  .hamburger__inner:before {
+    top: 0; }
+  .hamburger__inner:after {
+    top: 32px; }
+  .hamburger--open .hamburger__inner {
+    background: none; }
+  .hamburger--open .hamburger__inner:before,
+  .hamburger--open .hamburger__inner:after {
+    top: 16px; }
+  .hamburger--open .hamburger__inner:before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  .hamburger--open .hamburger__inner:after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); }
 
 /*
  *  UTILITY CLASSES
