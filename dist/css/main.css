@@ -404,14 +404,14 @@ body {
   right: 0;
   bottom: 1px;
   /* Because .photo-title has a -1px offset due to a bug */
-  width: 65px;
-  height: 65px;
-  background: #EFE9E0 url("../assets/icon-location.svg") no-repeat center center;
+  width: 64px;
+  height: 64px;
+  background: #80776b url("../assets/icon-location.svg") no-repeat center center;
   background-size: 65% auto;
   z-index: 1;
   outline: none; }
   .photo-card__location:hover {
-    background-color: white; }
+    background-color: #bfa98a; }
 
 /* Lightbox */
 .photo-lightbox {
