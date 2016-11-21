@@ -159,11 +159,11 @@ audio, canvas, iframe, img, svg, video {
  *  ELEMENTS
  */
 ::-moz-selection {
-  background: #b3d4fc;
+  background: #dc5776;
   text-shadow: none; }
 
 ::selection {
-  background: #b3d4fc;
+  background: #dc5776;
   text-shadow: none; }
 
 body {
@@ -485,7 +485,7 @@ body {
  */
 .has-tab-focus:focus,
 .has-tab-focus:focus img {
-  outline: 4px solid #f51b72 !important; }
+  outline: 4px solid #dc5776 !important; }
 
 .hidden {
   display: none !important; }

@@ -15,6 +15,8 @@ $max-screen-l:  "only screen and (max-width: 780px)";
 $max-screen-m:  "only screen and (max-width: 680px)";
 $max-screen-s:  "only screen and (max-width: 520px)";
 
+$color-highlight: #dc5776;
+
 /*
  *  ELEMENTS
  */
@@ -24,12 +26,12 @@ $max-screen-s:  "only screen and (max-width: 520px)";
 // }
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: $color-highlight;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: $color-highlight;
     text-shadow: none;
 }
 
@@ -373,7 +375,7 @@ body {
 
 .has-tab-focus:focus,
 .has-tab-focus:focus img {
-    outline: 4px solid #f51b72 !important;
+    outline: 4px solid $color-highlight !important;
 }
 
 .hidden {
