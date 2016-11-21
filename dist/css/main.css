@@ -331,7 +331,7 @@ body {
   .menu_item {
     margin: 3% 2%; } }
 
-/* Image block */
+/* Photo Cards */
 .photo-section {
   position: relative;
   -webkit-column-count: 3;
@@ -352,7 +352,7 @@ body {
     .photo-section {
       padding-top: 160px; } }
 
-.photo-box {
+.photo-card {
   width: 100%;
   display: block;
   position: relative;
@@ -360,14 +360,14 @@ body {
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   break-inside: avoid; }
-  .photo-box img {
+  .photo-card img {
     width: 100%;
     height: auto; }
-  .photo-box:hover > .photo-title {
+  .photo-card:hover > .photo-card__title {
     color: white; }
-  .photo-box__inner {
+  .photo-card__inner {
     position: relative; }
-  .photo-box-highlight {
+  .photo-card--highlighted {
     display: block;
     position: absolute;
     left: 0;
@@ -376,18 +376,18 @@ body {
     height: 10px;
     z-index: 1; }
   @media only screen and (max-width: 680px) {
-    .photo-box {
+    .photo-card {
       margin-bottom: 1em; } }
 
-.photo-link {
+.photo-card__link {
   display: block; }
-  .photo-link:focus {
+  .photo-card__link:focus {
     outline: none; }
 
-.photo-title {
+.photo-card__title {
   position: relative;
   top: -1px;
-  /* Fixes Chrome 1-pix gap bug */
+  /* Fixes Chrome 1-pix gap css columns bug */
   font: 100 1.8em/1.2 'Roboto', sans-serif;
   margin: 0;
   text-transform: uppercase;
@@ -398,7 +398,7 @@ body {
   transition: all 0.2s ease;
   cursor: pointer; }
 
-.map-location {
+.photo-card__location {
   display: block;
   position: absolute;
   right: 0;
@@ -410,9 +410,10 @@ body {
   background-size: 65% auto;
   z-index: 1;
   outline: none; }
-  .map-location:hover {
+  .photo-card__location:hover {
     background-color: white; }
 
+/* Lightbox */
 .photo-lightbox {
   display: none;
   position: fixed;

@@ -154,15 +154,15 @@ $(document).ready( function()
 			// Could be replaced with a mustache template some day
 			buildHTML : function(card) {
 				return '' +
-				'<div class="photo-box hidden">' + 
-					'<div class="photo-box__inner">' + 
-						(!card.title ? '<div class="photo-box-highlight"></div>' : '') +
-						'<a class="photo-link js-photo-link" href="' + gallery.getPath('lg') + card.filename + '">' + 
+				'<div class="photo-card hidden">' + 
+					'<div class="photo-card__inner">' + 
+						(!card.title ? '<div class="photo-card--highlighted"></div>' : '') +
+						'<a class="photo-card__link" href="' + gallery.getPath('lg') + card.filename + '">' + 
 							'<img src="' + gallery.getPath('sm') + card.filename + '" alt="' + card.title + '">' +
 						'</a>' + 
-						(card.location ? '<a class="map-location js-map-location" target="_blank" title="location" href="' + card.location + '"></a>' : '') +
+						(card.location ? '<a class="photo-card__location" target="_blank" title="location" href="' + card.location + '"></a>' : '') +
 					'</div>' + 
-					(card.title ? '<h2 class="photo-title">' + card.title + '</h2>' : '') +
+					(card.title ? '<h2 class="photo-card__title">' + card.title + '</h2>' : '') +
 				'</div>';
 			}
 		}
@@ -192,9 +192,9 @@ $(document).ready( function()
 
 					var $cardDOMref = $( photoCardView.buildHTML(card) );
 
-					var $highlightEl = card.title ? $cardDOMref.find('h2') : $cardDOMref.find('.photo-box-highlight');
-					var $photo_link = $cardDOMref.find('.js-photo-link')
-					var $location_icon = $cardDOMref.find('.js-map-location');
+					var $highlightEl = card.title ? $cardDOMref.find('.photo-card__title') : $cardDOMref.find('.photo-card--highlighted');
+					var $photo_link = $cardDOMref.find('.photo-card__link')
+					var $location_icon = $cardDOMref.find('.photo-card__location');
 					
 					$cardDOMref.on('click', function(e) {
 						e.preventDefault();
@@ -250,7 +250,7 @@ $(document).ready( function()
 				_prevCat = newCat;
 				_gallery_active = true;
 
-				$_cur_card = $('.photo-box:not(.hidden):first .js-photo-link');
+				$_cur_card = $('.photo-card:not(.hidden):first .photo-card__link');
 
 				this.show();
 			}
