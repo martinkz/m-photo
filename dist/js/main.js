@@ -69,7 +69,7 @@ $(document).ready( function()
 			}
 		}
 	});
-	
+
 	$('.js-menu-item').on('click', function(e) {
 		e.preventDefault();
 

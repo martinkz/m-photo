@@ -123,12 +123,12 @@ body {
     right: 0;
     top: 0;
 
-    background: #d7cfb4;
+    background-color: rgba(210, 195, 166, 0.65);
 
     visibility: hidden;
     opacity: 0;
-    transition: all 0.2s ease;
-    will-change: transform, opacity;
+    transition: all 0.5s ease;
+    will-change: transform, opacity, background-color;
 
     &--visible {
         visibility: visible;
@@ -174,8 +174,10 @@ body {
     text-decoration: none;
     word-wrap: break-word;
 
+    transition: background-color 0.2s ease;
+
     &:hover {
-        background: #cbc1aa;
+        background-color: rgba(189, 173, 144, 0.60);
     }
 
     @media #{$max-screen-xl} {
