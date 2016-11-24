@@ -233,6 +233,8 @@ body {
   text-transform: uppercase; }
   .cat-title:before {
     content: " / "; }
+  .cat-title:focus {
+    outline: none; }
   @media only screen and (max-width: 520px) {
     .cat-title {
       left: 8%;

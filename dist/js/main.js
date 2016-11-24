@@ -79,7 +79,9 @@ $(document).ready( function()
 		photoGallery.render(cat);
 		
 		$('#js-bgvid-container').addClass('hidden');
+		
 		$('#js-cat-title').text( $(this).text() );
+		$('#js-cat-title').focus();
 	});
 	
 	$('#js-home-btn').click(function(e)  {
@@ -235,23 +237,26 @@ $(document).ready( function()
 			this.render = function(newCat) {
 				if( !gallery.ready() ) return;
 
-				if(_prevCat && _prevCat !== newCat) {
-					_cardDOMrefs[_prevCat].forEach( function(card) {
-						card.addClass('hidden');
+				if(_prevCat !== newCat) {
+					if(_prevCat) {
+						_cardDOMrefs[_prevCat].forEach( function(card) {
+							card.addClass('hidden');
+						});
+					}
+
+					if( !catLoaded(newCat) ) initCards(newCat);
+
+					_cardDOMrefs[newCat].forEach( function(card) {
+						card.removeClass('hidden');
 					});
+
+					_prevCat = newCat;
+				} 
+				else {
+					$_cur_card = undefined;
 				}
 
-				if( !catLoaded(newCat) ) initCards(newCat);
-
-				_cardDOMrefs[newCat].forEach( function(card) {
-					card.removeClass('hidden');
-				});
-
-				_prevCat = newCat;
 				_gallery_active = true;
-
-				$_cur_card = $('.photo-card:not(.hidden):first .photo-card__link');
-
 				this.show();
 			}
 
@@ -273,7 +278,7 @@ $(document).ready( function()
 			this.show = function() {
 				$container.removeClass('hidden');
 				$(document).scrollTop(_cur_scroll);
-				$_cur_card.focus();
+				if($_cur_card) $_cur_card.focus();
 			}
 
 			this.hide = function() {
@@ -285,7 +290,7 @@ $(document).ready( function()
 				if(this.isVisible())
 					this.hide();
 				else
-					this.show();
+					this.render(_prevCat); // Using render here (instead of show) to prevent scroll jump to previously focused cards
 			}
 		}
 	}(galleryModel);
