@@ -17,6 +17,8 @@ $max-screen-s:  "only screen and (max-width: 520px)";
 
 $color-highlight: #dc5776;
 
+$broken-img-bg: #c1bbac;
+
 /*
  *  ELEMENTS
  */
@@ -233,6 +235,28 @@ body {
     img {
         width: 100%;
         height: auto;
+
+        // Broken image styles
+        color: $broken-img-bg; //needed to hide the default text from Firefox
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: $broken-img-bg;
+        }
+
+        &:after {
+            content: "✖ " attr(alt);
+            display: block;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            color: #928d80;
+            text-align: center;
+        }
     }
 
     &:hover > &__title { color: white; }
@@ -256,6 +280,8 @@ body {
 
 .photo-card__link { 
     display: block;
+    min-height: 160px;
+    background-color: $broken-img-bg;
 
     &:focus { outline: none; }
 }

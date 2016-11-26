@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  *  GENERIC
  */
@@ -366,7 +367,23 @@ body {
   break-inside: avoid; }
   .photo-card img {
     width: 100%;
-    height: auto; }
+    height: auto;
+    color: #c1bbac; }
+    .photo-card img:before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: #c1bbac; }
+    .photo-card img:after {
+      content: "✖ " attr(alt);
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      color: #928d80;
+      text-align: center; }
   .photo-card:hover > .photo-card__title {
     color: white; }
   .photo-card__inner {
@@ -384,7 +401,9 @@ body {
       margin-bottom: 1em; } }
 
 .photo-card__link {
-  display: block; }
+  display: block;
+  min-height: 160px;
+  background-color: #c1bbac; }
   .photo-card__link:focus {
     outline: none; }
 
