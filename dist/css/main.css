@@ -191,7 +191,10 @@ body {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
-    object-fit: cover; }
+    object-fit: cover;
+    display: none; }
+    .no-js .bg-main-vid video {
+      display: block; }
 
 .m-logo {
   display: block;

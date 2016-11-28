@@ -368,16 +368,11 @@ $(document).ready( function()
 	 *   INIT
 	 */
 
-	$('#js-bgvid').hide();
-
-	setTimeout( function() { 
-		$('#js-bgvid').fadeIn(300);
-	}, 0);
-
-	var bgvid = document.getElementById('js-bgvid');
-	bgvid.play();
-
 	var lightbox = new photoLightbox('#js-photo-lightbox', '#js-nav, #js-main');
 	var photoGallery = new photoGalleryView('#js-photo-section');
+
+	var bgvid = document.getElementById('js-bgvid');
+	$(bgvid).fadeIn(800);
+	bgvid.play();
 	
 });
