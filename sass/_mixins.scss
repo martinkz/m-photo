@@ -1,0 +1,23 @@
+@mixin triangle($direction, $color: currentcolor, $size: 1em) {
+	$direction-to-color: (
+		'top':		'transparent transparent #{$color} transparent',
+		'right':	'transparent transparent transparent #{$color}',
+		'bottom':	'#{$color} transparent transparent transparent',
+		'left':		'transparent #{$color} transparent transparent'
+	);
+
+	$ratio: 1.6;
+
+	$direction-to-size: (
+		'top':		'0 #{$size} #{$size*$ratio} #{$size}',
+		'right':	'#{$size} 0 #{$size} #{$size*$ratio}',
+		'bottom':	'#{$size*$ratio} #{$size} 0 #{$size}',
+		'left':		'#{$size} #{$size*$ratio} #{$size} 0'
+	);
+
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: #{ map-get($direction-to-size, $direction) };
+	border-color: #{ map-get($direction-to-color, $direction) };
+}

@@ -196,6 +196,31 @@ body {
     .no-js .bg-main-vid video {
       display: block; }
 
+.bgvid-playbtn {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 10px 25px 10px 30px;
+  font-size: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 7px;
+  outline: none;
+  cursor: pointer; }
+  .bgvid-playbtn:before {
+    content: '';
+    display: inline-block;
+    font-size: initial;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 18px 0 18px 28.8px;
+    border-color: transparent transparent transparent rgba(255, 255, 255, 0.75); }
+  .bgvid-playbtn:hover:before, .bgvid-playbtn:active:before, .bgvid-playbtn:focus:before {
+    border-left-color: white; }
+
 .m-logo {
   display: block;
   position: absolute;

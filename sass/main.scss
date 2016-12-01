@@ -4,6 +4,7 @@
 
 @import 'normalize';
 @import 'reset';
+@import 'mixins';
 
 
 /*
@@ -70,6 +71,37 @@ body {
             display: block;
         }
     }
+}
+
+.bgvid-playbtn {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 25px 10px 30px;
+
+    font-size: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 7px;
+    outline: none;
+    cursor: pointer;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        font-size: initial;
+        
+        @include triangle(
+            $direction: right, 
+            $color: rgba(255, 255, 255, 0.75), 
+            $size: 18px
+        );
+    }
+    
+    &:hover:before,
+    &:active:before,
+    &:focus:before { border-left-color: white; }
 }
 
 .m-logo {
