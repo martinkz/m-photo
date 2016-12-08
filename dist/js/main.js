@@ -130,6 +130,8 @@ $(document).ready( function()
 	 *   GALLERY
 	 */
 
+	var $data_error_el = $('#js-error-data');
+
 	var galleryModel = function() {
 		var paths = {
 			'sm' : 'images/small/',
@@ -155,6 +157,11 @@ $(document).ready( function()
 
 		$.getJSON("js/photo-data.json", function(data) {
 			photos = data;
+
+			if( !$data_error_el.hasClass('hidden') ) { // If error is visible, rendering has been attempted and failed
+				photoGallery.render();
+				$data_error_el.addClass('hidden');
+			}
 		});
 
 		return _galleryDataAccessObj;
@@ -242,9 +249,20 @@ $(document).ready( function()
 
 			var _gallery_active;
 			var _prevCat;
+			var _failedLoadCat;
 
 			this.render = function(newCat) {
-				if( !gallery.ready() ) return;
+
+				_gallery_active = true;
+				this.show();
+
+				if( !gallery.ready() ) { 
+					$data_error_el.removeClass('hidden');
+					_failedLoadCat = newCat;
+					return;
+				}
+
+				if(!newCat && _failedLoadCat) newCat = _failedLoadCat;
 
 				if(_prevCat !== newCat) {
 					if(_prevCat) {
@@ -264,9 +282,6 @@ $(document).ready( function()
 				else {
 					$_cur_card = undefined;
 				}
-
-				_gallery_active = true;
-				this.show();
 			}
 
 			this.isActive = function() {
