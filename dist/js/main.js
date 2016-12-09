@@ -53,6 +53,8 @@ $(document).ready( function()
 	var menu = new menuBtn('#js-hamburger');
 	var home = new homeBtn('#js-home-btn');
 
+	var $bgvid_playbtn = $('#js-bgvid-playbtn');
+
 	$('#js-hamburger').on('click', function(e) {
 		menu.toggle();
 		
@@ -62,7 +64,7 @@ $(document).ready( function()
 			if( menu.isOn() ) {
 				home.on();
 				bgvid.pause();
-				$('#js-bgvid-playbtn').addClass('hidden'); // CREATE VIDEO BTN COMPONENT
+				$bgvid_playbtn.addClass('hidden');
 			}
 			else {
 				home.off();
@@ -98,12 +100,12 @@ $(document).ready( function()
 		bgvid.play();
 	});
 
-	$('#js-bgvid-playbtn').on('click', function() {
+	$bgvid_playbtn.on('click', function() {
 		bgvid.play();
 	});
 
 	$('#js-bgvid').on('play', function() {
-		$('#js-bgvid-playbtn').addClass('hidden');
+		$bgvid_playbtn.addClass('hidden');
 	});
 
 
@@ -401,7 +403,7 @@ $(document).ready( function()
 	bgvid.play()
 	.catch( function(err) { 
 		if(err.name === 'NotAllowedError') {
-			$('#js-bgvid-playbtn').removeClass('hidden');
+			$bgvid_playbtn.removeClass('hidden');
 		}
 	});
 	
