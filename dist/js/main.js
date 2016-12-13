@@ -170,83 +170,90 @@ $(document).ready( function()
 	}();
 
 	var photoCardView = function(gallery) {
-		return {
-			// Could be replaced with a mustache template some day
-			buildHTML : function(card) {
-				return '' +
-				'<div class="photo-card hidden">' + 
-					'<div class="photo-card__inner">' + 
-						(!card.title ? '<div class="photo-card--highlighted"></div>' : '') +
-						'<a class="photo-card__link" href="' + gallery.getPath('lg') + card.filename + '">' + 
-							'<img src="' + gallery.getPath('sm') + card.filename + '" alt="' + card.title + '">' +
-						'</a>' + 
-						(card.location ? '<a class="photo-card__location" target="_blank" title="location" href="' + card.location + '"></a>' : '') +
-					'</div>' + 
-					(card.title ? '<h2 class="photo-card__title">' + card.title + '</h2>' : '') +
-				'</div>';
-			}
+
+		function buildHTML(card) {  // Or use mustache template maybe?
+			return '' +
+			'<div class="photo-card hidden">' + 
+				'<div class="photo-card__inner">' + 
+					(!card.title ? '<div class="photo-card--highlighted"></div>' : '') +
+					'<a class="photo-card__link" href="' + gallery.getPath('lg') + card.filename + '">' + 
+						'<img src="' + gallery.getPath('sm') + card.filename + '" alt="' + card.title + '">' +
+					'</a>' + 
+					(card.location ? '<a class="photo-card__location" target="_blank" title="location" href="' + card.location + '"></a>' : '') +
+				'</div>' + 
+				(card.title ? '<h2 class="photo-card__title">' + card.title + '</h2>' : '') +
+			'</div>';
+		}
+
+		return function buildCard(card) {
+			var $cardDOMref = $( buildHTML(card) );
+
+			var $highlightEl = card.title ? $cardDOMref.find('.photo-card__title') : $cardDOMref.find('.photo-card--highlighted');
+			var $photo_link = $cardDOMref.find('.photo-card__link')
+			var $location_icon = $cardDOMref.find('.photo-card__location');
+			
+			$cardDOMref.on('click', function(e) {
+				e.preventDefault();
+				lightbox.show(card);
+				photoGallery.setCurrentCard($photo_link);
+			});
+
+			$photo_link.on('focus', function(e) {
+				$highlightEl.css('background-color', card.color);
+			});
+
+			$photo_link.on('blur', function(e) {
+				$highlightEl.css('background-color', '');
+			});
+
+			$cardDOMref.on('mouseenter', function(e) {
+				$highlightEl.css('background-color', card.color);
+			});
+
+			$cardDOMref.on('mouseleave', function(e) {
+				$highlightEl.css('background-color', '');
+			});
+
+			$location_icon.on('click', function(e){
+				e.stopPropagation();
+			});
+
+			setFocusOutline($location_icon);
+
+			return $cardDOMref;
 		}
 	}(galleryModel);
 
 	var photoGalleryView = function(gallery) {
 
+		var _cardDOMrefs = {};
+
+		function catExists(cat) {
+			return _cardDOMrefs.hasOwnProperty(cat);
+		}
+
+		function catLoaded(cat) {
+			return (catExists(cat) && _cardDOMrefs[cat].length > 0);
+		}
+
 		return function(container) {
-
-			var _cardDOMrefs = {};
+			
 			var $container = $(container);
-
-			function catExists(cat) {
-				return _cardDOMrefs.hasOwnProperty(cat);
-			}
-
-			function catLoaded(cat) {
-				return (catExists(cat) && _cardDOMrefs[cat].length > 0);
-			}
-
-			var $_cur_card;
 
 			function initCards(cat) {
 				_cardDOMrefs[cat] = [];
 
 				gallery.getPhotos(cat).forEach( function(card) {
-
-					var $cardDOMref = $( photoCardView.buildHTML(card) );
-
-					var $highlightEl = card.title ? $cardDOMref.find('.photo-card__title') : $cardDOMref.find('.photo-card--highlighted');
-					var $photo_link = $cardDOMref.find('.photo-card__link')
-					var $location_icon = $cardDOMref.find('.photo-card__location');
-					
-					$cardDOMref.on('click', function(e) {
-						e.preventDefault();
-						lightbox.show(card);
-						$_cur_card = $photo_link;
-					});
-
-					$photo_link.on('focus', function(e) {
-						$highlightEl.css('background-color', card.color);
-					});
-
-					$photo_link.on('blur', function(e) {
-						$highlightEl.css('background-color', '');
-					});
-
-					$cardDOMref.on('mouseenter', function(e) {
-						$highlightEl.css('background-color', card.color);
-					});
-
-					$cardDOMref.on('mouseleave', function(e) {
-						$highlightEl.css('background-color', '');
-					});
-
-					$location_icon.on('click', function(e){
-						e.stopPropagation();
-					});
-					
-					_cardDOMrefs[cat].push($cardDOMref);
-					setFocusOutline($location_icon);
+					_cardDOMrefs[cat].push( photoCardView(card) );
 				});
 
 				$container.append(_cardDOMrefs[cat]);
+			}
+
+			var $_cur_card;
+
+			this.setCurrentCard = function($item) {
+				$_cur_card = $item;
 			}
 
 			var _gallery_active;
@@ -268,15 +275,15 @@ $(document).ready( function()
 
 				if(_prevCat !== newCat) {
 					if(_prevCat) {
-						_cardDOMrefs[_prevCat].forEach( function(card) {
-							card.addClass('hidden');
+						_cardDOMrefs[_prevCat].forEach( function($card) {
+							$card.addClass('hidden');
 						});
 					}
 
 					if( !catLoaded(newCat) ) initCards(newCat);
 
-					_cardDOMrefs[newCat].forEach( function(card) {
-						card.removeClass('hidden');
+					_cardDOMrefs[newCat].forEach( function($card) {
+						$card.removeClass('hidden');
 					});
 
 					_prevCat = newCat;
