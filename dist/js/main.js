@@ -332,26 +332,26 @@ $(document).ready( function()
 
 	var photoLightbox = function(gallery) {
 
+		var highDPR = window.devicePixelRatio ? window.devicePixelRatio >= 1.5 ? 1 : 0 : 0;
+
+		// To be replaced with srcset once object-fit works in Edge
+		function generate_resp_path() {
+			var ww = window.innerWidth;
+			var wh = window.innerHeight;
+
+			if(ww <= 660 && wh <= 660) {
+				return highDPR ? gallery.getPath('md') : gallery.getPath('sm');
+			}
+			else if (ww <= 1200 && wh <= 1200) {
+				return highDPR ? gallery.getPath('lg') : gallery.getPath('md');
+			}
+			else return gallery.getPath('lg');
+		}
+
 		return function(el, elA11yHide) {
 
 			var $container = $(el);
 			var $image = $('<img src="">').appendTo($container);
-
-			var highDPR = window.devicePixelRatio ? window.devicePixelRatio >= 1.5 ? 1 : 0 : 0;
-
-			// To be replaced with srcset once object-fit works in Edge
-			function generate_resp_path() {
-				var ww = window.innerWidth;
-				var wh = window.innerHeight;
-
-				if(ww <= 660 && wh <= 660) {
-					return highDPR ? gallery.getPath('md') : gallery.getPath('sm');
-				}
-				else if (ww <= 1200 && wh <= 1200) {
-					return highDPR ? gallery.getPath('lg') : gallery.getPath('md');
-				}
-				else return gallery.getPath('lg');
-			}
 
 			this.show = function(card) {
 				$image.attr('src', generate_resp_path() + card.filename);
