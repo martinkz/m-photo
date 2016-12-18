@@ -404,6 +404,9 @@ $(document).ready( function()
 	var lightbox = new photoLightbox('#js-photo-lightbox', '#js-nav, #js-main');
 	var photoGallery = new photoGalleryView('#js-photo-section');
 
+	$('#js-main-loader').addClass('hidden');
+	$('#js-hamburger').removeClass('hidden');
+
 	var bgvid = document.getElementById('js-bgvid');
 	$(bgvid).fadeIn(800);
 	

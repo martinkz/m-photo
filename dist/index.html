@@ -25,12 +25,25 @@
     </head>
     <body>
 
+        <svg class="svg-sprite--hidden" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <symbol id="loader" viewBox="0 0 50 50">
+                    <path fill="#fff" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                    </path>
+                </symbol>
+            </defs>
+        </svg>
+
+        <svg id="js-main-loader" class="loader main-loader" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <use xlink:href="#loader"></use>
+        </svg>
+
         <nav id="js-nav" role="navigation">
             <a id="js-home-btn" href="index.html" class="m-logo" title="Home" tabindex="-1">
                 <img class="" src="assets/logo-m.png" alt="M Photography Logo">
             </a>
             
-            <button id="js-hamburger" class="hamburger" aria-label="Open Menu" aria-controls="main-nav" aria-expanded="false">
+            <button id="js-hamburger" class="hamburger hidden" aria-label="Open Menu" aria-controls="main-nav" aria-expanded="false">
                 <div class="hamburger__inner"></div>
             </button>
             
@@ -58,11 +71,8 @@
                 <h2 id="js-cat-title" class="cat-title" tabindex="-1"></h2>
                 
                 <div id="js-error-data" class="error-data hidden">
-                    <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="40px" height="40px" viewBox="0 0 50 50" xml:space="preserve">
-                        <path fill="#fff" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
-                            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1.2s" repeatCount="indefinite"/>
-                        </path>
+                    <svg class="loader" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <use xlink:href="#loader"></use>
                     </svg>
                     Loading data...
                 </div>

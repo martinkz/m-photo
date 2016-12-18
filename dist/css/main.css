@@ -534,6 +534,47 @@ body {
 
 .error-data {
   font-size: 2.4em; }
+  .error-data svg {
+    width: 40px;
+    height: 40px; }
+
+.svg-sprite--hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden; }
+
+.loader {
+  -webkit-animation: infinite-spinning 1s infinite;
+  animation: infinite-spinning 1s infinite; }
+
+.main-loader {
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 8%;
+  width: 64px;
+  height: 64px;
+  z-index: 5; }
+  .no-js .main-loader {
+    display: none; }
+
+@-webkit-keyframes infinite-spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes infinite-spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 
 /*
  *  UTILITY CLASSES

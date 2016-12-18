@@ -439,8 +439,45 @@ body {
 
 .error-data {
     font-size: 2.4em;
+
+    svg {
+        width: 40px;
+        height: 40px;
+    }
 }
 
+.svg-sprite--hidden {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden; 
+}
+
+.loader { 
+    animation: infinite-spinning 1s infinite; 
+}
+
+.main-loader {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 8%;
+    width: 64px;
+    height: 64px;
+    z-index: 5;
+
+    .no-js & { display: none }
+}
+
+@keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 /*
  *  UTILITY CLASSES
