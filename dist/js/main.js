@@ -55,7 +55,7 @@ $(document).ready( function()
 
 	var $bgvid_playbtn = $('#js-bgvid-playbtn');
 
-	$('#js-hamburger').on('click', function(e) {
+	$('#js-hamburger').on('click', function() {
 		menu.toggle();
 		
 		if( photoGallery.isActive() ) {
@@ -117,7 +117,7 @@ $(document).ready( function()
 		var items = list instanceof jQuery ? list : $(list);
 
 		items.on('keyup', function (e) {
-			if ((e.keyCode || e.which) == 9) $(this).addClass('has-tab-focus');
+			if ((e.keyCode || e.which) === 9) $(this).addClass('has-tab-focus');
 		});
 
 		items.on('blur', function() {
@@ -198,19 +198,19 @@ $(document).ready( function()
 				photoGallery.setCurrentCard($photo_link);
 			});
 
-			$photo_link.on('focus', function(e) {
+			$photo_link.on('focus', function() {
 				$highlightEl.css('background-color', card.color);
 			});
 
-			$photo_link.on('blur', function(e) {
+			$photo_link.on('blur', function() {
 				$highlightEl.css('background-color', '');
 			});
 
-			$cardDOMref.on('mouseenter', function(e) {
+			$cardDOMref.on('mouseenter', function() {
 				$highlightEl.css('background-color', card.color);
 			});
 
-			$cardDOMref.on('mouseleave', function(e) {
+			$cardDOMref.on('mouseleave', function() {
 				$highlightEl.css('background-color', '');
 			});
 
@@ -362,7 +362,7 @@ $(document).ready( function()
 				photoGallery.hide();
 				$(elA11yHide).attr('aria-hidden', true);
 				
-				if(history.state===null || history.state.cur_page!="photo") { 
+				if(history.state===null || history.state.cur_page!=="photo") { 
 					history.pushState({cur_page: "photo"}, null, null);
 				}
 			}
@@ -379,18 +379,18 @@ $(document).ready( function()
 
 			var that = this;
 
-			$container.on('click', function(e) {
+			$container.on('click', function() {
 				that.hide();
 			});
 
 			$container.on('keydown', function(e) {
-				if (e.keyCode == 27 || e.keyCode == 13) that.hide();
+				if (e.keyCode === 27 || e.keyCode === 13) that.hide();
 
 				// Trap the tab key on the focused modal
-				if (e.keyCode == 9) e.preventDefault();
+				if (e.keyCode === 9) e.preventDefault();
 			});
 			
-			window.addEventListener("popstate", function(event) {
+			window.addEventListener("popstate", function() {
 				that.hide();
 			});
 		}
