@@ -76,6 +76,17 @@ gulp.task('img', () => {
 		.pipe(gulp.dest('./dist'));
 });
 
+// Jasmine task
+
+var jasmineBrowser = require('gulp-jasmine-browser');
+
+gulp.task('jas', function() {
+	return gulp.src(['src/**/*.js', 'tests/**/*_spec.js'])
+		//.pipe(watch('tests/**/*_spec.js'))
+		.pipe(jasmineBrowser.specRunner())
+		.pipe(jasmineBrowser.server({port: 8888}));
+});
+
 // BrowserSync server
 
 gulp.task('serve', ['styles', 'lint'], function() {
