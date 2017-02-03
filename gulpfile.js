@@ -6,7 +6,7 @@ var eslint = require('gulp-eslint');
 
 gulp.task('styles', function() {
 	gulp.src('sass/**/*.scss')
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass({outputStyle:'compressed'}).on('error', sass.logError))
 		.pipe(autoprefixer({
 			browsers: ['>1%', 'last 2 versions', 'IE 8'],
 			cascade: false
