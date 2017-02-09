@@ -379,63 +379,72 @@ body {
     }
 }
 
-/* Hamburger */
+/* Hamburger component */
+
+$hamburger__height: 50px;
+$hamburger__width: 50px;
+$hamburger__layer__height: 9px;
+$hamburger__layer__gap: 7px;
+$hamburger__colour: #FFF;
 
 .hamburger {
     display: block;
     position: absolute;
     top: 35px;
     right: 8%;
-
-    width: 50px;
-    height: 41px;
     padding: 0;
-    
-    z-index: 1000;
 
     outline: none;
     background: none;
     border: none;
     cursor: pointer;
 
-    &__inner,
-    &__inner:before, 
-    &__inner:after {
+    width: $hamburger__height;
+    height: $hamburger__width;
+    z-index: 1000;
+
+    &__inner { 
         display: block;
-        width: 50px;
-        height: 9px;
-        background: #fff;
-        border-radius: 1px;
-        transition: all 0.2s ease-in-out;
-    }
-
-    &__inner {
-        margin-top: 0;
-    }
-    &__inner:before, 
-    &__inner:after {
         position: absolute;
-        content: "";
-        z-index: -1;
+        top: 0;
+        width: $hamburger__width;
+        height: $hamburger__layer__height; 
+        margin-top: $hamburger__layer__height + $hamburger__layer__gap;
+        background-color: $hamburger__colour;
+        transition: background-color 0.25s ease-in-out;
+
+        &:before, &:after { 
+            display: block; 
+            position: absolute; 
+            content: "";
+            width: $hamburger__width; 
+            height: $hamburger__layer__height; 
+            background: $hamburger__colour;
+            transition: all 0.25s ease-in-out; 
+        }
+        &:before {
+            top: -($hamburger__layer__height + $hamburger__layer__gap);
+        }
+        &:after {
+            top: $hamburger__layer__height + $hamburger__layer__gap;
+        }
     }
 
-    &__inner:before { top: 0; }
-    &__inner:after { top: 32px; }
+    &--open &__inner {
+        background-color: transparent;
 
-    &--open &__inner { background: none; }
-
-    &--open &__inner:before, 
-    &--open &__inner:after {
-        top: 16px;
-    }
-
-    &--open &__inner:before {
-        transform: rotate(-45deg);
-    }
-    &--open &__inner:after {
-        transform: rotate(45deg);
+        &:before, &:after {
+            top: 0;
+        }
+        &:before {
+            transform: rotate(-45deg);
+        }
+        &:after {
+            transform: rotate(45deg);
+        }
     }
 }
+
 
 .error-data {
     font-size: 2.4em;
