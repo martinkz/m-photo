@@ -416,7 +416,7 @@ body {
   position: relative;
   column-count: 3;
   column-gap: 3vw;
-  column-width: 350px;
+  column-width: 380px;
   padding: 128px 8% 30px 8%;
 }
 @media only screen and (max-width: 680px) {

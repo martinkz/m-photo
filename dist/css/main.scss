@@ -246,7 +246,7 @@ body {
     position: relative; // Forces this to be on top of the video
     column-count: 3;
     column-gap: 3vw;
-    column-width: 350px;
+    column-width: 380px;
     padding: 128px 8% 30px 8%;
 
     @media #{$max-screen-m} {
