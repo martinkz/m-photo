@@ -163,6 +163,9 @@
 			"color" : "#5e35b1",
 			"title" : "The London Eye"
 		},{
+			"color" : "#e53935",
+			"filename" : "DSC04397_2.jpg"
+		},{
 			"filename" : "DSC07260_2.jpg",
 			"location" : "https://www.google.com/maps/place/Bern,+Switzerland/@46.9547232,7.3598507,13z/data=!3m1!4b1!4m5!3m4!1s0x478e39c0d43a1b77:0xcb555ffe0457659a!8m2!3d46.9479739!4d7.4474468",
 			"color" : "#e53935",
@@ -284,17 +287,8 @@
 			"color" : "#ffa726",
 			"filename" : "DSC07127-3.jpg"
 		},{
-			"color" : "#7cb342",
-			"filename" : "DSC00284.jpg"
-		},{
-			"color" : "#ec407a",
-			"filename" : "DSC00370.jpg"
-		},{
 			"color" : "#ef5350",
 			"filename" : "DSC00446.jpg"
-		},{
-			"color" : "#ff1744",
-			"filename" : "DSC01252_2.jpg"
 		},{
 			"color" : "#29b6f6",
 			"filename" : "DSC08387.jpg"
@@ -317,26 +311,17 @@
 			"color" : "#ec407a",
 			"filename" : "DSC03231.jpg"
 		},{
-			"color" : "#ff7043",
-			"filename" : "DSC03263.jpg"
-		},{
 			"color" : "#ab47bc",
 			"filename" : "DSC05200.jpg"
 		},{
 			"color" : "#3f51b5",
 			"filename" : "DSC05672.jpg"
 		},{
-			"color" : "#fdd835",
-			"filename" : "DSC02943.jpg"
-		},{
-			"color" : "#e53935",
-			"filename" : "DSC04397_2.jpg"
+			"color" : "#ff7043",
+			"filename" : "DSC03263.jpg"
 		},{
 			"color" : "#ff7043",
 			"filename" : "DSC05983-2.jpg"
-		},{
-			"color" : "#fdd835",
-			"filename" : "DSC03372-2.jpg"
 		}
 	]
 }
