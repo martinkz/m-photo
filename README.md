@@ -1,3 +1,3 @@
 https://photo.martinkz.uk/
 
-Yes, it's a 10 year old jQuery site.
+Yes, it's a 10 year old jQuery "app".
